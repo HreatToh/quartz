@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    @layout("/layout/header.html"){
+
+    @}
+    @layout("/layout/content.html"){
+        <div id="main-content" style="height:100%">
+            @//layout("/first.html",{menuList:menuList!}){}
+        </div>
+    @}
+    @layout("/layout/footer.html"){
+
+    @}
+</html>

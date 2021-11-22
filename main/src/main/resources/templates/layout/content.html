@@ -1,0 +1,24 @@
+<!--  templates\layout\content.html -->
+<body class="layui-layout-body layuimini-all">
+    <div class="layui-layout layui-layout-admin">
+        <!--头部tab-->
+        @layout("/layout/comm/contentToper.html"){
+
+        @}
+        <!--无限极左侧菜单-->
+        @layout("/layout/comm/contentSider.html"){
+
+        @}
+        <!--初始化加载层-->
+        @layout("/layout/comm/contentLoader.html"){
+
+        @}
+
+        <!--手机端遮罩层-->
+        @layout("/layout/comm/contentMobile.html"){
+
+        @}
+
+        ${layoutContent!}
+    </div>
+</body>

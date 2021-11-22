@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <groupId>com.csx</groupId>
+        <artifactId>quartz</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>main</artifactId>
+    <name>main</name>
+    <description>启动以及主要模块</description>
+    <packaging>war</packaging>
+
+    <!--引入所有需要运行的模块-->
+    <dependencies>
+        <!--引入公共模块-->
+        <dependency>
+            <groupId>com.csx</groupId>
+            <artifactId>common</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+        <!--引入任务模块-->
+        <dependency>
+            <groupId>com.csx</groupId>
+            <artifactId>task</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+        <!--引入认证模块-->
+        <dependency>
+            <groupId>com.csx</groupId>
+            <artifactId>licence</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+        <!--引入单元测试模块-->
+        <dependency>
+            <groupId>com.csx</groupId>
+            <artifactId>test</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+    </dependencies>
+</project>

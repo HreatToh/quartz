@@ -1,0 +1,52 @@
+################################################################################
+#                                 项目 主要配置入口
+################################################################################
+
+#设置端口以及项目名
+server:
+  port: 9001
+  servlet:
+    context-path: /quartz
+
+#配置log4j2配置文件路径
+logging:
+  config: classpath:log4j2.xml
+
+#切环境 开发  测试  生产 dev、test、prod
+spring:
+  profiles:
+    include: quartz,activiti,datasource
+    active: dev
+  cache:
+    #配置 ehcache
+    ehcache:
+      #本地缓存名
+      localname: localCache
+      #配置文件路径
+      config: ehcache-config.xml
+
+
+# mybatis plus 主配置
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.log4j2.Log4j2Impl
+  mapper-locations: classpath*:mappers/mysql/*Mapper.xml
+  global-config:
+    #逻辑删除配置
+    db-config:
+      # 删除前
+      logic-not-delete-value: true
+      # 删除后
+      logic-delete-value: false
+
+# beetl 模版引擎
+beetl:
+  enabled: true
+  #模版路径
+  templatesPath: /templates
+  #配置文件路径
+  configsPath: beetl.properties
+  #后缀
+  suffix: html

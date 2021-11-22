@@ -1,0 +1,21 @@
+################################################################################
+#                                 Activiti 主要配置
+################################################################################
+
+#Activiti 配置
+
+spring:
+  activiti:
+#自动构建Activiti数据库表，设置value = true ，启动时检测，无表创建，有表跳过，设置value = drop-create
+#每次启动时创建新表（SpringBoot 1.x 中生效，SpringBoot 2.x 中已经不生效了，因此关闭）
+#    database-schema-update: true
+#Activiti 自动部署验证配置；true 开启（默认） false 关闭
+    check-process-definitions: false
+#设置true后将代替那些老的job executor
+    async-executor-activate: false
+#    是指定activiti流程描述文件的前缀（即路径）
+    process-definition-location-prefix: classpath:/processes/
+#    process-definition-location-suffixes:
+#      - **.bpmn
+#      - **.bpmn20.xml
+    history-level: full
