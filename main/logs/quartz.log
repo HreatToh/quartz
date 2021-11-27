@@ -1,201 +1,71 @@
-21:10:59.470 [main] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 17076 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
-21:10:59.487 [main] DEBUG com.csx.main.MainApplication  - Running with Spring Boot v2.5.3, Spring v5.3.9
-21:10:59.488 [main] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
-21:11:02.732 [main] DEBUG com.ibeetl.starter.BeetlSqlStarterClassPathScanner  - Identified candidate component class: URL [jar:file:/E:/Maven/repository/com/alibaba/druid/1.2.4/druid-1.2.4.jar!/com/alibaba/druid/support/monitor/dao/MonitorDao.class]
-21:11:04.771 [main] DEBUG com.ibeetl.starter.BeetlSqlStarterClassPathScanner  - Bean definition with name 'monitorDao': Generic bean: class [com.alibaba.druid.support.monitor.dao.MonitorDao]; scope=singleton; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [jar:file:/E:/Maven/repository/com/alibaba/druid/1.2.4/druid-1.2.4.jar!/com/alibaba/druid/support/monitor/dao/MonitorDao.class]
-21:11:04.773 [main] DEBUG com.ibeetl.starter.BeetlSqlStarterClassPathScanner  - 已开启BeetSql自动按照类型注入 'monitorDao'.
-21:11:04.962 [main] DEBUG org.apache.ibatis.logging.LogFactory  - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
-21:11:05.777 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-9001"]
-21:11:05.777 [main] INFO  org.apache.catalina.core.StandardService  - Starting service [Tomcat]
-21:11:05.778 [main] INFO  org.apache.catalina.core.StandardEngine  - Starting Servlet engine: [Apache Tomcat/9.0.50]
-21:11:05.918 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring embedded WebApplicationContext
-21:11:05.961 [main] DEBUG com.csx.main.plugin.owner.config.GlobalConfig  - 注册过滤器[ loginFilter ]成功
-21:11:05.970 [main] DEBUG com.csx.main.plugin.owner.config.GlobalConfig  - 注册过滤器[ charFilter ]成功
-21:11:05.977 [main] DEBUG com.csx.main.plugin.owner.config.GlobalConfig  - 注册过滤器[ druidFilter ]成功
-21:11:05.981 [main] DEBUG com.csx.main.plugin.owner.config.GlobalConfig  - 注册监听器[ loginListener ]成功
-21:11:06.302 [main] DEBUG org.apache.ibatis.logging.LogFactory  - Logging initialized using 'class org.apache.ibatis.logging.log4j2.Log4j2Impl' adapter.
-21:11:06.339 [main] DEBUG com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean  - Registered plugin: 'AbstractSqlParserHandler(sqlParserList=null, sqlParserFilter=null)'
-21:11:06.450 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.insert
-21:11:06.456 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.delete
-21:11:06.458 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.deleteByMap
-21:11:06.492 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.deleteById
-21:11:06.494 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.deleteBatchIds
-21:11:06.500 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.update
-21:11:06.503 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.updateById
-21:11:06.504 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectById
-21:11:06.506 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectBatchIds
-21:11:06.508 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectByMap
-21:11:06.512 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectOne
-21:11:06.518 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectCount
-21:11:06.522 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectMaps
-21:11:06.524 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectMapsPage
-21:11:06.527 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectObjs
-21:11:06.529 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectList
-21:11:06.533 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectPage
-21:11:06.534 [main] DEBUG com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean  - Parsed mapper file: 'file [D:\IdeaProject\quartz\common\target\classes\mappers\mysql\ExcetionMapper.xml]'
-21:11:08.788 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.insert
-21:11:08.791 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.delete
-21:11:08.793 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.deleteByMap
-21:11:08.794 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.deleteById
-21:11:08.795 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.deleteBatchIds
-21:11:08.798 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.update
-21:11:08.800 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.updateById
-21:11:08.800 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.selectById
-21:11:08.802 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.selectBatchIds
-21:11:08.805 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.selectByMap
-21:11:08.808 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.selectOne
-21:11:08.810 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.selectCount
-21:11:08.812 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.selectMaps
-21:11:08.815 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.selectMapsPage
-21:11:08.817 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.selectObjs
-21:11:08.819 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.selectList
-21:11:08.821 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.selectPage
-21:11:08.917 [main] DEBUG net.sf.ehcache.config.ConfigurationFactory  - Configuring ehcache from InputStream
-21:11:08.937 [main] DEBUG net.sf.ehcache.config.BeanHandler  - Ignoring ehcache attribute xmlns:xsi
-21:11:08.937 [main] DEBUG net.sf.ehcache.config.BeanHandler  - Ignoring ehcache attribute xsi:noNamespaceSchemaLocation
-21:11:08.939 [main] DEBUG net.sf.ehcache.config.DiskStoreConfiguration  - Disk Store Path: C:\Users\cheng\AppData\Local\Temp\
-21:11:08.956 [main] DEBUG net.sf.ehcache.CacheManager  - Creating new CacheManager with Configuration Object
-21:11:08.958 [main] DEBUG net.sf.ehcache.util.PropertyUtil  - propertiesString is null.
-21:11:08.967 [main] DEBUG net.sf.ehcache.config.ConfigurationHelper  - No CacheManagerEventListenerFactory class specified. Skipping...
-21:11:09.037 [main] DEBUG net.sf.ehcache.Cache  - No BootstrapCacheLoaderFactory class specified. Skipping...
-21:11:09.038 [main] DEBUG net.sf.ehcache.Cache  - CacheWriter factory not configured. Skipping...
-21:11:09.038 [main] DEBUG net.sf.ehcache.config.ConfigurationHelper  - No CacheExceptionHandlerFactory class specified. Skipping...
-21:11:09.044 [main] DEBUG net.sf.ehcache.Cache  - No BootstrapCacheLoaderFactory class specified. Skipping...
-21:11:09.045 [main] DEBUG net.sf.ehcache.Cache  - CacheWriter factory not configured. Skipping...
-21:11:09.045 [main] DEBUG net.sf.ehcache.config.ConfigurationHelper  - No CacheExceptionHandlerFactory class specified. Skipping...
-21:11:09.065 [main] DEBUG net.sf.ehcache.DiskStorePathManager  - Using diskstore path C:\Users\cheng\AppData\Local\Temp
-21:11:09.065 [main] DEBUG net.sf.ehcache.DiskStorePathManager  - Holding exclusive lock on C:\Users\cheng\AppData\Local\Temp\.ehcache-diskstore.lock
-21:11:09.072 [main] DEBUG net.sf.ehcache.store.disk.DiskStorageFactory  - Matching data file missing (or empty) for index file. Deleting index file C:\Users\cheng\AppData\Local\Temp\local%0043ache.index
-21:11:09.137 [main] DEBUG net.sf.ehcache.statistics.extended.ExtendedStatisticsImpl  - Mocking Pass-Through Statistic: LOCAL_OFFHEAP_SIZE
-21:11:09.138 [main] DEBUG net.sf.ehcache.statistics.extended.ExtendedStatisticsImpl  - Mocking Pass-Through Statistic: LOCAL_OFFHEAP_SIZE_BYTES
-21:11:09.139 [main] DEBUG net.sf.ehcache.statistics.extended.ExtendedStatisticsImpl  - Mocking Pass-Through Statistic: WRITER_QUEUE_LENGTH
-21:11:09.139 [main] DEBUG net.sf.ehcache.statistics.extended.ExtendedStatisticsImpl  - Mocking Pass-Through Statistic: REMOTE_SIZE
-21:11:09.139 [main] DEBUG net.sf.ehcache.statistics.extended.ExtendedStatisticsImpl  - Mocking Pass-Through Statistic: LAST_REJOIN_TIMESTAMP
-21:11:09.157 [main] DEBUG net.sf.ehcache.statistics.extended.ExtendedStatisticsImpl  - Mocking Operation Statistic: OFFHEAP_GET
-21:11:09.158 [main] DEBUG net.sf.ehcache.statistics.extended.ExtendedStatisticsImpl  - Mocking Operation Statistic: OFFHEAP_PUT
-21:11:09.159 [main] DEBUG net.sf.ehcache.statistics.extended.ExtendedStatisticsImpl  - Mocking Operation Statistic: OFFHEAP_REMOVE
-21:11:09.160 [main] DEBUG net.sf.ehcache.statistics.extended.ExtendedStatisticsImpl  - Mocking Operation Statistic: XA_COMMIT
-21:11:09.160 [main] DEBUG net.sf.ehcache.statistics.extended.ExtendedStatisticsImpl  - Mocking Operation Statistic: XA_ROLLBACK
-21:11:09.160 [main] DEBUG net.sf.ehcache.statistics.extended.ExtendedStatisticsImpl  - Mocking Operation Statistic: XA_RECOVERY
-21:11:09.161 [main] DEBUG net.sf.ehcache.statistics.extended.ExtendedStatisticsImpl  - Mocking Operation Statistic: CLUSTER_EVENT
-21:11:09.161 [main] DEBUG net.sf.ehcache.statistics.extended.ExtendedStatisticsImpl  - Mocking Operation Statistic: NONSTOP
-21:11:09.170 [main] DEBUG net.sf.ehcache.Cache  - Initialised cache: localCache
-21:11:09.170 [main] DEBUG net.sf.ehcache.config.ConfigurationHelper  - CacheDecoratorFactory not configured. Skipping for 'localCache'.
-21:11:09.170 [main] DEBUG net.sf.ehcache.config.ConfigurationHelper  - CacheDecoratorFactory not configured for defaultCache. Skipping for 'localCache'.
-21:11:09.452 [main] DEBUG com.csx.main.plugin.owner.config.GlobalConfig  - 注册拦截器[class com.csx.main.plugin.owner.interceptor.LoginInterceptor]成功
-21:11:09.491 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings  - 
-	c.c.c.c.CodeController:
-	{GET [/kaptcha]}: getKaptchaImage(HttpServletRequest,HttpServletResponse)
-21:11:09.495 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings  - 
-	c.c.c.c.HomeContrller:
-	{POST [/home/getHomeInfo]}: getHomeInfo()
-21:11:09.497 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings  - 
-	c.c.c.c.LoginController:
-	{POST [/login/index]}: index()
-21:11:09.499 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings  - 
-	c.c.c.c.PageController:
-	{GET [/page/index]}: index(ModelMap)
-	{GET [/page/login]}: login(ModelMap)
-21:11:09.502 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings  - 
-	c.c.s.c.SysMenuController:
-	{POST [/sysmm/menu/getMenuInfo]}: getMenuInfo(Map)
-	{POST [/sysmm/menu/saveMenuInfo]}: saveMenuInfo(Map)
-21:11:09.502 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings  - 
-	c.c.s.c.SysPageController:
-	{GET [/page/{sysId}/{menu}/{mode}]}: gotoPage(String,String,String,Map,ModelMap,HttpServletRequest,HttpServletResponse)
-21:11:09.507 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings  - 
-	o.s.b.a.w.s.e.BasicErrorController:
-	{ [/error]}: error(HttpServletRequest)
-	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
-21:11:09.542 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings  - 'viewControllerHandlerMapping' {/=ParameterizableViewController [view="page/login"]}
-21:11:09.546 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings  - 'beanNameHandlerMapping' {}
-21:11:09.569 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings  - 'resourceHandlerMapping' {/webjars/**=ResourceHttpRequestHandler [Classpath [META-INF/resources/webjars/]], /**=ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]], /static/**=ResourceHttpRequestHandler [Classpath [static/]]}
-21:11:09.745 [main] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} inited
-21:11:11.874 [main] DEBUG org.activiti.engine.impl.cfg.ProcessEngineConfigurationImpl  - database product name: 'MySQL'
-21:11:11.874 [main] DEBUG org.activiti.engine.impl.cfg.ProcessEngineConfigurationImpl  - using database type: mysql
-21:11:12.637 [main] INFO  org.activiti.engine.compatibility.DefaultActiviti5CompatibilityHandlerFactory  - Activiti 5 compatibility handler implementation not found or error during instantiation : org.activiti.compatibility.DefaultActiviti5CompatibilityHandler. Activiti 5 backwards compatibility disabled.
-21:11:12.641 [main] DEBUG org.activiti.engine.impl.interceptor.LogInterceptor  - 
-
-21:11:12.641 [main] DEBUG org.activiti.engine.impl.interceptor.LogInterceptor  - --- starting SchemaOperationsProcessEngineBuild --------------------------------------------------------
-21:11:12.641 [main] DEBUG org.activiti.spring.SpringTransactionInterceptor  - Running command with propagation NOT_SUPPORTED
-21:11:12.650 [main] DEBUG org.activiti.engine.impl.agenda.DefaultActivitiEngineAgenda  - Operation class org.activiti.engine.impl.interceptor.CommandInvoker$1 added to agenda
-21:11:12.656 [main] DEBUG org.activiti.engine.impl.db.DbSqlSession  - Executing performSchemaOperationsProcessEngineBuild with setting true
-21:11:12.656 [main] DEBUG org.apache.ibatis.transaction.managed.ManagedTransaction  - Opening JDBC Connection
-21:11:12.728 [main] DEBUG org.activiti.engine.impl.persistence.entity.PropertyEntityImpl.selectProperty  - ==>  Preparing: select * from ACT_GE_PROPERTY where NAME_ = ? 
-21:11:12.744 [main] DEBUG org.activiti.engine.impl.persistence.entity.PropertyEntityImpl.selectProperty  - ==> Parameters: schema.version(String)
-21:11:12.759 [main] DEBUG org.activiti.engine.impl.persistence.entity.PropertyEntityImpl.selectProperty  - <==      Total: 1
-21:11:12.797 [main] DEBUG org.activiti.engine.impl.db.DbSqlSession  - Flushing dbSqlSession
-21:11:12.797 [main] DEBUG org.activiti.engine.impl.db.DbSqlSession  - flush summary: 0 insert, 0 update, 0 delete.
-21:11:12.798 [main] DEBUG org.activiti.engine.impl.db.DbSqlSession  - now executing flush...
-21:11:12.798 [main] DEBUG org.apache.ibatis.transaction.managed.ManagedTransaction  - Closing JDBC Connection [Transaction-aware proxy for target Connection [com.mysql.cj.jdbc.ConnectionImpl@59e02113]]
-21:11:12.798 [main] DEBUG org.activiti.engine.impl.interceptor.LogInterceptor  - --- SchemaOperationsProcessEngineBuild finished --------------------------------------------------------
-21:11:12.798 [main] DEBUG org.activiti.engine.impl.interceptor.LogInterceptor  - 
-
-21:11:12.798 [main] INFO  org.activiti.engine.impl.ProcessEngineImpl  - ProcessEngine default created
-21:11:12.803 [main] DEBUG org.activiti.engine.impl.interceptor.LogInterceptor  - 
-
-21:11:12.803 [main] DEBUG org.activiti.engine.impl.interceptor.LogInterceptor  - --- starting ValidateExecutionRelatedEntityCountCfgCmd --------------------------------------------------------
-21:11:12.803 [main] DEBUG org.activiti.spring.SpringTransactionInterceptor  - Running command with propagation REQUIRED
-21:11:12.804 [main] DEBUG org.activiti.engine.impl.agenda.DefaultActivitiEngineAgenda  - Operation class org.activiti.engine.impl.interceptor.CommandInvoker$1 added to agenda
-21:11:12.804 [main] DEBUG org.apache.ibatis.transaction.managed.ManagedTransaction  - Opening JDBC Connection
-21:11:12.804 [main] DEBUG org.activiti.engine.impl.persistence.entity.PropertyEntityImpl.selectProperty  - ==>  Preparing: select * from ACT_GE_PROPERTY where NAME_ = ? 
-21:11:12.804 [main] DEBUG org.activiti.engine.impl.persistence.entity.PropertyEntityImpl.selectProperty  - ==> Parameters: cfg.execution-related-entities-count(String)
-21:11:12.805 [main] DEBUG org.activiti.engine.impl.persistence.entity.PropertyEntityImpl.selectProperty  - <==      Total: 1
-21:11:12.806 [main] DEBUG org.activiti.engine.impl.db.DbSqlSession  - Flushing dbSqlSession
-21:11:12.806 [main] DEBUG org.activiti.engine.impl.db.DbSqlSession  - flush summary: 0 insert, 0 update, 0 delete.
-21:11:12.806 [main] DEBUG org.activiti.engine.impl.db.DbSqlSession  - now executing flush...
-21:11:12.806 [main] DEBUG org.apache.ibatis.transaction.managed.ManagedTransaction  - Closing JDBC Connection [Transaction-aware proxy for target Connection [com.mysql.cj.jdbc.ConnectionImpl@59e02113]]
-21:11:12.807 [main] DEBUG org.activiti.engine.impl.interceptor.LogInterceptor  - --- ValidateExecutionRelatedEntityCountCfgCmd finished --------------------------------------------------------
-21:11:12.807 [main] DEBUG org.activiti.engine.impl.interceptor.LogInterceptor  - 
-
-21:11:13.152 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-9001"]
-21:11:13.258 [main] INFO  com.csx.main.MainApplication  - Started MainApplication in 15.219 seconds (JVM running for 18.671)
-21:11:13.322 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-11-27 21:11:13]服务已启动 , 开始初始化... ------------------------------
-21:11:13.323 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] JdbcUtils 初始化完成！
-21:11:13.326 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] ToolUtils 初始化完成！
-21:11:13.326 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] Cache缓存 初始化完成！
-21:11:13.326 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-11-27 21:11:13]服务已启动 , 初始化完成！   ------------------------------
-21:11:13.328 [main] INFO  com.csx.main.ApplicationRunner  - 总共用时：63 毫秒
-21:11:21.680 [http-nio-9001-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring DispatcherServlet 'dispatcherServlet'
-21:11:21.737 [http-nio-9001-exec-1] DEBUG com.csx.main.plugin.owner.interceptor.LoginInterceptor  - 请求地址：/quartz/page/login
-21:11:22.111 [http-nio-9001-exec-2] DEBUG com.csx.main.plugin.owner.interceptor.LoginInterceptor  - 请求地址：/quartz/kaptcha
-21:11:22.119 [http-nio-9001-exec-2] DEBUG com.csx.main.plugin.owner.listener.LoginListener  - 当前在线人数：1
-21:11:28.023 [http-nio-9001-exec-3] DEBUG com.csx.main.plugin.owner.interceptor.LoginInterceptor  - 请求地址：/quartz/kaptcha
-21:11:29.481 [http-nio-9001-exec-4] DEBUG com.csx.main.plugin.owner.interceptor.LoginInterceptor  - 请求地址：/quartz/kaptcha
-21:11:31.320 [http-nio-9001-exec-5] DEBUG com.csx.main.plugin.owner.interceptor.LoginInterceptor  - 请求地址：/quartz/kaptcha
-21:11:32.712 [http-nio-9001-exec-6] DEBUG com.csx.main.plugin.owner.interceptor.LoginInterceptor  - 请求地址：/quartz/kaptcha
-21:11:34.811 [http-nio-9001-exec-7] DEBUG com.csx.main.plugin.owner.interceptor.LoginInterceptor  - 请求地址：/quartz/kaptcha
-21:11:36.062 [http-nio-9001-exec-8] DEBUG com.csx.main.plugin.owner.interceptor.LoginInterceptor  - 请求地址：/quartz/kaptcha
-21:14:17.884 [http-nio-9001-exec-1] DEBUG com.csx.main.plugin.owner.interceptor.LoginInterceptor  - 请求地址：/quartz/kaptcha
-21:14:20.609 [http-nio-9001-exec-2] DEBUG com.csx.main.plugin.owner.interceptor.LoginInterceptor  - 请求地址：/quartz/kaptcha
-21:14:21.547 [http-nio-9001-exec-3] DEBUG com.csx.main.plugin.owner.interceptor.LoginInterceptor  - 请求地址：/quartz/kaptcha
-21:14:23.502 [http-nio-9001-exec-4] DEBUG com.csx.main.plugin.owner.interceptor.LoginInterceptor  - 请求地址：/quartz/kaptcha
-21:15:26.136 [http-nio-9001-exec-6] DEBUG com.csx.main.plugin.owner.interceptor.LoginInterceptor  - 请求地址：/quartz/kaptcha
-21:15:28.892 [http-nio-9001-exec-7] DEBUG com.csx.main.plugin.owner.interceptor.LoginInterceptor  - 请求地址：/quartz/kaptcha
-21:15:30.370 [http-nio-9001-exec-8] DEBUG com.csx.main.plugin.owner.interceptor.LoginInterceptor  - 请求地址：/quartz/kaptcha
-21:15:31.550 [http-nio-9001-exec-9] DEBUG com.csx.main.plugin.owner.interceptor.LoginInterceptor  - 请求地址：/quartz/kaptcha
-21:15:33.118 [http-nio-9001-exec-10] DEBUG com.csx.main.plugin.owner.interceptor.LoginInterceptor  - 请求地址：/quartz/kaptcha
-21:15:36.515 [http-nio-9001-exec-1] DEBUG com.csx.main.plugin.owner.interceptor.LoginInterceptor  - 请求地址：/quartz/kaptcha
-21:15:37.574 [http-nio-9001-exec-2] DEBUG com.csx.main.plugin.owner.interceptor.LoginInterceptor  - 请求地址：/quartz/kaptcha
-21:15:38.604 [http-nio-9001-exec-3] DEBUG com.csx.main.plugin.owner.interceptor.LoginInterceptor  - 请求地址：/quartz/kaptcha
-21:16:51.862 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 338563
-21:16:51.862 [quartzScheduler_QuartzSchedulerThread] DEBUG com.alibaba.druid.pool.DruidDataSource  - skip not validate connection.
-21:19:07.108 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 135228
-21:19:07.109 [quartzScheduler_QuartzSchedulerThread] DEBUG com.alibaba.druid.pool.DruidDataSource  - skip not validate connection.
-21:20:13.255 [QuartzScheduler_quartzScheduler-Administrator1638018672976_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 66101
-21:20:13.256 [QuartzScheduler_quartzScheduler-Administrator1638018672976_MisfireHandler] DEBUG com.alibaba.druid.pool.DruidDataSource  - skip not validate connection.
-21:24:26.788 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 253473
-21:24:26.789 [quartzScheduler_QuartzSchedulerThread] DEBUG com.alibaba.druid.pool.DruidDataSource  - skip not validate connection.
-21:28:13.262 [QuartzScheduler_quartzScheduler-Administrator1638018672976_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 226443
-21:28:13.263 [QuartzScheduler_quartzScheduler-Administrator1638018672976_MisfireHandler] DEBUG com.alibaba.druid.pool.DruidDataSource  - skip not validate connection.
-21:32:58.834 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 285536
-21:32:58.835 [quartzScheduler_QuartzSchedulerThread] DEBUG com.alibaba.druid.pool.DruidDataSource  - skip not validate connection.
-21:36:14.094 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 195210
-21:36:14.094 [quartzScheduler_QuartzSchedulerThread] DEBUG com.alibaba.druid.pool.DruidDataSource  - skip not validate connection.
-21:38:13.265 [QuartzScheduler_quartzScheduler-Administrator1638018672976_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 119105
-21:38:13.266 [QuartzScheduler_quartzScheduler-Administrator1638018672976_MisfireHandler] DEBUG com.alibaba.druid.pool.DruidDataSource  - skip not validate connection.
-21:46:06.957 [Catalina-utility-2] DEBUG com.csx.main.plugin.owner.listener.LoginListener  - 当前在线人数：0
-21:47:13.270 [QuartzScheduler_quartzScheduler-Administrator1638018672976_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 539997
-21:47:13.270 [QuartzScheduler_quartzScheduler-Administrator1638018672976_MisfireHandler] DEBUG com.alibaba.druid.pool.DruidDataSource  - skip not validate connection.
-21:48:37.383 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 84110
-21:48:37.383 [quartzScheduler_QuartzSchedulerThread] DEBUG com.alibaba.druid.pool.DruidDataSource  - skip not validate connection.
+01:11:03.456 [restartedMain] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 5832 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
+01:11:03.472 [restartedMain] DEBUG com.csx.main.MainApplication  - Running with Spring Boot v2.5.3, Spring v5.3.9
+01:11:03.472 [restartedMain] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
+01:11:06.846 [restartedMain] DEBUG com.ibeetl.starter.BeetlSqlStarterClassPathScanner  - Identified candidate component class: URL [jar:file:/E:/Maven/repository/com/alibaba/druid/1.2.4/druid-1.2.4.jar!/com/alibaba/druid/support/monitor/dao/MonitorDao.class]
+01:11:08.266 [restartedMain] DEBUG com.ibeetl.starter.BeetlSqlStarterClassPathScanner  - Bean definition with name 'monitorDao': Generic bean: class [com.alibaba.druid.support.monitor.dao.MonitorDao]; scope=singleton; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [jar:file:/E:/Maven/repository/com/alibaba/druid/1.2.4/druid-1.2.4.jar!/com/alibaba/druid/support/monitor/dao/MonitorDao.class]
+01:11:08.266 [restartedMain] DEBUG com.ibeetl.starter.BeetlSqlStarterClassPathScanner  - 已开启BeetSql自动按照类型注入 'monitorDao'.
+01:11:08.579 [restartedMain] DEBUG org.apache.ibatis.logging.LogFactory  - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+01:11:10.453 [restartedMain] DEBUG org.apache.shiro.spring.LifecycleBeanPostProcessor  - Initializing bean [getAuthRealm]...
+01:11:10.453 [restartedMain] DEBUG org.apache.shiro.realm.AuthorizingRealm  - No authorizationCache instance set.  Checking for a cacheManager...
+01:11:10.453 [restartedMain] DEBUG org.apache.shiro.realm.AuthorizingRealm  - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+01:11:11.312 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-9001"]
+01:11:11.312 [restartedMain] INFO  org.apache.catalina.core.StandardService  - Starting service [Tomcat]
+01:11:11.312 [restartedMain] INFO  org.apache.catalina.core.StandardEngine  - Starting Servlet engine: [Apache Tomcat/9.0.50]
+01:11:11.484 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring embedded WebApplicationContext
+01:11:11.531 [restartedMain] DEBUG com.csx.main.plugin.owner.config.GlobalConfig  - 注册过滤器[ loginFilter ]成功
+01:11:11.547 [restartedMain] DEBUG com.csx.main.plugin.owner.config.GlobalConfig  - 注册过滤器[ charFilter ]成功
+01:11:11.562 [restartedMain] DEBUG com.csx.main.plugin.owner.config.GlobalConfig  - 注册过滤器[ druidFilter ]成功
+01:11:11.562 [restartedMain] DEBUG com.csx.main.plugin.owner.config.GlobalConfig  - 注册监听器[ loginListener ]成功
+01:11:11.578 [restartedMain] DEBUG org.apache.shiro.spring.web.ShiroFilterFactoryBean  - Creating Shiro Filter instance.
+01:11:11.593 [restartedMain] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Creating chain [/**] with global filters [invalidRequest] and from String definition [authc]
+01:11:11.593 [restartedMain] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [/**] to filter [invalidRequest] with config [null]
+01:11:11.593 [restartedMain] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [/**] to filter [authc] with config [null]
+01:11:11.593 [restartedMain] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Creating chain [/page/login] with global filters [invalidRequest] and from String definition [anon]
+01:11:11.593 [restartedMain] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [/page/login] to filter [invalidRequest] with config [null]
+01:11:11.593 [restartedMain] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [/page/login] to filter [anon] with config [null]
+01:11:11.593 [restartedMain] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Creating chain [/login] with global filters [invalidRequest] and from String definition [anon]
+01:11:11.593 [restartedMain] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [/login] to filter [invalidRequest] with config [null]
+01:11:11.593 [restartedMain] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [/login] to filter [anon] with config [null]
+01:11:11.593 [restartedMain] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Creating chain [/logout] with global filters [invalidRequest] and from String definition [anon]
+01:11:11.593 [restartedMain] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [/logout] to filter [invalidRequest] with config [null]
+01:11:11.593 [restartedMain] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [/logout] to filter [anon] with config [null]
+01:11:12.031 [restartedMain] DEBUG org.apache.ibatis.logging.LogFactory  - Logging initialized using 'class org.apache.ibatis.logging.log4j2.Log4j2Impl' adapter.
+01:11:12.078 [restartedMain] DEBUG com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean  - Registered plugin: 'AbstractSqlParserHandler(sqlParserList=null, sqlParserFilter=null)'
+01:11:12.218 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.insert
+01:11:12.218 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.delete
+01:11:12.218 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.deleteByMap
+01:11:12.265 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.deleteById
+01:11:12.265 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.deleteBatchIds
+01:11:12.265 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.update
+01:11:12.281 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.updateById
+01:11:12.281 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectById
+01:11:12.281 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectBatchIds
+01:11:12.296 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectByMap
+01:11:12.296 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectOne
+01:11:12.296 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectCount
+01:11:12.312 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectMaps
+01:11:12.312 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectMapsPage
+01:11:12.312 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectObjs
+01:11:12.312 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectList
+01:11:12.312 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectPage
+01:11:12.312 [restartedMain] DEBUG com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean  - Parsed mapper file: 'file [D:\IdeaProject\quartz\common\target\classes\mappers\mysql\ExcetionMapper.xml]'
+01:11:14.466 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.insert
+01:11:14.466 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.delete
+01:11:14.466 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.deleteByMap
+01:11:14.466 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.deleteById
+01:11:14.482 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.deleteBatchIds
+01:11:14.482 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.update
+01:11:14.482 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.updateById
+01:11:14.482 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.selectById
+01:11:14.482 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.selectBatchIds
+01:11:14.482 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.selectByMap
+01:11:14.498 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.selectOne
+01:11:14.498 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.selectCount
+01:11:14.498 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.selectMaps
+01:11:14.498 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.selectMapsPage
+01:11:14.498 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.selectObjs
+01:11:14.498 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.selectList
+01:11:14.498 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.selectPage
+01:11:14.529 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-0} closing ...
+01:11:14.529 [restartedMain] DEBUG org.apache.shiro.spring.LifecycleBeanPostProcessor  - Destroying bean [getSessionsSecurityManager]...
+01:11:14.545 [restartedMain] INFO  org.apache.catalina.core.StandardService  - Stopping service [Tomcat]

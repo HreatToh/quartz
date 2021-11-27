@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("page")
+@RequestMapping("/page")
 public class PageController extends BaseController {
 
     /**
@@ -16,7 +16,7 @@ public class PageController extends BaseController {
      * @return  String
      * @desc    去往登录页的方法
      **/
-    @GetMapping( name = "登录页" , value = "login")
+    @GetMapping( name = "登录页" , value = "/login")
     public String login(ModelMap modelMap){
         return "/login";
     }
@@ -27,7 +27,7 @@ public class PageController extends BaseController {
      * @return  String
      * @desc    去往首页的方法
      **/
-    @GetMapping( name = "首页" , value = "index")
+    @GetMapping( name = "首页" , value = "/index")
     public String index(ModelMap modelMap){
         return "/index";
     }

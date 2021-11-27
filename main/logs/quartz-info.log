@@ -1,205 +1,22 @@
-18:28:44.246 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 73032162
-18:36:19.877 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 298836
-18:47:13.430 [QuartzScheduler_quartzScheduler-Administrator1637920969800_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 653507
-18:48:44.566 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 91109
-18:54:13.442 [QuartzScheduler_quartzScheduler-Administrator1637920969800_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 328872
-18:58:42.614 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closing ...
-18:58:42.630 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closed
-18:58:56.357 [main] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 4012 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
-18:58:56.372 [main] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
-18:59:02.994 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-9001"]
-18:59:02.994 [main] INFO  org.apache.catalina.core.StandardService  - Starting service [Tomcat]
-18:59:02.994 [main] INFO  org.apache.catalina.core.StandardEngine  - Starting Servlet engine: [Apache Tomcat/9.0.50]
-18:59:03.119 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring embedded WebApplicationContext
-18:59:06.883 [main] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} inited
-18:59:09.146 [main] INFO  org.activiti.engine.compatibility.DefaultActiviti5CompatibilityHandlerFactory  - Activiti 5 compatibility handler implementation not found or error during instantiation : org.activiti.compatibility.DefaultActiviti5CompatibilityHandler. Activiti 5 backwards compatibility disabled.
-18:59:09.428 [main] INFO  org.activiti.engine.impl.ProcessEngineImpl  - ProcessEngine default created
-18:59:09.834 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-9001"]
-18:59:09.941 [main] INFO  com.csx.main.MainApplication  - Started MainApplication in 14.449 seconds (JVM running for 18.043)
-18:59:09.998 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-11-27 18:59:09]服务已启动 , 开始初始化... ------------------------------
-18:59:09.999 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] JdbcUtils 初始化完成！
-18:59:10.000 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] ToolUtils 初始化完成！
-18:59:10.000 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] Cache缓存 初始化完成！
-18:59:10.000 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-11-27 18:59:10]服务已启动 , 初始化完成！   ------------------------------
-18:59:10.001 [main] INFO  com.csx.main.ApplicationRunner  - 总共用时：53 毫秒
-18:59:41.229 [http-nio-9001-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring DispatcherServlet 'dispatcherServlet'
-18:59:49.601 [http-nio-9001-exec-8] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM001-主页模板]冲突请修改！
-18:59:49.611 [http-nio-9001-exec-9] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM001001-主页一]冲突请修改！
-18:59:49.618 [http-nio-9001-exec-10] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM001002-主页二]冲突请修改！
-18:59:49.633 [http-nio-9001-exec-4] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM002-菜单管理]冲突请修改！
-18:59:49.633 [http-nio-9001-exec-2] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM001003-主页三]冲突请修改！
-18:59:49.638 [http-nio-9001-exec-8] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM003-系统设置]冲突请修改！
-18:59:49.646 [http-nio-9001-exec-9] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM004-表格示例]冲突请修改！
-18:59:49.650 [http-nio-9001-exec-5] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM005-表单示例]冲突请修改！
-18:59:49.660 [http-nio-9001-exec-3] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM005001-普通表单]冲突请修改！
-18:59:49.661 [http-nio-9001-exec-10] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM005002-分步表单]冲突请修改！
-18:59:49.664 [http-nio-9001-exec-1] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM006-登录模板]冲突请修改！
-18:59:49.665 [http-nio-9001-exec-4] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM006002-登录-2]冲突请修改！
-18:59:49.665 [http-nio-9001-exec-7] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM006001-登录-1]冲突请修改！
-18:59:49.671 [http-nio-9001-exec-2] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM006003-登录-3]冲突请修改！
-18:59:49.677 [http-nio-9001-exec-8] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM007-异常页面]冲突请修改！
-18:59:49.681 [http-nio-9001-exec-6] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM007001-404页面]冲突请修改！
-18:59:49.682 [http-nio-9001-exec-9] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM008-其它界面]冲突请修改！
-18:59:49.684 [http-nio-9001-exec-5] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM008001-按钮示例]冲突请修改！
-18:59:49.686 [http-nio-9001-exec-6] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM008002-弹出层]冲突请修改！
-18:59:49.693 [http-nio-9001-exec-4] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[PLUGIN003-颜色选择]冲突请修改！
-18:59:49.693 [http-nio-9001-exec-1] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[PLUGIN002-图标选择]冲突请修改！
-18:59:49.694 [http-nio-9001-exec-10] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[PLUGIN001-图标列表]冲突请修改！
-18:59:49.697 [http-nio-9001-exec-7] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[PLUGIN004-下拉选择]冲突请修改！
-18:59:49.724 [http-nio-9001-exec-2] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[PLUGIN005-文件上传]冲突请修改！
-18:59:49.728 [http-nio-9001-exec-8] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[PLUGIN006-富文本编辑器]冲突请修改！
-18:59:49.741 [http-nio-9001-exec-9] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[PLUGIN007-省市县区选择器]冲突请修改！
-18:59:49.745 [http-nio-9001-exec-3] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[OTHER001-多级菜单]冲突请修改！
-18:59:49.749 [http-nio-9001-exec-5] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[OTHER001001-按钮1]冲突请修改！
-18:59:49.750 [http-nio-9001-exec-6] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[OTHER001001001-按钮2]冲突请修改！
-18:59:49.753 [http-nio-9001-exec-1] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[OTHER001001001001-按钮3]冲突请修改！
-18:59:49.759 [http-nio-9001-exec-4] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[OTHER001001001002-表单4]冲突请修改！
-18:59:49.767 [http-nio-9001-exec-10] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[OTHER002-失效菜单]冲突请修改！
-19:02:19.297 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 149532
-19:05:26.681 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 187382
-19:05:26.682 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 336988
-19:05:26.683 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 337063
-19:05:26.683 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 337066
-19:05:26.684 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 337069
-19:23:09.957 [QuartzScheduler_quartzScheduler-Administrator1638010749631_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 1063253
-19:41:24.175 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 1094205
-19:52:31.926 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 667737
-19:56:39.316 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 247379
-20:04:10.035 [QuartzScheduler_quartzScheduler-Administrator1638010749631_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 450687
-20:17:51.612 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 821576
-20:20:55.921 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 184291
-20:23:34.191 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 158267
-20:27:30.724 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 236518
-20:34:58.268 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closing ...
-20:34:58.284 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closed
-20:40:30.449 [main] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 21088 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
-20:40:30.464 [main] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
-20:41:07.277 [main] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 12328 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
-20:41:07.277 [main] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
-20:46:52.838 [main] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 13524 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
-20:46:52.853 [main] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
-20:56:43.620 [main] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 14116 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
-20:56:43.620 [main] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
-20:57:22.240 [main] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 11332 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
-20:57:22.255 [main] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
-20:58:50.028 [main] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 16120 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
-20:58:50.044 [main] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
-20:58:55.656 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-9001"]
-20:58:55.672 [main] INFO  org.apache.catalina.core.StandardService  - Starting service [Tomcat]
-20:58:55.672 [main] INFO  org.apache.catalina.core.StandardEngine  - Starting Servlet engine: [Apache Tomcat/9.0.50]
-20:58:55.906 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring embedded WebApplicationContext
-20:59:18.003 [main] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} inited
-20:59:20.220 [main] INFO  org.activiti.engine.compatibility.DefaultActiviti5CompatibilityHandlerFactory  - Activiti 5 compatibility handler implementation not found or error during instantiation : org.activiti.compatibility.DefaultActiviti5CompatibilityHandler. Activiti 5 backwards compatibility disabled.
-20:59:20.518 [main] INFO  org.activiti.engine.impl.ProcessEngineImpl  - ProcessEngine default created
-20:59:20.862 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-9001"]
-20:59:20.943 [main] INFO  com.csx.main.MainApplication  - Started MainApplication in 31.919 seconds (JVM running for 34.876)
-20:59:20.999 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-11-27 20:59:20]服务已启动 , 开始初始化... ------------------------------
-20:59:21.000 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] JdbcUtils 初始化完成！
-20:59:21.001 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] ToolUtils 初始化完成！
-20:59:21.001 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] Cache缓存 初始化完成！
-20:59:21.001 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-11-27 20:59:21]服务已启动 , 初始化完成！   ------------------------------
-20:59:21.002 [main] INFO  com.csx.main.ApplicationRunner  - 总共用时：52 毫秒
-20:59:31.207 [http-nio-9001-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring DispatcherServlet 'dispatcherServlet'
-21:00:29.849 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closing ...
-21:00:29.849 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closed
-21:00:36.804 [main] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 4212 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
-21:00:36.820 [main] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
-21:00:42.146 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-9001"]
-21:00:42.146 [main] INFO  org.apache.catalina.core.StandardService  - Starting service [Tomcat]
-21:00:42.146 [main] INFO  org.apache.catalina.core.StandardEngine  - Starting Servlet engine: [Apache Tomcat/9.0.50]
-21:00:42.286 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring embedded WebApplicationContext
-21:00:45.753 [main] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} inited
-21:00:48.065 [main] INFO  org.activiti.engine.compatibility.DefaultActiviti5CompatibilityHandlerFactory  - Activiti 5 compatibility handler implementation not found or error during instantiation : org.activiti.compatibility.DefaultActiviti5CompatibilityHandler. Activiti 5 backwards compatibility disabled.
-21:00:48.205 [main] INFO  org.activiti.engine.impl.ProcessEngineImpl  - ProcessEngine default created
-21:00:48.627 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-9001"]
-21:00:48.734 [main] INFO  com.csx.main.MainApplication  - Started MainApplication in 12.888 seconds (JVM running for 15.904)
-21:00:48.821 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-11-27 21:00:48]服务已启动 , 开始初始化... ------------------------------
-21:00:48.822 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] JdbcUtils 初始化完成！
-21:00:48.825 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] ToolUtils 初始化完成！
-21:00:48.825 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] Cache缓存 初始化完成！
-21:00:48.825 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-11-27 21:00:48]服务已启动 , 初始化完成！   ------------------------------
-21:00:48.825 [main] INFO  com.csx.main.ApplicationRunner  - 总共用时：86 毫秒
-21:00:52.515 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closing ...
-21:00:52.515 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closed
-21:01:00.070 [main] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 19984 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
-21:01:00.089 [main] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
-21:01:12.168 [main] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} inited
-21:01:14.871 [main] INFO  org.activiti.engine.compatibility.DefaultActiviti5CompatibilityHandlerFactory  - Activiti 5 compatibility handler implementation not found or error during instantiation : org.activiti.compatibility.DefaultActiviti5CompatibilityHandler. Activiti 5 backwards compatibility disabled.
-21:01:14.996 [main] INFO  org.activiti.engine.impl.ProcessEngineImpl  - ProcessEngine default created
-21:01:15.424 [main] INFO  com.csx.main.MainApplication  - Started MainApplication in 16.818 seconds (JVM running for 19.944)
-21:01:15.491 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-11-27 21:01:15]服务已启动 , 开始初始化... ------------------------------
-21:01:15.492 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] JdbcUtils 初始化完成！
-21:01:15.493 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] ToolUtils 初始化完成！
-21:01:15.493 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] Cache缓存 初始化完成！
-21:01:15.494 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-11-27 21:01:15]服务已启动 , 初始化完成！   ------------------------------
-21:01:15.494 [main] INFO  com.csx.main.ApplicationRunner  - 总共用时：56 毫秒
-21:01:16.403 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closing ...
-21:01:16.419 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closed
-21:01:21.782 [main] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 13544 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
-21:01:21.798 [main] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
-21:01:27.096 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-9001"]
-21:01:27.096 [main] INFO  org.apache.catalina.core.StandardService  - Starting service [Tomcat]
-21:01:27.096 [main] INFO  org.apache.catalina.core.StandardEngine  - Starting Servlet engine: [Apache Tomcat/9.0.50]
-21:01:27.237 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring embedded WebApplicationContext
-21:01:30.719 [main] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} inited
-21:01:34.060 [main] INFO  org.activiti.engine.compatibility.DefaultActiviti5CompatibilityHandlerFactory  - Activiti 5 compatibility handler implementation not found or error during instantiation : org.activiti.compatibility.DefaultActiviti5CompatibilityHandler. Activiti 5 backwards compatibility disabled.
-21:01:34.250 [main] INFO  org.activiti.engine.impl.ProcessEngineImpl  - ProcessEngine default created
-21:01:34.617 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-9001"]
-21:01:34.730 [main] INFO  com.csx.main.MainApplication  - Started MainApplication in 14.209 seconds (JVM running for 17.277)
-21:01:34.786 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-11-27 21:01:34]服务已启动 , 开始初始化... ------------------------------
-21:01:34.787 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] JdbcUtils 初始化完成！
-21:01:34.789 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] ToolUtils 初始化完成！
-21:01:34.789 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] Cache缓存 初始化完成！
-21:01:34.789 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-11-27 21:01:34]服务已启动 , 初始化完成！   ------------------------------
-21:01:34.789 [main] INFO  com.csx.main.ApplicationRunner  - 总共用时：55 毫秒
-21:01:37.507 [http-nio-9001-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring DispatcherServlet 'dispatcherServlet'
-21:02:04.433 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closing ...
-21:02:04.436 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closed
-21:02:10.803 [main] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 3212 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
-21:02:10.819 [main] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
-21:02:16.609 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-9001"]
-21:02:16.609 [main] INFO  org.apache.catalina.core.StandardService  - Starting service [Tomcat]
-21:02:16.610 [main] INFO  org.apache.catalina.core.StandardEngine  - Starting Servlet engine: [Apache Tomcat/9.0.50]
-21:02:16.758 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring embedded WebApplicationContext
-21:02:21.271 [main] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} inited
-21:02:24.236 [main] INFO  org.activiti.engine.compatibility.DefaultActiviti5CompatibilityHandlerFactory  - Activiti 5 compatibility handler implementation not found or error during instantiation : org.activiti.compatibility.DefaultActiviti5CompatibilityHandler. Activiti 5 backwards compatibility disabled.
-21:02:24.397 [main] INFO  org.activiti.engine.impl.ProcessEngineImpl  - ProcessEngine default created
-21:02:24.727 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-9001"]
-21:02:24.860 [main] INFO  com.csx.main.MainApplication  - Started MainApplication in 14.885 seconds (JVM running for 17.77)
-21:02:24.934 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-11-27 21:02:24]服务已启动 , 开始初始化... ------------------------------
-21:02:24.935 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] JdbcUtils 初始化完成！
-21:02:24.937 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] ToolUtils 初始化完成！
-21:02:24.937 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] Cache缓存 初始化完成！
-21:02:24.937 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-11-27 21:02:24]服务已启动 , 初始化完成！   ------------------------------
-21:02:24.937 [main] INFO  com.csx.main.ApplicationRunner  - 总共用时：70 毫秒
-21:02:29.218 [http-nio-9001-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring DispatcherServlet 'dispatcherServlet'
-21:10:52.413 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closing ...
-21:10:52.417 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closed
-21:10:59.470 [main] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 17076 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
-21:10:59.488 [main] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
-21:11:05.777 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-9001"]
-21:11:05.777 [main] INFO  org.apache.catalina.core.StandardService  - Starting service [Tomcat]
-21:11:05.778 [main] INFO  org.apache.catalina.core.StandardEngine  - Starting Servlet engine: [Apache Tomcat/9.0.50]
-21:11:05.918 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring embedded WebApplicationContext
-21:11:09.745 [main] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} inited
-21:11:12.637 [main] INFO  org.activiti.engine.compatibility.DefaultActiviti5CompatibilityHandlerFactory  - Activiti 5 compatibility handler implementation not found or error during instantiation : org.activiti.compatibility.DefaultActiviti5CompatibilityHandler. Activiti 5 backwards compatibility disabled.
-21:11:12.798 [main] INFO  org.activiti.engine.impl.ProcessEngineImpl  - ProcessEngine default created
-21:11:13.152 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-9001"]
-21:11:13.258 [main] INFO  com.csx.main.MainApplication  - Started MainApplication in 15.219 seconds (JVM running for 18.671)
-21:11:13.322 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-11-27 21:11:13]服务已启动 , 开始初始化... ------------------------------
-21:11:13.323 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] JdbcUtils 初始化完成！
-21:11:13.326 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] ToolUtils 初始化完成！
-21:11:13.326 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] Cache缓存 初始化完成！
-21:11:13.326 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-11-27 21:11:13]服务已启动 , 初始化完成！   ------------------------------
-21:11:13.328 [main] INFO  com.csx.main.ApplicationRunner  - 总共用时：63 毫秒
-21:11:21.680 [http-nio-9001-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring DispatcherServlet 'dispatcherServlet'
-21:16:51.862 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 338563
-21:19:07.108 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 135228
-21:20:13.255 [QuartzScheduler_quartzScheduler-Administrator1638018672976_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 66101
-21:24:26.788 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 253473
-21:28:13.262 [QuartzScheduler_quartzScheduler-Administrator1638018672976_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 226443
-21:32:58.834 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 285536
-21:36:14.094 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 195210
-21:38:13.265 [QuartzScheduler_quartzScheduler-Administrator1638018672976_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 119105
-21:47:13.270 [QuartzScheduler_quartzScheduler-Administrator1638018672976_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 539997
-21:48:37.383 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 84110
+00:05:13.483 [QuartzScheduler_quartzScheduler-Administrator1638018672976_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 506640
+00:21:13.519 [QuartzScheduler_quartzScheduler-Administrator1638018672976_ClusterManager] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 449837
+00:26:06.009 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 292446
+00:31:13.518 [QuartzScheduler_quartzScheduler-Administrator1638018672976_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 307455
+00:48:13.535 [QuartzScheduler_quartzScheduler-Administrator1638018672976_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 1020002
+01:00:13.550 [QuartzScheduler_quartzScheduler-Administrator1638018672976_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 719984
+01:01:11.152 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closing ...
+01:01:11.183 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closed
+01:01:32.831 [restartedMain] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 22004 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
+01:01:32.862 [restartedMain] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
+01:08:34.654 [restartedMain] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 14808 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
+01:08:34.685 [restartedMain] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
+01:09:37.824 [restartedMain] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 15808 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
+01:09:37.839 [restartedMain] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
+01:11:03.456 [restartedMain] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 5832 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
+01:11:03.472 [restartedMain] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
+01:11:11.312 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-9001"]
+01:11:11.312 [restartedMain] INFO  org.apache.catalina.core.StandardService  - Starting service [Tomcat]
+01:11:11.312 [restartedMain] INFO  org.apache.catalina.core.StandardEngine  - Starting Servlet engine: [Apache Tomcat/9.0.50]
+01:11:11.484 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring embedded WebApplicationContext
+01:11:14.529 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-0} closing ...
+01:11:14.545 [restartedMain] INFO  org.apache.catalina.core.StandardService  - Stopping service [Tomcat]

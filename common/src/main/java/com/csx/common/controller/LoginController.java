@@ -21,7 +21,7 @@ public class LoginController extends BaseController {
      * @return java.lang.String
      * @desc
      **/
-    @RequestMapping( name = "index" , value = "index" , method = RequestMethod.POST )
+    @RequestMapping( name = "index" , value = "/index" , method = RequestMethod.POST )
     public String index(){
         return "index";
     }

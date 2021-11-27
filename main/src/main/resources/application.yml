@@ -27,6 +27,7 @@ spring:
       #配置文件路径
       config: ehcache/ehcache-config.xml
 
+
 #####################################################################################################################################
 # mybatis plus 主配置
 #####################################################################################################################################
@@ -65,7 +66,7 @@ application:
   interceptor:
     logininterceptor:
       include: ["/**"]
-      exclude: ["/", "/static/**", "css/**", "js/**", "img/**", "json/**", "fonts/**", "*.html", "*.json" , "*.js" , "*.json" , "*.css" , "*.png"]
+      exclude: ["/" , "/kaptcha", "/static/**", "css/**", "js/**", "img/**", "json/**", "fonts/**", "*.html", "*.json" , "*.js" , "*.json" , "*.css" , "*.png"]
   filter:
     loginfilter:
       include: ["/*" ]
@@ -77,5 +78,11 @@ application:
       include: ["/*"]
       exclude: ["/static/*", "/druid/*"]
 
-
-
+#####################################################################################################################################
+# Shiro 权限控制 配置
+#####################################################################################################################################
+shiro:
+  enabled: true
+  loginUrl: /page/login
+  successUrl: /page/index
+  pathdefinitions: '{ "/**" : "authc" , "/page/login": "anon" , "/login": "anon" , "/logout": "anon"}'
