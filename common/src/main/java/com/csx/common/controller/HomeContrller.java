@@ -1,6 +1,6 @@
 package com.csx.common.controller;
 
-import com.csx.common.base.controller.BaseController;
+import com.csx.base.controller.BaseController;
 import com.csx.common.service.HomeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

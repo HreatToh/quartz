@@ -6,6 +6,10 @@ import cn.hutool.core.util.StrUtil;
 import com.csx.common.entity.Constants;
 import com.csx.common.enums.EvmentEnum;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.Closeable;
+import java.io.IOException;
+
 public class ToolUtils extends StrUtil{
 
     /** 是否是管理员    */
@@ -107,6 +111,16 @@ public class ToolUtils extends StrUtil{
      * 如果那么语法
      * @param itemVal
      * @param itemDefval
+     * @return
+     */
+    public static String nvl(Object itemVal, String itemDefval) {
+        String val = isNotNull(itemVal) && (itemVal instanceof String ) ? itemVal.toString() : itemDefval;
+        return val;
+    }
+    /**
+     * 如果那么语法
+     * @param itemVal
+     * @param itemDefval
      * @param trim true : 返回空串 false : 返回null
      * @return
      */
@@ -115,4 +129,47 @@ public class ToolUtils extends StrUtil{
         return isBlank(val) && trim ? "" : val;
     }
 
+
+
+    /**
+     * @method  closeIO
+     * @params  Closeable closeable
+     * @return  
+     * @desc    关闭IO的方法
+     **/
+    public static void closeIO(Closeable closeable){
+        if (isNotNull(closeable)){
+            try {
+                closeable.close();
+            } catch (IOException e) {
+            }
+        }
+    }
+
+    /**
+     * @method  getParam
+     * @params  HttpServletRequest request , String key
+     * @return  String
+     * @desc    获取参数值
+     **/
+    public static String getParam(HttpServletRequest request , String key){
+        return nvl(request.getParameter(key) , "");
+    }
+
+    /**
+     * @method  checkVerifyCode
+     * @params  HttpServletRequest request
+     * @return  boolean
+     * @desc    校验验证码
+     **/
+    public static boolean checkVerifyCode(HttpServletRequest request) {
+        //获取生成的验证码
+        String verifyCodeExpected = (String) request.getSession().getAttribute(com.google.code.kaptcha.Constants.KAPTCHA_SESSION_KEY);
+        //获取用户输入的验证码
+        String verifyCodeActual = getParam(request, "kaptchaCode");
+        if (isNull(verifyCodeActual) || !equals(verifyCodeActual,verifyCodeExpected)){
+            return false;
+        }
+        return true;
+    }
 }

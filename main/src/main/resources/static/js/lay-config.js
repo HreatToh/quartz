@@ -5,13 +5,10 @@
  * version:2.0.4
  */
 
-window.rootPath = (function (src) {
-    src = document.scripts[document.scripts.length - 1].src;
-    return src.substring(0, src.lastIndexOf("/") + 1);
-})();
+window.rootPath = "/quartz";
 
 layui.config({
-    base: rootPath + "lay-module/",
+    base: rootPath + "/static/js/lay-module/",
     version: true
 }).extend({
     miniAdmin: "layuimini/miniAdmin", // layuimini后台扩展

@@ -2,9 +2,8 @@ package com.csx.common.service;
 
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.exceptions.ExceptionUtil;
-import cn.hutool.core.lang.Console;
-import cn.hutool.core.net.NetUtil;
 import cn.hutool.core.util.IdUtil;
+import com.csx.base.service.BaseService;
 import com.csx.common.entity.Constants;
 import com.csx.common.entity.SysException;
 import com.csx.common.mapper.ExcetionMapper;
@@ -20,7 +19,7 @@ import javax.servlet.http.HttpServletRequest;
  * @desc    ExcetionService 异常处理服务
  **/
 @Service
-public class ExcetionService {
+public class ExcetionService extends BaseService {
 
     @Autowired
     private ExcetionMapper excetionMapper;

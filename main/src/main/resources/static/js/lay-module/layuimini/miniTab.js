@@ -53,8 +53,16 @@ layui.define(["element", "layer", "jquery"], function (exports) {
             if (options.isIframe) ele = parent.layui.element;
             ele.tabAdd('layuiminiTab', {
                 title: '<span class="layuimini-tab-active"></span><span>' + options.title + '</span><i class="layui-icon layui-unselect layui-tab-close">ဆ</i>' //用于演示
-                , content: '<iframe width="100%" height="100%" frameborder="no" border="0" marginwidth="0" marginheight="0"   src="' + options.href + '"></iframe>'
+                // , content: '<iframe width="100%" height="100%" frameborder="no" border="0" marginwidth="0" marginheight="0"   src="' + options.href + '"></iframe>'
+                , content: '<div width="100%" height="100%" style="margin: 0 5px" id="layuiminiHomeTabContent_' + options.tabId + '" href="' + options.href + '"></div>'
                 , id: options.tabId
+            });
+            $.ajax({
+                url: options.href,
+                cache: false,
+                success: function(html){
+                    $('#layuiminiHomeTabContent_' + options.tabId ).html(html);
+                }
             });
             $('.layuimini-menu-left').attr('layuimini-tab-tag', 'add');
             sessionStorage.setItem('layuiminimenu_' + options.tabId, options.title);
@@ -63,10 +71,10 @@ layui.define(["element", "layer", "jquery"], function (exports) {
 
         /**
          * 切换选项卡
-         * @param tabId
+         * @param tabhref
          */
-        change: function (tabId) {
-            element.tabChange('layuiminiTab', tabId);
+        change: function (tabhref) {
+            element.tabChange('layuiminiTab', tabhref);
         },
 
         /**
@@ -205,7 +213,7 @@ layui.define(["element", "layer", "jquery"], function (exports) {
              */
             $('body').on('click', '[layuimini-href]', function () {
                 var loading = layer.load(0, {shade: false, time: 2 * 1000});
-                var tabId = $(this).attr('layuimini-href'),
+                var tabId = 10000000 ,
                     href = $(this).attr('layuimini-href'),
                     title = $(this).text(),
                     target = $(this).attr('target');
@@ -219,7 +227,7 @@ layui.define(["element", "layer", "jquery"], function (exports) {
 
                 if (target === '_blank') {
                     layer.close(loading);
-                    window.open(href, "_blank");
+                    window.open(href, target);
                     return false;
                 }
 
@@ -243,7 +251,7 @@ layui.define(["element", "layer", "jquery"], function (exports) {
              */
             $('body').on('click', '[layuimini-content-href]', function () {
                 var loading = parent.layer.load(0, {shade: false, time: 2 * 1000});
-                var tabId = $(this).attr('layuimini-content-href'),
+                var tabId = $(this).attr('layuimini-content-id'),
                     href = $(this).attr('layuimini-content-href'),
                     title = $(this).attr('data-title'),
                     target = $(this).attr('target');
@@ -371,8 +379,9 @@ layui.define(["element", "layer", "jquery"], function (exports) {
             };
             element.on('tab(' + options.filter + ')', function (data) {
                 var tabId = $(this).attr('lay-id');
+                var tabhref = options.href;
                 if (options.urlHashLocation) {
-                    location.hash = '/' + tabId;
+                    location.hash = '/' + tabhref;
                 }
                 if (typeof options.listenSwichCallback === 'function') {
                     options.listenSwichCallback();
@@ -383,9 +392,9 @@ layui.define(["element", "layer", "jquery"], function (exports) {
                 } else {
                     $("[layuimini-href]").parent().removeClass('layui-this');
                     if (options.multiModule) {
-                        miniTab.listenSwitchMultiModule(tabId);
+                        miniTab.listenSwitchMultiModule(tabhref);
                     } else {
-                        miniTab.listenSwitchSingleModule(tabId);
+                        miniTab.listenSwitchSingleModule(tabhref);
                     }
                 }
                 miniTab.rollPosition();
@@ -403,18 +412,20 @@ layui.define(["element", "layer", "jquery"], function (exports) {
             options.homeInfo = options.homeInfo || {};
             options.menuList = options.menuList || [];
             if (!options.urlHashLocation) return false;
-            var tabId = location.hash.replace(/^#\//, '');
-            if (tabId === null || tabId === undefined || tabId ==='') return false;
+            var tabId = new Date().getTime();
+            var tabhref = location.hash.replace(/^#\//, '');
+            console.log(tabId);
+            if (tabhref === null || tabhref === undefined || tabhref ==='') return false;
 
             // 判断是否为首页
-            if(tabId ===options.homeInfo.href) return false;
+            if(tabhref ===options.homeInfo.href) return false;
 
             // 判断是否为右侧菜单
-            var menu = miniTab.searchMenu(tabId, options.menuList);
+            var menu = miniTab.searchMenu(tabhref, options.menuList);
             if (menu !== undefined) {
                 miniTab.create({
                     tabId: tabId,
-                    href: tabId,
+                    href: tabhref,
                     title: menu.title,
                     isIframe: false,
                     maxTabNum: options.maxTabNum,
@@ -427,11 +438,11 @@ layui.define(["element", "layer", "jquery"], function (exports) {
             // 判断是否为快捷菜单
             var isSearchMenu = false;
             $("[layuimini-content-href]").each(function () {
-                if ($(this).attr("layuimini-content-href") === tabId) {
+                if ($(this).attr("layuimini-content-href") === tabhref) {
                     var title = $(this).attr("data-title");
                     miniTab.create({
                         tabId: tabId,
-                        href: tabId,
+                        href: tabhref,
                         title: title,
                         isIframe: false,
                         maxTabNum: options.maxTabNum,
@@ -448,7 +459,7 @@ layui.define(["element", "layer", "jquery"], function (exports) {
             var title = sessionStorage.getItem('layuiminimenu_' + tabId) === null ? tabId : sessionStorage.getItem('layuiminimenu_' + tabId);
             miniTab.create({
                 tabId: tabId,
-                href: tabId,
+                href: tabhref,
                 title: title,
                 isIframe: false,
                 maxTabNum: options.maxTabNum,

@@ -1,6 +1,6 @@
 package com.csx.common.entity;
 
-import com.csx.common.base.entity.BaseEntity;
+import com.csx.base.entity.BaseEntity;
 
 public class SysUser extends BaseEntity {
 }

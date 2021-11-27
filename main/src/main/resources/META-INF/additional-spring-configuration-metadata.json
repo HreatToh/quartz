@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "kaptcha.textproducer_font_names",
+      "type": "java.lang.String",
+      "description": "Description for kaptcha.textproducer_font_names."
+  }
+] }

@@ -41,5 +41,11 @@
             <artifactId>test</artifactId>
             <version>${parent.version}</version>
         </dependency>
+        <!--系统管理模块-->
+        <dependency>
+            <groupId>com.csx</groupId>
+            <artifactId>sysmm</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
     </dependencies>
 </project>

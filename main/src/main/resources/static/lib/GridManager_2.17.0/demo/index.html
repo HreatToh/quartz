@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GridManager demo</title>
+	<link rel="stylesheet" href="./css/layout.css"/>
+</head>
+<body>
+    <section class="demo-site">
+        <div class="demo-tabs">
+            <span class="demo-ele" data-url="./demo1.html">带搜索功能的动态数据</span>
+            <span class="demo-ele" data-url="./demo2.html">简易静态数据</span>
+            <span class="demo-ele" data-url="./demo3.html">多表 I18N</span>
+            <span class="demo-ele" data-url="./demo4.html">通栏样式</span>
+            <span class="demo-ele" data-url="./demo5.html">单选行</span>
+            <span class="demo-ele" data-url="./demo6.html">无总页</span>
+            <span class="demo-ele" data-url="./demo7.html">延迟总页</span>
+            <span class="demo-ele" data-url="./demo8.html">嵌套表头</span>
+            <span class="demo-ele" data-url="./demo9.html">数据折叠</span>
+            <span class="demo-ele" data-url="./jquery.html">jquery</span>
+            <span class="demo-ele" data-url="./promise.html">promise</span>
+        </div>
+        <iframe id="demo-iframe"></iframe>
+    </section>
+	<script type="text/javascript">
+		[].forEach.call(document.querySelectorAll('.demo-ele'), function(v, i){
+			v.addEventListener('click', function () {
+				document.querySelector('#demo-iframe').src = this.getAttribute('data-url');
+				[].forEach.call(document.querySelectorAll('.demo-ele'), function(v2, i2){
+					v2.removeAttribute('selected');
+				});
+				this.setAttribute('selected', 'selected')
+			});
+		});
+		document.querySelector('.demo-ele').click();
+	</script>
+</body>
+</html>

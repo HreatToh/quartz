@@ -1,7 +1,7 @@
 package com.csx.common.service;
 
 
-import com.csx.common.base.service.BaseService;
+import com.csx.base.service.BaseService;
 import org.springframework.stereotype.Service;
 
 /**

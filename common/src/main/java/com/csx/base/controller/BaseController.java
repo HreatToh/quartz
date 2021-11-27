@@ -1,4 +1,4 @@
-package com.csx.common.base.controller;
+package com.csx.base.controller;
 
 import lombok.extern.slf4j.Slf4j;
 

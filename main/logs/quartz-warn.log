@@ -1,514 +1,62 @@
-10:51:59.903 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 941753
-10:58:12.556 [QuartzScheduler_quartzScheduler-Administrator1637548577578_ClusterManager] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 372628
-11:02:18.042 [QuartzScheduler_quartzScheduler-Administrator1637548577578_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 192332
-11:10:18.048 [QuartzScheduler_quartzScheduler-Administrator1637548577578_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 159293
-11:11:57.245 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 99191
-11:13:17.504 [QuartzScheduler_quartzScheduler-Administrator1637548577578_ClusterManager] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 80216
-11:16:37.874 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 200327
-11:18:18.051 [QuartzScheduler_quartzScheduler-Administrator1637548577578_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 100139
-11:26:48.585 [http-nio-9001-exec-2] ERROR com.csx.main.plugin.owner.handle.GlobalExceptionHandler  - 发生空指针异常！原因是：｛null｝
-java.lang.NullPointerException: null
-	at com.csx.common.controller.PageController.index(PageController.java:32) ~[classes/:?]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_251]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_251]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_251]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_251]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1064) [spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) [spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.3.9.jar:5.3.9]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) [tomcat-embed-core-9.0.50.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.3.9.jar:5.3.9]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [tomcat-embed-core-9.0.50.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:228) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124) [druid-1.2.4.jar:1.2.4]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at com.csx.main.plugin.owner.filter.LoginFilter.doFilter(LoginFilter.java:41) [classes/:?]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1723) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_251]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_251]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_251]
-11:26:49.578 [http-nio-9001-exec-2] ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz].[dispatcherServlet]  - Servlet.service() for servlet [dispatcherServlet] in context with path [/quartz] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
-java.lang.NullPointerException: null
-	at com.csx.common.controller.PageController.index(PageController.java:32) ~[classes/:?]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_251]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_251]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_251]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_251]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1064) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) ~[tomcat-embed-core-9.0.50.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.50.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:228) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124) ~[druid-1.2.4.jar:1.2.4]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at com.csx.main.plugin.owner.filter.LoginFilter.doFilter(LoginFilter.java:41) ~[classes/:?]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1723) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_251]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_251]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_251]
-11:28:20.671 [http-nio-9001-exec-3] ERROR com.csx.main.plugin.owner.handle.GlobalExceptionHandler  - 发生空指针异常！原因是：｛null｝
-java.lang.NullPointerException: null
-	at com.csx.common.controller.PageController.index(PageController.java:32) ~[classes/:?]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_251]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_251]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_251]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_251]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1064) [spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) [spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.3.9.jar:5.3.9]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) [tomcat-embed-core-9.0.50.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.3.9.jar:5.3.9]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [tomcat-embed-core-9.0.50.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:228) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124) [druid-1.2.4.jar:1.2.4]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at com.csx.main.plugin.owner.filter.LoginFilter.doFilter(LoginFilter.java:41) [classes/:?]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1723) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_251]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_251]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_251]
-11:28:21.742 [http-nio-9001-exec-3] ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz].[dispatcherServlet]  - Servlet.service() for servlet [dispatcherServlet] in context with path [/quartz] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
-java.lang.NullPointerException: null
-	at com.csx.common.controller.PageController.index(PageController.java:32) ~[classes/:?]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_251]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_251]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_251]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_251]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1064) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) ~[tomcat-embed-core-9.0.50.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.50.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:228) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124) ~[druid-1.2.4.jar:1.2.4]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at com.csx.main.plugin.owner.filter.LoginFilter.doFilter(LoginFilter.java:41) ~[classes/:?]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1723) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_251]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_251]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_251]
-11:28:43.946 [http-nio-9001-exec-4] ERROR com.csx.main.plugin.owner.handle.GlobalExceptionHandler  - 发生空指针异常！原因是：｛null｝
-java.lang.NullPointerException: null
-	at com.csx.common.controller.PageController.index(PageController.java:32) ~[classes/:?]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_251]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_251]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_251]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_251]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1064) [spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) [spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.3.9.jar:5.3.9]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) [tomcat-embed-core-9.0.50.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.3.9.jar:5.3.9]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [tomcat-embed-core-9.0.50.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:228) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124) [druid-1.2.4.jar:1.2.4]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at com.csx.main.plugin.owner.filter.LoginFilter.doFilter(LoginFilter.java:41) [classes/:?]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1723) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_251]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_251]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_251]
-11:28:52.925 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 145442
-11:29:37.085 [http-nio-9001-exec-4] ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz].[dispatcherServlet]  - Servlet.service() for servlet [dispatcherServlet] in context with path [/quartz] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
-java.lang.NullPointerException: null
-	at com.csx.common.controller.PageController.index(PageController.java:32) ~[classes/:?]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_251]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_251]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_251]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_251]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1064) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) ~[tomcat-embed-core-9.0.50.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.50.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:228) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124) ~[druid-1.2.4.jar:1.2.4]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at com.csx.main.plugin.owner.filter.LoginFilter.doFilter(LoginFilter.java:41) ~[classes/:?]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1723) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_251]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_251]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_251]
-11:34:00.744 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 216455
-11:34:00.746 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 268345
-11:36:29.971 [QuartzScheduler_quartzScheduler-Administrator1637551587196_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 149193
-11:58:26.013 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 1316028
-11:59:48.550 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 78568
-12:14:50.209 [QuartzScheduler_quartzScheduler-Administrator1637551587196_ClusterManager] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 901626
-12:16:49.636 [main] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper  - Can not find table primary key in Class: "com.csx.common.entity.SysException".
-12:19:07.904 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 132323
-12:21:17.541 [main] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper  - Can not find table primary key in Class: "com.csx.common.entity.SysException".
-12:22:37.385 [main] WARN  net.sf.ehcache.DiskStorePathManager  - diskStorePath 'C:\Users\cheng\AppData\Local\Temp' is already used by an existing CacheManager either in the same VM or in a different process.
-The diskStore path for this CacheManager will be set to C:\Users\cheng\AppData\Local\Temp\ehcache_auto_created5936002608829343803diskstore.
-To avoid this warning consider using the CacheManager factory methods to create a singleton CacheManager or specifying a separate ehcache configuration (ehcache.xml) for each CacheManager instance.
-12:22:37.386 [main] WARN  net.sf.ehcache.store.disk.DiskStorageFactory  - Data in persistent disk stores is ignored for stores from automatically created directories.
-Remove diskPersistent or resolve the conflicting disk paths in cache configuration.
-Deleting data file C:\Users\cheng\AppData\Local\Temp\ehcache_auto_created5936002608829343803diskstore\local%0043ache.data
-12:25:31.982 [http-nio-9001-exec-1] ERROR com.csx.main.plugin.owner.handle.GlobalExceptionHandler  - 发生空指针异常！原因是：｛null｝
-java.lang.NullPointerException: null
-	at com.csx.common.controller.PageController.index(PageController.java:32) ~[classes/:?]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_251]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_251]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_251]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_251]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1064) [spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) [spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.3.9.jar:5.3.9]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) [tomcat-embed-core-9.0.50.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.3.9.jar:5.3.9]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [tomcat-embed-core-9.0.50.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:228) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124) [druid-1.2.4.jar:1.2.4]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at com.csx.main.plugin.owner.filter.LoginFilter.doFilter(LoginFilter.java:41) [classes/:?]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1723) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_251]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_251]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_251]
-12:30:13.044 [http-nio-9001-exec-10] ERROR com.csx.main.plugin.owner.handle.GlobalExceptionHandler  - 发生空指针异常！原因是：｛null｝
-java.lang.NullPointerException: null
-	at com.csx.common.controller.PageController.index(PageController.java:32) ~[classes/:?]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_251]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_251]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_251]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_251]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1064) [spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) [spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.3.9.jar:5.3.9]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.3.9.jar:5.3.9]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) [tomcat-embed-core-9.0.50.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.3.9.jar:5.3.9]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [tomcat-embed-core-9.0.50.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:228) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124) [druid-1.2.4.jar:1.2.4]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at com.csx.main.plugin.owner.filter.LoginFilter.doFilter(LoginFilter.java:41) [classes/:?]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1723) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_251]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_251]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.50.jar:9.0.50]
-	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_251]
-12:35:18.672 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 316986
-13:13:10.364 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 308632
-13:16:01.708 [QuartzScheduler_quartzScheduler-Administrator1637555401282_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 171272
-13:18:24.994 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 143270
-13:26:14.052 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 469022
-13:36:01.744 [QuartzScheduler_quartzScheduler-Administrator1637555401282_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 587637
-13:37:59.023 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 117262
-13:39:47.616 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 108582
-13:43:34.090 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 199465
-13:45:46.366 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 106196
-13:49:23.243 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 216857
-13:54:01.779 [QuartzScheduler_quartzScheduler-Administrator1637555401282_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 278533
-14:05:17.613 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 173390
-14:07:28.924 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 131262
-14:08:55.121 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 86180
-14:18:24.224 [QuartzScheduler_quartzScheduler-Administrator1637560943893_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 569076
-14:35:24.233 [QuartzScheduler_quartzScheduler-Administrator1637560943893_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 1020000
-14:37:12.380 [QuartzScheduler_quartzScheduler-Administrator1637560943893_ClusterManager] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 108131
+18:28:44.246 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 73032162
+18:36:19.877 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 298836
+18:47:13.430 [QuartzScheduler_quartzScheduler-Administrator1637920969800_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 653507
+18:48:44.566 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 91109
+18:54:13.442 [QuartzScheduler_quartzScheduler-Administrator1637920969800_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 328872
+18:59:49.601 [http-nio-9001-exec-8] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM001-主页模板]冲突请修改！
+18:59:49.611 [http-nio-9001-exec-9] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM001001-主页一]冲突请修改！
+18:59:49.618 [http-nio-9001-exec-10] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM001002-主页二]冲突请修改！
+18:59:49.633 [http-nio-9001-exec-4] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM002-菜单管理]冲突请修改！
+18:59:49.633 [http-nio-9001-exec-2] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM001003-主页三]冲突请修改！
+18:59:49.638 [http-nio-9001-exec-8] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM003-系统设置]冲突请修改！
+18:59:49.646 [http-nio-9001-exec-9] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM004-表格示例]冲突请修改！
+18:59:49.650 [http-nio-9001-exec-5] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM005-表单示例]冲突请修改！
+18:59:49.660 [http-nio-9001-exec-3] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM005001-普通表单]冲突请修改！
+18:59:49.661 [http-nio-9001-exec-10] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM005002-分步表单]冲突请修改！
+18:59:49.664 [http-nio-9001-exec-1] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM006-登录模板]冲突请修改！
+18:59:49.665 [http-nio-9001-exec-4] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM006002-登录-2]冲突请修改！
+18:59:49.665 [http-nio-9001-exec-7] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM006001-登录-1]冲突请修改！
+18:59:49.671 [http-nio-9001-exec-2] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM006003-登录-3]冲突请修改！
+18:59:49.677 [http-nio-9001-exec-8] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM007-异常页面]冲突请修改！
+18:59:49.681 [http-nio-9001-exec-6] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM007001-404页面]冲突请修改！
+18:59:49.682 [http-nio-9001-exec-9] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM008-其它界面]冲突请修改！
+18:59:49.684 [http-nio-9001-exec-5] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM008001-按钮示例]冲突请修改！
+18:59:49.686 [http-nio-9001-exec-6] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[SYSMM008002-弹出层]冲突请修改！
+18:59:49.693 [http-nio-9001-exec-4] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[PLUGIN003-颜色选择]冲突请修改！
+18:59:49.693 [http-nio-9001-exec-1] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[PLUGIN002-图标选择]冲突请修改！
+18:59:49.694 [http-nio-9001-exec-10] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[PLUGIN001-图标列表]冲突请修改！
+18:59:49.697 [http-nio-9001-exec-7] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[PLUGIN004-下拉选择]冲突请修改！
+18:59:49.724 [http-nio-9001-exec-2] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[PLUGIN005-文件上传]冲突请修改！
+18:59:49.728 [http-nio-9001-exec-8] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[PLUGIN006-富文本编辑器]冲突请修改！
+18:59:49.741 [http-nio-9001-exec-9] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[PLUGIN007-省市县区选择器]冲突请修改！
+18:59:49.745 [http-nio-9001-exec-3] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[OTHER001-多级菜单]冲突请修改！
+18:59:49.749 [http-nio-9001-exec-5] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[OTHER001001-按钮1]冲突请修改！
+18:59:49.750 [http-nio-9001-exec-6] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[OTHER001001001-按钮2]冲突请修改！
+18:59:49.753 [http-nio-9001-exec-1] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[OTHER001001001001-按钮3]冲突请修改！
+18:59:49.759 [http-nio-9001-exec-4] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[OTHER001001001002-表单4]冲突请修改！
+18:59:49.767 [http-nio-9001-exec-10] WARN  com.csx.sysmm.service.SysMenuService  - 菜单ID与菜单[OTHER002-失效菜单]冲突请修改！
+19:02:19.297 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 149532
+19:05:26.681 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 187382
+19:05:26.682 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 336988
+19:05:26.683 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 337063
+19:05:26.683 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 337066
+19:05:26.684 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 337069
+19:23:09.957 [QuartzScheduler_quartzScheduler-Administrator1638010749631_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 1063253
+19:41:24.175 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 1094205
+19:52:31.926 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 667737
+19:56:39.316 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 247379
+20:04:10.035 [QuartzScheduler_quartzScheduler-Administrator1638010749631_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 450687
+20:17:51.612 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 821576
+20:20:55.921 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 184291
+20:23:34.191 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 158267
+20:27:30.724 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 236518
+21:16:51.862 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 338563
+21:19:07.108 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 135228
+21:20:13.255 [QuartzScheduler_quartzScheduler-Administrator1638018672976_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 66101
+21:24:26.788 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 253473
+21:28:13.262 [QuartzScheduler_quartzScheduler-Administrator1638018672976_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 226443
+21:32:58.834 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 285536
+21:36:14.094 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 195210
+21:38:13.265 [QuartzScheduler_quartzScheduler-Administrator1638018672976_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 119105
+21:47:13.270 [QuartzScheduler_quartzScheduler-Administrator1638018672976_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 539997
+21:48:37.383 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 84110

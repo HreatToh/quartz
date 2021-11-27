@@ -18,10 +18,10 @@ create table sys_config_info
     comm_uuser   varchar(50)   null comment '修改人',
     comm_delfalg varchar(2)    null comment '是否删除标记',
     comm_v1      varchar(200)  null comment '扩展字段1',
-    comm_v2      varchar(200)  null comment '扩展字段1',
-    comm_v3      varchar(200)  null comment '扩展字段1',
-    comm_v4      varchar(200)  null comment '扩展字段1',
-    comm_v5      varchar(200)  null comment '扩展字段1'
+    comm_v2      varchar(200)  null comment '扩展字段2',
+    comm_v3      varchar(200)  null comment '扩展字段3',
+    comm_v4      varchar(200)  null comment '扩展字段4',
+    comm_v5      varchar(200)  null comment '扩展字段5'
 )
 comment '系统配置表';
 #------------------------------------------ 系统配置表 ------------------------------------------
@@ -46,10 +46,10 @@ create table sys_subconfig_info (
     comm_uuser   varchar(50)   null comment '修改人',
     comm_delfalg varchar(2)    null comment '是否删除标记',
     comm_v1      varchar(200)  null comment '扩展字段1',
-    comm_v2      varchar(200)  null comment '扩展字段1',
-    comm_v3      varchar(200)  null comment '扩展字段1',
-    comm_v4      varchar(200)  null comment '扩展字段1',
-    comm_v5      varchar(200)  null comment '扩展字段1',
+    comm_v2      varchar(200)  null comment '扩展字段2',
+    comm_v3      varchar(200)  null comment '扩展字段3',
+    comm_v4      varchar(200)  null comment '扩展字段4',
+    comm_v5      varchar(200)  null comment '扩展字段5',
     primary key (sys_id, item_id)
 )
 comment '子系统配置表';
@@ -71,15 +71,67 @@ create table sys_exception_info
     comm_uuser   varchar(50)    null comment '修改人',
     comm_delfalg varchar(2)     null comment '是否删除标记',
     comm_v1      varchar(200)   null comment '扩展字段1',
-    comm_v2      varchar(200)   null comment '扩展字段1',
-    comm_v3      varchar(200)   null comment '扩展字段1',
-    comm_v4      varchar(200)   null comment '扩展字段1',
-    comm_v5      varchar(200)   null comment '扩展字段1'
-);
-
+    comm_v2      varchar(200)   null comment '扩展字段2',
+    comm_v3      varchar(200)   null comment '扩展字段3',
+    comm_v4      varchar(200)   null comment '扩展字段4',
+    comm_v5      varchar(200)   null comment '扩展字段5'
+)
+comment '异常信息表';
 create unique index sys_exception_info_exp_id_uindex on sys_exception_info (exp_id);
 alter table sys_exception_info add constraint sys_exception_info_pk primary key (exp_id);
 
 #------------------------------------------ 异常信息表 ------------------------------------------
 
+#------------------------------------------ 菜单信息表 ------------------------------------------
+create table sys_menu_info
+(
+    sys_id 			varchar(10) not null comment '系统编号',
+    menu_id 		varchar(20) not null comment '菜单编号',
+    menu_name 		varchar(200) 	null comment '菜单名称',
+    menu_type 		varchar(10) 	null comment '菜单类型',
+    menu_icon 		varchar(50) 	null comment '菜单图标',
+    menu_url 		varchar(200) 	null comment '请求地址',
+    menu_parent_id 	varchar(20) 	null comment '上级菜单编号',
+    menu_path 		varchar(200) 	null comment '上级路径',
+    menu_order 		varchar(10) 	null comment '序号',
+    menu_class 		varchar(200) 	null comment '菜单初始化Service名称',
+    menu_target 	varchar(10) 	null comment '窗口渲染模式',
+    comm_cdate   	varchar(10)   	null comment '创建时间',
+    comm_udate   	varchar(10)   	null comment '更新时间',
+    comm_cuser   	varchar(50)   	null comment '创建人',
+    comm_uuser   	varchar(50)   	null comment '修改人',
+    comm_delfalg 	varchar(2)    	null comment '是否删除标记',
+    comm_v1      	varchar(200)  	null comment '扩展字段1',
+    comm_v2      	varchar(200)  	null comment '扩展字段2',
+    comm_v3      	varchar(200)  	null comment '扩展字段3',
+    comm_v4      	varchar(200)  	null comment '扩展字段4',
+    comm_v5      	varchar(200)  	null comment '扩展字段5',
+    constraint sys_menu_info_pk primary key (sys_id , menu_id)
+)comment '菜单表信息表';
 
+#------------------------------------------ 菜单信息表 ------------------------------------------
+
+#------------------------------------------ 子系统信息表 ------------------------------------------
+create table sys_system_info (
+     sys_id          varchar(10)     null comment '系统名称',
+     sys_name        varchar(100)    null comment '系统名称',
+     sys_url         varchar(100)    null comment '系统接口地址',
+     sys_parent_id   varchar(10)     null comment '系统父级菜单id',
+     sys_path        varchar(200)    null comment '系统依赖路径',
+     sys_icon        varchar(30)     null comment '系统图标',
+     sys_target      varchar(10)     null comment '系统开窗口模式',
+     sys_order       varchar(10)     null comment '系统排序',
+     comm_cdate   	 varchar(10)   	 null comment '创建时间',
+     comm_udate   	 varchar(10)   	 null comment '更新时间',
+     comm_cuser   	 varchar(50)   	 null comment '创建人',
+     comm_uuser   	 varchar(50)   	 null comment '修改人',
+     comm_delfalg 	 varchar(2)    	 null comment '是否删除标记',
+     comm_v1      	 varchar(200)  	 null comment '扩展字段1',
+     comm_v2      	 varchar(200)  	 null comment '扩展字段2',
+     comm_v3      	 varchar(200)  	 null comment '扩展字段3',
+     comm_v4      	 varchar(200)  	 null comment '扩展字段4',
+     comm_v5      	 varchar(200)  	 null comment '扩展字段5',
+    constraint sys_system_info_pk primary key (sys_id)
+)comment '子系统信息表';
+create unique index sys_system_info_sys_id_uindex on sys_system_info (sys_id);
+#------------------------------------------ 子系统信息表 ------------------------------------------

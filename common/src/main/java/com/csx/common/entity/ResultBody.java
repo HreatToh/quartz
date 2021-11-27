@@ -1,7 +1,7 @@
 package com.csx.common.entity;
 
 import cn.hutool.core.exceptions.ExceptionUtil;
-import com.csx.common.base.entity.BaseEntity;
+import com.csx.base.entity.BaseEntity;
 import com.csx.common.enums.AppEnum;
 
 /**

@@ -3,7 +3,6 @@ package com.csx.common.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.csx.common.entity.SysException;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 /**

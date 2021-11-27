@@ -1,6 +1,6 @@
 package com.csx.common.entity;
 
-import com.csx.common.base.entity.BaseEntity;
+import com.csx.base.entity.BaseEntity;
 
 /**
  * @author  Chengshx
@@ -31,26 +31,6 @@ public class SysConfig extends BaseEntity {
     private String itemOrder        ;
     /**   是否启用          */
     private String itemEnable       ;
-    /**   创建时间          */
-    private String commCdate        ;
-    /**   更新时间          */
-    private String commUdate        ;
-    /**   创建人            */
-    private String commCuser        ;
-    /**   修改人            */
-    private String commUuser        ;
-    /**   是否删除标记      */
-    private String commDelfalg      ;
-    /**   扩展字段1         */
-    private String commV1           ;
-    /**   扩展字段1         */
-    private String commV2           ;
-    /**   扩展字段1         */
-    private String commV3           ;
-    /**   扩展字段1         */
-    private String commV4           ;
-    /**   扩展字段1         */
-    private String commV5           ;
 
     public String getSysId() {
         return sysId;
@@ -140,83 +120,4 @@ public class SysConfig extends BaseEntity {
         this.itemEnable = itemEnable;
     }
 
-    public String getCommCdate() {
-        return commCdate;
-    }
-
-    public void setCommCdate(String commCdate) {
-        this.commCdate = commCdate;
-    }
-
-    public String getCommUdate() {
-        return commUdate;
-    }
-
-    public void setCommUdate(String commUdate) {
-        this.commUdate = commUdate;
-    }
-
-    public String getCommCuser() {
-        return commCuser;
-    }
-
-    public void setCommCuser(String commCuser) {
-        this.commCuser = commCuser;
-    }
-
-    public String getCommUuser() {
-        return commUuser;
-    }
-
-    public void setCommUuser(String commUuser) {
-        this.commUuser = commUuser;
-    }
-
-    public String getCommDelfalg() {
-        return commDelfalg;
-    }
-
-    public void setCommDelfalg(String commDelfalg) {
-        this.commDelfalg = commDelfalg;
-    }
-
-    public String getCommV1() {
-        return commV1;
-    }
-
-    public void setCommV1(String commV1) {
-        this.commV1 = commV1;
-    }
-
-    public String getCommV2() {
-        return commV2;
-    }
-
-    public void setCommV2(String commV2) {
-        this.commV2 = commV2;
-    }
-
-    public String getCommV3() {
-        return commV3;
-    }
-
-    public void setCommV3(String commV3) {
-        this.commV3 = commV3;
-    }
-
-    public String getCommV4() {
-        return commV4;
-    }
-
-    public void setCommV4(String commV4) {
-        this.commV4 = commV4;
-    }
-
-    public String getCommV5() {
-        return commV5;
-    }
-
-    public void setCommV5(String commV5) {
-        this.commV5 = commV5;
-    }
 }

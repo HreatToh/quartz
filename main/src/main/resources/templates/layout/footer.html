@@ -1,12 +1,10 @@
 <!-- templates\layout\footer.html -->
 ${layoutContent!}
 <script>
-    layui.use(['jquery', 'layer', 'miniAdmin','miniTongji'], function () {
-        var $ = layui.jquery,
-            layer = layui.layer,
+    layui.use(['layer', 'miniAdmin','miniTongji'], function () {
+        var layer = layui.layer,
             miniAdmin = layui.miniAdmin,
             miniTongji = layui.miniTongji;
-
         var options = {
             iniUrl: "${ctxPath}/json/init.json",    // 初始化接口
             clearUrl: "${ctxPath}/json/clear.json", // 缓存清理接口
@@ -35,5 +33,6 @@ ${layoutContent!}
                 window.location = 'page/login-3.html';
             });
         });
+        $.extend(jQuery.Application , layui);
     });
 </script>
