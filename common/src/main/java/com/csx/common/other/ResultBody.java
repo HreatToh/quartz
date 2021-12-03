@@ -1,7 +1,6 @@
-package com.csx.common.entity;
+package com.csx.common.other;
 
 import cn.hutool.core.exceptions.ExceptionUtil;
-import com.csx.base.entity.BaseEntity;
 import com.csx.common.enums.AppEnum;
 
 /**
@@ -9,7 +8,7 @@ import com.csx.common.enums.AppEnum;
  * @create  2021/11/19 17:19
  * @desc    自定义响应体
  **/
-public class ResultBody extends BaseEntity {
+public class ResultBody {
 
     /** 响应码    */
     private String code;
@@ -76,6 +75,21 @@ public class ResultBody extends BaseEntity {
      */
     public static ResultBody success( AppEnum appEnum){
         return success(appEnum.getCode() , appEnum.getMsg());
+    }
+
+    /**
+     * 默认成功 不带数据
+     * @return
+     */
+    public static ResultBody success(String msg){
+        return success(AppEnum.SUCCESS.getCode() , msg);
+    }
+    /**
+     * 默认成功 不带数据
+     * @return
+     */
+    public static ResultBody success(String msg , Object o){
+        return success(AppEnum.SUCCESS.getCode() , msg , o);
     }
     /**
      * 默认成功 不带数据

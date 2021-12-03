@@ -8,6 +8,30 @@
 $(function () {
 
     jQuery.Application = {
+        // token
+        Authorization : '',
+        // licence 许可证
+        licence : null,
+        // 成功的对话框
+        success : function(layer , msg , callback){
+            var index = 0;
+            if (callback && callback instanceof Function){
+                index = layer.msg(msg, {icon: 1} , callback);
+            }else{
+                index = layer.msg(msg, {icon: 1});
+            }
+            return index;
+        },
+        //失败对话框
+        fail : function(layer , msg , callback){
+            var index = 0;
+            if (callback && callback instanceof Function){
+                index = layer.msg(msg, {icon: 2} , callback);
+            }else{
+                index = layer.msg(msg, {icon: 2});
+            }
+            return index;
+        },
 
         baseTbColOpt: {
             // 列的唯一索引。字符串类型，必设项

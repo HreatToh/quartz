@@ -1,4 +1,4 @@
-package com.csx.common.entity;
+package com.csx.common.other;
 
 import com.csx.base.entity.BaseEntity;
 

@@ -7,7 +7,9 @@ server:
   port: 9001
   servlet:
     context-path: /quartz
-
+    session:
+      # session 到期时间
+      timeout: 30m
 #配置log4j2配置文件路径
 logging:
   config: classpath:log4j2/log4j2.xml
@@ -27,7 +29,6 @@ spring:
       #配置文件路径
       config: ehcache/ehcache-config.xml
 
-
 #####################################################################################################################################
 # mybatis plus 主配置
 #####################################################################################################################################
@@ -41,9 +42,9 @@ mybatis-plus:
     #逻辑删除配置
     db-config:
       # 删除前
-      logic-not-delete-value: true
+      logic-not-delete-value: N
       # 删除后
-      logic-delete-value: false
+      logic-delete-value: Y
 
 
 #####################################################################################################################################
@@ -64,25 +65,33 @@ beetl:
 #####################################################################################################################################
 application:
   interceptor:
-    logininterceptor:
-      include: ["/**"]
-      exclude: ["/" , "/kaptcha", "/static/**", "css/**", "js/**", "img/**", "json/**", "fonts/**", "*.html", "*.json" , "*.js" , "*.json" , "*.css" , "*.png"]
+    authorizationinterceptor:
+      include: /**
+      exclude: / , /kaptcha, /page/login , /login , /static/**, css/**, js/**, img/**, json/**, fonts/**, *.html, *.json , *.js , *.json , *.css , *.png
   filter:
     loginfilter:
-      include: ["/*" ]
-      exclude: ["/static/*", "/druid/*"]
+      include: /**
+      exclude: /static/**, /druid/**
     charfilter:
-      include: ["/*"]
-      exclude: ["/static/*", "/druid/*"]
+      include: /**
+      exclude: /static/**, /druid/**
     druidfilter:
-      include: ["/*"]
-      exclude: ["/static/*", "/druid/*"]
+      include: /**]
+      exclude: /static/**, /druid/**
 
 #####################################################################################################################################
 # Shiro 权限控制 配置
 #####################################################################################################################################
 shiro:
   enabled: true
+  # 使用hex算法还是bas64 ： true：hex false：base64
+  isStoredCredentialsHexEncoded: false
+  # 散列迭代次数
+  hashiterations: 10
+  # 散列算法，SHA-256 : 使用sha256算法  MD5 : 使用MD5算法 MD2 : 使用MD2算法  .. SHA-1 SHA-384 SHA-512
+  hashalgorithmname: SHA-256
   loginUrl: /page/login
   successUrl: /page/index
-  pathdefinitions: '{ "/**" : "authc" , "/page/login": "anon" , "/login": "anon" , "/logout": "anon"}'
+  pathdefinitions:
+    authc: /**
+    anon: /kaptcha , /page/login , /login , /logout , /static/** , *.html, *.json , *.js , *.json , *.css , *.png

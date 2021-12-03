@@ -4,7 +4,7 @@ import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.exceptions.ExceptionUtil;
 import cn.hutool.core.util.IdUtil;
 import com.csx.base.service.BaseService;
-import com.csx.common.entity.Constants;
+import com.csx.common.other.Constants;
 import com.csx.common.entity.SysException;
 import com.csx.common.mapper.ExcetionMapper;
 import com.csx.common.utils.ToolUtils;
@@ -42,8 +42,8 @@ public class ExcetionService extends BaseService {
         exception.setExpTime(DateUtil.now());
         exception.setCommCdate(DateUtil.today());
         exception.setCommUdate(DateUtil.today());
-        exception.setCommCuser(Constants.ADMIN);
-        exception.setCommUuser(Constants.ADMIN);
+        exception.setCommCuser(Constants.Session.ADMIN);
+        exception.setCommUuser(Constants.Session.ADMIN);
         return excetionMapper.insert(exception) > 0 ;
     }
 }

@@ -1,19 +1,25 @@
 package com.csx.base.service;
 
-import cn.hutool.core.lang.Console;
+import cn.hutool.core.exceptions.ExceptionUtil;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.csx.common.entity.QueryFormatFactory;
+import com.csx.common.entity.SysLog;
+import com.csx.common.enums.LogEnum;
+import com.csx.common.factory.QueryFormatFactory;
 import com.csx.common.enums.AppEnum;
+import com.csx.common.mapper.SysLogMapper;
+import com.csx.common.other.Constants;
+import com.csx.common.utils.JdbcUtils;
+import com.csx.common.utils.SpringUtils;
 import com.csx.common.utils.ToolUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
-import java.util.regex.Pattern;
 
 /**
  * @author  Chengshx
@@ -29,6 +35,9 @@ public class BaseService {
     /** 请求返回码    */
     public static final String SUCCESS = AppEnum.SUCCESS.getCode();
     public static final String FAIL = AppEnum.FAIL.getCode();
+
+    public SysLogMapper sysLogMapper = null;
+
     /**
      * @method  initPage
      * @params  @PathVariable String sysId , @PathVariable String menu , @PathVariable String mode , @RequestParam Map<String , Object> params , ModelMap modelMap , HttpServletRequest request , HttpServletResponse response
@@ -102,4 +111,114 @@ public class BaseService {
         return queryWrapper;
     }
 
+    /**
+     * @method  SYSLOGOFF
+     * @params  String sysId , String logType , String logMsg
+     * @return  
+     * @desc    记录日志的方法
+     **/
+    public void SYSLOGOFF(String sysId , String logType , String logMsg){
+        SYSLOG(sysId , ToolUtils.getId() , LogEnum.OFF , logType , logMsg , null);
+    }
+    /**
+     * @method  SYSLOGFATAL
+     * @params  String sysId , String logType , String logMsg
+     * @return
+     * @desc    记录日志的方法
+     **/
+    public void SYSLOGFATAL(String sysId , String logType , String logMsg){
+        SYSLOG(sysId , ToolUtils.getId() , LogEnum.FATAL , logType , logMsg , null);
+    }
+    /**
+     * @method  SYSLOGERROR
+     * @params  String sysId , String logType , String logMsg
+     * @return
+     * @desc    记录日志的方法
+     **/
+    public void SYSLOGERROR(String sysId , String logType , String logMsg , Throwable e){
+        StringBuffer sb = new StringBuffer();
+        sb.append("说明：").append(logMsg).append(Constants.App._N_R);
+        sb.append("异常：").append(ExceptionUtil.stacktraceToString(e , 1500));
+        SYSLOG(sysId , ToolUtils.getId() , LogEnum.ERROR , logType , sb.toString() , null);
+        sb.delete(0,sb.length());
+    }
+
+    /**
+     * @method  SYSLOGWARN
+     * @params  String sysId , String logType , String logMsg
+     * @return
+     * @desc    记录日志的方法
+     **/
+    public void SYSLOGWARN(String sysId , String logType , String logMsg){
+        SYSLOG(sysId , ToolUtils.getId() , LogEnum.WARN , logType , logMsg , null);
+    }
+
+    /**
+     * @method  SYSLOGINFO
+     * @params  String sysId , String logType , String logMsg
+     * @return
+     * @desc    记录日志的方法
+     **/
+    public void SYSLOGINFO(String sysId , String logType , String logMsg){
+        SYSLOG(sysId , ToolUtils.getId() , LogEnum.INFO , logType , logMsg , null);
+    }
+
+    /**
+     * @method  SYSLOGDEBUG
+     * @params  String sysId , String logType , String logMsg
+     * @return
+     * @desc    记录日志的方法
+     **/
+    public void SYSLOGDEBUG(String sysId , String logType , String logMsg){
+        SYSLOG(sysId , ToolUtils.getId() , LogEnum.DEBUG , logType , logMsg , null);
+    }
+
+    /**
+     * @method  SYSLOGTRACE
+     * @params  String sysId , String logType , String logMsg
+     * @return
+     * @desc    记录日志的方法
+     **/
+    public void SYSLOGTRACE(String sysId , String logType , String logMsg){
+        SYSLOG(sysId , ToolUtils.getId() , LogEnum.TRACE , logType , logMsg , null);
+    }
+    /**
+     * @method  SYSLOGALL
+     * @params  String sysId , String logType , String logMsg
+     * @return
+     * @desc    记录日志的方法
+     **/
+    public void SYSLOGALL(String sysId , String logType , String logMsg){
+        SYSLOG(sysId , ToolUtils.getId() , LogEnum.ALL , logType , logMsg , null);
+    }
+
+    /**
+     * @method  SYSLOG
+     * @params  String sysId , String logId , LogEnum logEnum , String logType , String logMsg , String logOther
+     * @return  
+     * @desc    记录日志的方法
+     **/
+    public void SYSLOG(String sysId , String logId , LogEnum logEnum , String logType , String logMsg , String logOther){
+        try{
+            SysLog sysLog = SysLog.newInstance();
+            sysLog.setSysId(sysId);
+            sysLog.setLogId(logId);
+            sysLog.setLogLevel(logEnum.getName());
+            sysLog.setLogType(logType);
+            sysLog.setLogMsg(logMsg);
+            sysLog.setLogOther(logOther);
+            sysLog.setLogTime(ToolUtils.nowTime());
+            sysLog.setCommCdate(ToolUtils.nowDate());
+            sysLog.setCommCuser(ToolUtils.getUserId());
+            sysLog.setCommDelfalg(Constants.App.DELFALG_N);
+            sysLog.setCommUdate(ToolUtils.nowDate());
+            sysLog.setCommUuser(ToolUtils.getUserId());
+            if (ToolUtils.isNull(sysLogMapper)){
+                sysLogMapper = SpringUtils.getBean(SysLogMapper.class);
+            }
+            sysLogMapper.insert(sysLog);
+        } catch (Exception e){
+            log.error(ToolUtils.format("[{}]记录日志异常！" , ToolUtils.nowTime() ) , e);
+        }
+    }
 }

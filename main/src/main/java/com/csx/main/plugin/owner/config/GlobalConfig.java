@@ -2,10 +2,10 @@ package com.csx.main.plugin.owner.config;
 
 import cn.hutool.core.util.ArrayUtil;
 import com.alibaba.druid.support.http.WebStatFilter;
-import com.csx.common.entity.PathPatterns;
+import com.csx.common.other.PathPatterns;
 import com.csx.main.plugin.owner.filter.CharFilter;
 import com.csx.main.plugin.owner.filter.LoginFilter;
-import com.csx.main.plugin.owner.interceptor.LoginInterceptor;
+import com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor;
 import com.csx.main.plugin.owner.listener.LoginListener;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +32,7 @@ public class GlobalConfig implements WebMvcConfigurer {
     private ApplicationContext applicationContext;
 
     /** 登录拦截器 拦截对象    */
-    @ConfigurationProperties( prefix = "application.interceptor.logininterceptor")
+    @ConfigurationProperties( prefix = "application.interceptor.authorizationinterceptor")
     @Bean("loginIt")
     public PathPatterns getLoginIt() {
         return new PathPatterns();
@@ -78,8 +78,8 @@ public class GlobalConfig implements WebMvcConfigurer {
 //        String[] LOGIN_EXCLUDEPATHPATTERNS = new String[]{  "/static/*" , "*.js" };
         /** 初始化被拦截的URL */
 //        String[] LOGIN_INCLUDEPATHPATTERNS = new String[]{  "/**" };
-        registry.addInterceptor(new LoginInterceptor()).addPathPatterns(loginIt.getInclude()).excludePathPatterns(loginIt.getExclude());
-        log.debug("注册拦截器[" + LoginInterceptor.class + "]成功");
+        registry.addInterceptor(new AuthorizationInterceptor()).addPathPatterns(loginIt.getInclude()).excludePathPatterns(loginIt.getExclude());
+        log.debug("注册拦截器[" + AuthorizationInterceptor.class + "]成功");
         /***************************** 添加登录拦截器 end   *****************************/
     }
 

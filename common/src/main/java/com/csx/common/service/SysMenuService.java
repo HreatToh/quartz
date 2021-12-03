@@ -1,17 +1,17 @@
-package com.csx.sysmm.service;
+package com.csx.common.service;
 
 import cn.hutool.core.date.DateUtil;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.csx.base.service.BaseService;
-import com.csx.common.entity.Constants;
-import com.csx.common.entity.ResultBody;
+import com.csx.common.other.Constants;
+import com.csx.common.other.ResultBody;
 import com.csx.common.entity.SysMenu;
-import com.csx.common.enums.AppEnum;
+import com.csx.common.mapper.SysMenuMapper;
 import com.csx.common.utils.ToolUtils;
-import com.csx.sysmm.mapper.SysMenuMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,6 +24,7 @@ import java.util.Map;
  **/
 @Slf4j
 @Service
+@Scope( proxyMode = ScopedProxyMode.TARGET_CLASS )
 public class SysMenuService extends BaseService {
 
     @Autowired
@@ -78,10 +79,10 @@ public class SysMenuService extends BaseService {
             sysMenu.setMenuUrl(ToolUtils.nvl(params.get("menuUrl") , ""));
             sysMenu.setMenuType(ToolUtils.nvl(params.get("menuType") , "_self"));
             sysMenu.setCommCdate(DateUtil.today());
-            sysMenu.setCommCuser(Constants.ADMIN);
-            sysMenu.setCommDelfalg(Constants.DELFALG_N);
+            sysMenu.setCommCuser(Constants.Session.ADMIN);
+            sysMenu.setCommDelfalg(Constants.App.DELFALG_N);
             sysMenu.setCommCdate(DateUtil.today());
-            sysMenu.setCommUuser(Constants.ADMIN);
+            sysMenu.setCommUuser(Constants.Session.ADMIN);
             msg = menuMapper.insert(sysMenu) != 1 ? "菜单保存失败，详情请看日志！" : "菜单保存成功！";
         } catch (Exception e){
             log.error(ToolUtils.format("保存菜单信息异常！" , e.getMessage() ) , e);

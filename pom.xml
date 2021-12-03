@@ -54,6 +54,7 @@
 
         <kaptcha.version>2.3.2</kaptcha.version>
         <shiro.version>1.7.1</shiro.version>
+        <jwt.version>3.18.2</jwt.version>
     </properties>
 
     <!--依赖说明：统一管理子模块依赖-->
@@ -219,10 +220,10 @@
         </dependency>
 
         <!-- 添加热部署依赖 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-devtools</artifactId>-->
+<!--        </dependency>-->
 
         <!-- 添加 shiro 依赖-->
         <dependency>
@@ -231,6 +232,12 @@
             <version>${shiro.version}</version>
         </dependency>
 
+        <!--引入 jwt 依赖-->
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>java-jwt</artifactId>
+            <version>${jwt.version}</version>
+        </dependency>
         <!--引入数据库驱动 start-->
         <!--引入mysql驱动依赖包-->
         <dependency>

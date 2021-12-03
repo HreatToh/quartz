@@ -1,10 +1,9 @@
 package com.csx.main.plugin.owner.handle;
 
-import com.csx.common.entity.ResultBody;
+import com.csx.common.other.ResultBody;
 import com.csx.common.enums.AppEnum;
 import com.csx.common.exception.AppException;
 import com.csx.common.service.ExcetionService;
-import com.csx.common.utils.SpringUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ControllerAdvice;

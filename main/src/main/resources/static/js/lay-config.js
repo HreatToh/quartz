@@ -11,10 +11,10 @@ layui.config({
     base: rootPath + "/static/js/lay-module/",
     version: true
 }).extend({
-    miniAdmin: "layuimini/miniAdmin", // layuimini后台扩展
-    miniMenu: "layuimini/miniMenu", // layuimini菜单扩展
-    miniTab: "layuimini/miniTab", // layuimini tab扩展
-    miniTheme: "layuimini/miniTheme", // layuimini 主题扩展
+    customer: "customer/customer", // 自定义后台扩展
+    customer_menu: "customer/customer_menu", // 自定义菜单扩展
+    customer_tab: "customer/customer_tab", // 自定义 tab扩展
+    customer_theme: "customer/customer_theme", // 自定义 主题扩展
     miniTongji: "layuimini/miniTongji", // layuimini 统计扩展
     step: 'step-lay/step', // 分步表单扩展
     treetable: 'treetable-lay/treetable', //table树形扩展

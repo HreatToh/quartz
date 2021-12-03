@@ -8,6 +8,12 @@ package com.csx.common.enums;
 public enum AppEnum {
     // 数据操作错误定义
     SUCCESS("200", "请求成功!"),
+    UNKNOWNACOUNT("801" , "用户不存在！"),
+    PASSWORDERROR("802" , "密码错误！"),
+    LOCKEDACCOUNT("803" , "用户已经被锁定！"),
+    DISABLEDACCOUNT("804" , "用户已经被禁用！"),
+    EXPIREDCREDENTIALS("805" , "密码已经过期，请管理员重置密码！"),
+    CONCURRENTACCESS("806" , "用户已经登录，请注销后重新登录！"),
     FAIL("999","请求失败!") ,
     BODY_NOT_MATCH("400","请求的数据格式不符!"),
     SIGNATURE_NOT_MATCH("401","请求的数字签名不匹配!"),

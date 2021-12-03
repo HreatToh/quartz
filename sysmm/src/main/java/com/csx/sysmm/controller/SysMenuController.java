@@ -1,8 +1,8 @@
 package com.csx.sysmm.controller;
 
 import com.csx.base.controller.BaseController;
-import com.csx.common.entity.ResultBody;
-import com.csx.sysmm.service.SysMenuService;
+import com.csx.common.other.ResultBody;
+import com.csx.common.service.SysMenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +18,7 @@ import java.util.Map;
 public class SysMenuController extends BaseController {
 
     @Autowired
-    private SysMenuService menuService;
+    private SysMenuService sysMenuService;
 
 
     /**
@@ -29,7 +29,7 @@ public class SysMenuController extends BaseController {
      **/
     @RequestMapping( name = "获取菜单信息" , value = "getMenuInfo" , method = RequestMethod.POST )
     public ResultBody getMenuInfo(@RequestParam Map<String ,Object> params){
-        return menuService.getMenuInfo(params);
+        return sysMenuService.getMenuInfo(params);
     }
     
     /**
@@ -40,7 +40,7 @@ public class SysMenuController extends BaseController {
      **/
     @RequestMapping( name = "保存菜单信息" , value = "saveMenuInfo" , method = RequestMethod.POST )
     public ResultBody saveMenuInfo(@RequestParam Map<String ,Object> params){
-        return menuService.saveMenuInfo(params);
+        return sysMenuService.saveMenuInfo(params);
     }
 
 }

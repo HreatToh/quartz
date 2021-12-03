@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.csx.common.mapper.SysConfigMapper">
+
+    <!--系统配置表所有的列-->
+    <sql id="sysConfigColSql">
+        item_id, item_name, item_val, item_defval, item_type, item_conf, item_desc, item_group, item_order, item_enable, comm_cdate, comm_udate, comm_cuser, comm_uuser, comm_delfalg, comm_v1, comm_v2, comm_v3, comm_v4, comm_v5
+    </sql>
+    <!--子系统配置表所有的列-->
+    <sql id="sysSubConfigColSql">
+        sys_id , item_id, item_name, item_val, item_defval, item_type, item_conf, item_desc, item_group, item_order, item_enable, comm_cdate, comm_udate, comm_cuser, comm_uuser, comm_delfalg, comm_v1, comm_v2, comm_v3, comm_v4, comm_v5
+    </sql>
+    <!-- 获取所有的系统配置 -->
+    <select id="getSysConfigAll" resultType="com.csx.common.entity.SysConfig">
+        select <include refid="sysConfigColSql"/> from sys_config_info where item_enable = 'Y' and comm_delfalg = 'N'
+    </select>
+
+    <!-- 获取所有的子系统配置 -->
+    <select id="getSysSubConfigAll" resultType="com.csx.common.entity.SysConfig">
+        select <include refid="sysSubConfigColSql"/> from sys_subconfig_info where item_enable = 'Y' and comm_delfalg = 'N'
+    </select>
+
+</mapper>

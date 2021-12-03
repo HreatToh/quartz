@@ -1,22 +1,763 @@
-00:05:13.483 [QuartzScheduler_quartzScheduler-Administrator1638018672976_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 506640
-00:21:13.519 [QuartzScheduler_quartzScheduler-Administrator1638018672976_ClusterManager] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 449837
-00:26:06.009 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 292446
-00:31:13.518 [QuartzScheduler_quartzScheduler-Administrator1638018672976_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 307455
-00:48:13.535 [QuartzScheduler_quartzScheduler-Administrator1638018672976_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 1020002
-01:00:13.550 [QuartzScheduler_quartzScheduler-Administrator1638018672976_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 719984
-01:01:11.152 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closing ...
-01:01:11.183 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closed
-01:01:32.831 [restartedMain] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 22004 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
-01:01:32.862 [restartedMain] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
-01:08:34.654 [restartedMain] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 14808 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
-01:08:34.685 [restartedMain] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
-01:09:37.824 [restartedMain] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 15808 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
-01:09:37.839 [restartedMain] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
-01:11:03.456 [restartedMain] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 5832 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
-01:11:03.472 [restartedMain] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
-01:11:11.312 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-9001"]
-01:11:11.312 [restartedMain] INFO  org.apache.catalina.core.StandardService  - Starting service [Tomcat]
-01:11:11.312 [restartedMain] INFO  org.apache.catalina.core.StandardEngine  - Starting Servlet engine: [Apache Tomcat/9.0.50]
-01:11:11.484 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring embedded WebApplicationContext
-01:11:14.529 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-0} closing ...
-01:11:14.545 [restartedMain] INFO  org.apache.catalina.core.StandardService  - Stopping service [Tomcat]
+08:54:10.025 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 80906
+09:03:19.207 [QuartzScheduler_quartzScheduler-Administrator1638343097668_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 386773
+09:06:12.607 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 173398
+09:19:19.224 [QuartzScheduler_quartzScheduler-Administrator1638343097668_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 302576
+09:28:42.407 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 563163
+09:31:20.626 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 158204
+09:32:33.803 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 73157
+09:35:41.142 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 187334
+09:45:19.247 [QuartzScheduler_quartzScheduler-Administrator1638343097668_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 540012
+10:02:18.176 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 1018899
+10:12:20.069 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 540816
+10:14:19.255 [QuartzScheduler_quartzScheduler-Administrator1638343097668_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 119180
+10:26:19.264 [QuartzScheduler_quartzScheduler-Administrator1638343097668_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 707027
+10:34:19.264 [QuartzScheduler_quartzScheduler-Administrator1638343097668_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 442927
+10:39:20.879 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 301599
+10:49:27.036 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 606124
+10:51:19.277 [QuartzScheduler_quartzScheduler-Administrator1638343097668_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 112217
+10:53:58.654 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 159361
+10:57:03.057 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 184362
+11:04:20.890 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 380796
+11:09:40.486 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 319540
+11:17:19.294 [QuartzScheduler_quartzScheduler-Administrator1638343097668_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 458775
+11:29:03.405 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 704108
+11:36:19.310 [QuartzScheduler_quartzScheduler-Administrator1638343097668_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 435891
+11:38:56.769 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 157450
+11:41:02.990 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 126199
+11:43:19.313 [QuartzScheduler_quartzScheduler-Administrator1638343097668_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 136256
+11:45:43.674 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 144315
+11:50:19.318 [QuartzScheduler_quartzScheduler-Administrator1638343097668_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 275585
+11:51:28.509 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 69171
+11:57:19.323 [QuartzScheduler_quartzScheduler-Administrator1638343097668_ClusterManager] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 350796
+12:04:19.324 [QuartzScheduler_quartzScheduler-Administrator1638343097668_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 264594
+12:10:02.174 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 342841
+12:17:50.238 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 390905
+12:22:47.875 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 273572
+12:26:12.353 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 204438
+12:29:39.820 [QuartzScheduler_quartzScheduler-Administrator1638343097668_ClusterManager] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 207433
+12:33:19.340 [QuartzScheduler_quartzScheduler-Administrator1638343097668_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 142341
+12:36:43.863 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 204478
+12:38:29.079 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 105175
+12:40:19.344 [QuartzScheduler_quartzScheduler-Administrator1638343097668_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 110230
+12:43:40.811 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 201413
+12:46:13.173 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 152330
+12:47:19.348 [QuartzScheduler_quartzScheduler-Administrator1638343097668_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 66168
+12:53:25.124 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 365751
+13:02:19.355 [QuartzScheduler_quartzScheduler-Administrator1638343097668_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 534206
+13:10:54.602 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 515196
+13:19:54.687 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 540072
+13:24:19.368 [QuartzScheduler_quartzScheduler-Administrator1638343097668_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 264633
+13:39:19.375 [QuartzScheduler_quartzScheduler-Administrator1638343097668_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 862981
+13:44:22.022 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 302638
+13:52:33.089 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 491028
+13:54:19.389 [QuartzScheduler_quartzScheduler-Administrator1638343097668_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 106258
+14:19:19.400 [QuartzScheduler_quartzScheduler-Administrator1638343097668_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 1500008
+14:26:06.032 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 401630
+14:29:19.407 [QuartzScheduler_quartzScheduler-Administrator1638343097668_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 193351
+14:33:05.802 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 226349
+14:36:41.314 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 215485
+14:40:31.702 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 230346
+14:45:19.420 [QuartzScheduler_quartzScheduler-Administrator1638343097668_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 287655
+14:54:19.422 [QuartzScheduler_quartzScheduler-Administrator1638343097668_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 539971
+15:00:20.983 [QuartzScheduler_quartzScheduler-Administrator1638343097668_ClusterManager] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 361548
+15:07:44.770 [QuartzScheduler_quartzScheduler-Administrator1638343097668_ClusterManager] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 443734
+15:18:27.905 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 643104
+15:27:14.831 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 503904
+15:33:19.459 [QuartzScheduler_quartzScheduler-Administrator1638343097668_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 364618
+15:45:03.857 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closing ...
+15:45:03.873 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closed
+15:45:10.313 [main] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 11900 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
+15:45:10.335 [main] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
+15:45:22.134 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-9001"]
+15:45:22.134 [main] INFO  org.apache.catalina.core.StandardService  - Starting service [Tomcat]
+15:45:22.135 [main] INFO  org.apache.catalina.core.StandardEngine  - Starting Servlet engine: [Apache Tomcat/9.0.50]
+15:45:22.276 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring embedded WebApplicationContext
+15:45:22.385 [main] INFO  org.apache.catalina.core.StandardContext  - Suspicious URL pattern: [/**] in context [/quartz], see sections 12.1 and 12.2 of the Servlet specification
+15:45:22.385 [main] INFO  org.apache.catalina.core.StandardContext  - Suspicious URL pattern: [/**] in context [/quartz], see sections 12.1 and 12.2 of the Servlet specification
+15:45:22.497 [main] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-0} closing ...
+15:45:22.500 [main] INFO  org.apache.catalina.core.StandardService  - Stopping service [Tomcat]
+15:47:59.447 [main] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 7072 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
+15:47:59.460 [main] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
+15:48:09.348 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-9001"]
+15:48:09.349 [main] INFO  org.apache.catalina.core.StandardService  - Starting service [Tomcat]
+15:48:09.349 [main] INFO  org.apache.catalina.core.StandardEngine  - Starting Servlet engine: [Apache Tomcat/9.0.50]
+15:48:09.489 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring embedded WebApplicationContext
+15:48:09.596 [main] INFO  org.apache.catalina.core.StandardContext  - Suspicious URL pattern: [/**] in context [/quartz], see sections 12.1 and 12.2 of the Servlet specification
+15:48:09.596 [main] INFO  org.apache.catalina.core.StandardContext  - Suspicious URL pattern: [/**] in context [/quartz], see sections 12.1 and 12.2 of the Servlet specification
+15:48:11.134 [main] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} inited
+15:48:12.402 [main] INFO  org.activiti.engine.compatibility.DefaultActiviti5CompatibilityHandlerFactory  - Activiti 5 compatibility handler implementation not found or error during instantiation : org.activiti.compatibility.DefaultActiviti5CompatibilityHandler. Activiti 5 backwards compatibility disabled.
+15:48:12.608 [main] INFO  org.activiti.engine.impl.ProcessEngineImpl  - ProcessEngine default created
+15:48:13.193 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-9001"]
+15:48:13.493 [main] INFO  com.csx.main.MainApplication  - Started MainApplication in 15.006 seconds (JVM running for 17.638)
+15:48:13.560 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-12-03 15:48:13]服务已启动 , 开始初始化... ------------------------------
+15:48:13.562 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] JdbcUtils 初始化完成！
+15:48:13.563 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] ToolUtils 初始化完成！
+15:48:13.576 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] Cache缓存 初始化完成！
+15:48:13.576 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-12-03 15:48:13]服务已启动 , 初始化完成！   ------------------------------
+15:48:13.576 [main] INFO  com.csx.main.ApplicationRunner  - 总共用时：77 毫秒
+15:50:31.107 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closing ...
+15:50:31.110 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closed
+16:20:27.054 [main] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 19136 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
+16:20:27.069 [main] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
+16:20:35.699 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-9001"]
+16:20:35.700 [main] INFO  org.apache.catalina.core.StandardService  - Starting service [Tomcat]
+16:20:35.700 [main] INFO  org.apache.catalina.core.StandardEngine  - Starting Servlet engine: [Apache Tomcat/9.0.50]
+16:20:35.836 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring embedded WebApplicationContext
+16:20:35.934 [main] INFO  org.apache.catalina.core.StandardContext  - Suspicious URL pattern: [/**] in context [/quartz], see sections 12.1 and 12.2 of the Servlet specification
+16:20:35.934 [main] INFO  org.apache.catalina.core.StandardContext  - Suspicious URL pattern: [/**] in context [/quartz], see sections 12.1 and 12.2 of the Servlet specification
+16:20:37.202 [main] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} inited
+16:20:38.237 [main] INFO  org.activiti.engine.compatibility.DefaultActiviti5CompatibilityHandlerFactory  - Activiti 5 compatibility handler implementation not found or error during instantiation : org.activiti.compatibility.DefaultActiviti5CompatibilityHandler. Activiti 5 backwards compatibility disabled.
+16:20:38.374 [main] INFO  org.activiti.engine.impl.ProcessEngineImpl  - ProcessEngine default created
+16:20:38.892 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-9001"]
+16:20:39.210 [main] INFO  com.csx.main.MainApplication  - Started MainApplication in 13.035 seconds (JVM running for 15.891)
+16:20:39.281 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-12-03 16:20:39]服务已启动 , 开始初始化... ------------------------------
+16:20:39.283 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] JdbcUtils 初始化完成！
+16:20:39.284 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] ToolUtils 初始化完成！
+16:20:39.299 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] Cache缓存 初始化完成！
+16:20:39.300 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-12-03 16:20:39]服务已启动 , 初始化完成！   ------------------------------
+16:20:39.300 [main] INFO  com.csx.main.ApplicationRunner  - 总共用时：84 毫秒
+16:22:26.827 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closing ...
+16:22:26.830 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closed
+16:22:36.980 [main] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 22480 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
+16:22:36.992 [main] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
+16:22:45.611 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-9001"]
+16:22:45.612 [main] INFO  org.apache.catalina.core.StandardService  - Starting service [Tomcat]
+16:22:45.612 [main] INFO  org.apache.catalina.core.StandardEngine  - Starting Servlet engine: [Apache Tomcat/9.0.50]
+16:22:45.750 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring embedded WebApplicationContext
+16:22:45.851 [main] INFO  org.apache.catalina.core.StandardContext  - Suspicious URL pattern: [/**] in context [/quartz], see sections 12.1 and 12.2 of the Servlet specification
+16:22:45.852 [main] INFO  org.apache.catalina.core.StandardContext  - Suspicious URL pattern: [/**] in context [/quartz], see sections 12.1 and 12.2 of the Servlet specification
+16:22:47.129 [main] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} inited
+16:22:48.155 [main] INFO  org.activiti.engine.compatibility.DefaultActiviti5CompatibilityHandlerFactory  - Activiti 5 compatibility handler implementation not found or error during instantiation : org.activiti.compatibility.DefaultActiviti5CompatibilityHandler. Activiti 5 backwards compatibility disabled.
+16:22:48.285 [main] INFO  org.activiti.engine.impl.ProcessEngineImpl  - ProcessEngine default created
+16:22:48.778 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-9001"]
+16:22:49.120 [main] INFO  com.csx.main.MainApplication  - Started MainApplication in 12.964 seconds (JVM running for 15.735)
+16:22:49.179 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-12-03 16:22:49]服务已启动 , 开始初始化... ------------------------------
+16:22:49.189 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] JdbcUtils 初始化完成！
+16:22:49.191 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] ToolUtils 初始化完成！
+16:22:49.264 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] Cache缓存 初始化完成！
+16:22:49.264 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-12-03 16:22:49]服务已启动 , 初始化完成！   ------------------------------
+16:22:49.264 [main] INFO  com.csx.main.ApplicationRunner  - 总共用时：139 毫秒
+16:23:40.826 [http-nio-9001-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:23:40.898 [http-nio-9001-exec-2] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:40.912 [http-nio-9001-exec-1] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:40.919 [http-nio-9001-exec-3] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:40.923 [http-nio-9001-exec-4] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:40.929 [http-nio-9001-exec-5] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:40.934 [http-nio-9001-exec-6] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:40.938 [http-nio-9001-exec-7] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:40.942 [http-nio-9001-exec-8] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:40.946 [http-nio-9001-exec-9] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:40.952 [http-nio-9001-exec-10] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:40.956 [http-nio-9001-exec-2] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:40.961 [http-nio-9001-exec-1] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:40.965 [http-nio-9001-exec-3] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:40.970 [http-nio-9001-exec-4] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:40.974 [http-nio-9001-exec-5] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:40.980 [http-nio-9001-exec-6] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:40.986 [http-nio-9001-exec-7] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:40.989 [http-nio-9001-exec-8] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:40.994 [http-nio-9001-exec-9] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:40.998 [http-nio-9001-exec-10] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:42.077 [http-nio-9001-exec-2] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:42.084 [http-nio-9001-exec-1] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:42.088 [http-nio-9001-exec-3] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:42.091 [http-nio-9001-exec-4] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:42.094 [http-nio-9001-exec-5] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:42.097 [http-nio-9001-exec-6] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:42.100 [http-nio-9001-exec-7] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:42.104 [http-nio-9001-exec-8] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:42.107 [http-nio-9001-exec-9] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:42.111 [http-nio-9001-exec-10] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:42.115 [http-nio-9001-exec-2] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:42.119 [http-nio-9001-exec-1] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:42.122 [http-nio-9001-exec-3] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:42.128 [http-nio-9001-exec-4] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:42.134 [http-nio-9001-exec-5] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:42.137 [http-nio-9001-exec-6] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:42.140 [http-nio-9001-exec-7] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:42.147 [http-nio-9001-exec-8] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:42.150 [http-nio-9001-exec-9] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:42.153 [http-nio-9001-exec-10] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:44.463 [http-nio-9001-exec-2] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:44.467 [http-nio-9001-exec-1] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:44.470 [http-nio-9001-exec-3] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:44.473 [http-nio-9001-exec-4] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:44.476 [http-nio-9001-exec-5] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:44.480 [http-nio-9001-exec-6] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:44.483 [http-nio-9001-exec-7] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:44.487 [http-nio-9001-exec-8] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:44.490 [http-nio-9001-exec-9] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:44.494 [http-nio-9001-exec-10] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:44.498 [http-nio-9001-exec-2] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:44.501 [http-nio-9001-exec-1] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:44.504 [http-nio-9001-exec-3] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:44.506 [http-nio-9001-exec-4] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:44.509 [http-nio-9001-exec-5] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:44.512 [http-nio-9001-exec-6] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:44.516 [http-nio-9001-exec-7] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:44.519 [http-nio-9001-exec-8] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:44.522 [http-nio-9001-exec-9] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:44.525 [http-nio-9001-exec-10] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:45.390 [http-nio-9001-exec-2] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:45.393 [http-nio-9001-exec-1] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:45.396 [http-nio-9001-exec-3] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:45.400 [http-nio-9001-exec-4] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:45.403 [http-nio-9001-exec-5] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:45.406 [http-nio-9001-exec-6] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:45.409 [http-nio-9001-exec-7] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:45.412 [http-nio-9001-exec-8] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:45.414 [http-nio-9001-exec-9] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:45.417 [http-nio-9001-exec-10] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:45.421 [http-nio-9001-exec-2] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:45.424 [http-nio-9001-exec-1] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:45.427 [http-nio-9001-exec-3] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:45.430 [http-nio-9001-exec-4] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:45.433 [http-nio-9001-exec-5] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:45.438 [http-nio-9001-exec-6] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:45.441 [http-nio-9001-exec-7] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:45.444 [http-nio-9001-exec-8] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:45.447 [http-nio-9001-exec-9] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:45.450 [http-nio-9001-exec-10] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:50.491 [http-nio-9001-exec-2] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:50.501 [http-nio-9001-exec-1] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:50.505 [http-nio-9001-exec-3] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:50.509 [http-nio-9001-exec-4] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:50.515 [http-nio-9001-exec-5] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:50.521 [http-nio-9001-exec-6] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:50.527 [http-nio-9001-exec-7] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:50.530 [http-nio-9001-exec-8] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:50.533 [http-nio-9001-exec-9] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:50.536 [http-nio-9001-exec-10] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:50.539 [http-nio-9001-exec-2] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:50.543 [http-nio-9001-exec-1] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:50.547 [http-nio-9001-exec-3] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:50.549 [http-nio-9001-exec-4] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:50.552 [http-nio-9001-exec-5] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:50.556 [http-nio-9001-exec-6] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:50.564 [http-nio-9001-exec-7] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:50.566 [http-nio-9001-exec-8] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:50.569 [http-nio-9001-exec-9] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:23:50.572 [http-nio-9001-exec-10] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:24:20.634 [http-nio-9001-exec-2] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:24:20.637 [http-nio-9001-exec-1] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:24:20.639 [http-nio-9001-exec-3] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:24:20.641 [http-nio-9001-exec-4] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:24:20.645 [http-nio-9001-exec-5] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:24:20.647 [http-nio-9001-exec-6] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:24:20.650 [http-nio-9001-exec-7] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:24:20.653 [http-nio-9001-exec-8] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:24:20.655 [http-nio-9001-exec-9] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:24:20.658 [http-nio-9001-exec-10] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:24:20.661 [http-nio-9001-exec-2] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:24:20.664 [http-nio-9001-exec-1] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:24:20.667 [http-nio-9001-exec-3] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:24:20.669 [http-nio-9001-exec-4] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:24:20.671 [http-nio-9001-exec-5] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:24:20.674 [http-nio-9001-exec-6] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:24:20.677 [http-nio-9001-exec-7] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:24:20.680 [http-nio-9001-exec-8] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:24:20.684 [http-nio-9001-exec-9] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:24:20.687 [http-nio-9001-exec-10] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:25:20.730 [http-nio-9001-exec-3] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:25:20.734 [http-nio-9001-exec-4] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:25:20.738 [http-nio-9001-exec-5] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:25:20.746 [http-nio-9001-exec-6] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:25:20.749 [http-nio-9001-exec-7] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:25:20.752 [http-nio-9001-exec-8] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:25:20.755 [http-nio-9001-exec-9] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:25:20.759 [http-nio-9001-exec-10] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:25:20.761 [http-nio-9001-exec-2] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:25:20.764 [http-nio-9001-exec-1] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:25:20.766 [http-nio-9001-exec-3] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:25:20.769 [http-nio-9001-exec-4] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:25:20.771 [http-nio-9001-exec-5] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:25:20.774 [http-nio-9001-exec-6] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:25:20.776 [http-nio-9001-exec-7] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:25:20.779 [http-nio-9001-exec-8] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:25:20.782 [http-nio-9001-exec-9] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:25:20.785 [http-nio-9001-exec-10] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:25:20.788 [http-nio-9001-exec-2] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:25:20.791 [http-nio-9001-exec-1] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:25:30.423 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 161300
+16:26:05.545 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closing ...
+16:26:05.548 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closed
+16:26:11.585 [main] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 7148 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
+16:26:11.598 [main] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
+16:26:20.194 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-9001"]
+16:26:20.195 [main] INFO  org.apache.catalina.core.StandardService  - Starting service [Tomcat]
+16:26:20.196 [main] INFO  org.apache.catalina.core.StandardEngine  - Starting Servlet engine: [Apache Tomcat/9.0.50]
+16:26:20.333 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring embedded WebApplicationContext
+16:26:20.438 [main] INFO  org.apache.catalina.core.StandardContext  - Suspicious URL pattern: [/**] in context [/quartz], see sections 12.1 and 12.2 of the Servlet specification
+16:26:20.438 [main] INFO  org.apache.catalina.core.StandardContext  - Suspicious URL pattern: [/**] in context [/quartz], see sections 12.1 and 12.2 of the Servlet specification
+16:26:21.723 [main] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} inited
+16:26:22.728 [main] INFO  org.activiti.engine.compatibility.DefaultActiviti5CompatibilityHandlerFactory  - Activiti 5 compatibility handler implementation not found or error during instantiation : org.activiti.compatibility.DefaultActiviti5CompatibilityHandler. Activiti 5 backwards compatibility disabled.
+16:26:22.858 [main] INFO  org.activiti.engine.impl.ProcessEngineImpl  - ProcessEngine default created
+16:26:23.330 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-9001"]
+16:26:23.629 [main] INFO  com.csx.main.MainApplication  - Started MainApplication in 12.869 seconds (JVM running for 15.472)
+16:26:23.692 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-12-03 16:26:23]服务已启动 , 开始初始化... ------------------------------
+16:26:23.701 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] JdbcUtils 初始化完成！
+16:26:23.702 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] ToolUtils 初始化完成！
+16:26:23.738 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] Cache缓存 初始化完成！
+16:26:23.738 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-12-03 16:26:23]服务已启动 , 初始化完成！   ------------------------------
+16:26:23.738 [main] INFO  com.csx.main.ApplicationRunner  - 总共用时：104 毫秒
+16:29:20.542 [http-nio-9001-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:29:59.905 [http-nio-9001-exec-3] WARN  com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor  - token不能为空，返回登录页！
+16:30:51.670 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closing ...
+16:30:51.673 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closed
+16:30:57.512 [main] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 10600 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
+16:30:57.523 [main] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
+16:31:07.144 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-9001"]
+16:31:07.145 [main] INFO  org.apache.catalina.core.StandardService  - Starting service [Tomcat]
+16:31:07.145 [main] INFO  org.apache.catalina.core.StandardEngine  - Starting Servlet engine: [Apache Tomcat/9.0.50]
+16:31:07.290 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring embedded WebApplicationContext
+16:31:07.390 [main] INFO  org.apache.catalina.core.StandardContext  - Suspicious URL pattern: [/**] in context [/quartz], see sections 12.1 and 12.2 of the Servlet specification
+16:31:07.392 [main] INFO  org.apache.catalina.core.StandardContext  - Suspicious URL pattern: [/**] in context [/quartz], see sections 12.1 and 12.2 of the Servlet specification
+16:31:08.705 [main] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} inited
+16:31:09.735 [main] INFO  org.activiti.engine.compatibility.DefaultActiviti5CompatibilityHandlerFactory  - Activiti 5 compatibility handler implementation not found or error during instantiation : org.activiti.compatibility.DefaultActiviti5CompatibilityHandler. Activiti 5 backwards compatibility disabled.
+16:31:09.882 [main] INFO  org.activiti.engine.impl.ProcessEngineImpl  - ProcessEngine default created
+16:31:10.401 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-9001"]
+16:31:10.697 [main] INFO  com.csx.main.MainApplication  - Started MainApplication in 14.497 seconds (JVM running for 18.034)
+16:31:10.752 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-12-03 16:31:10]服务已启动 , 开始初始化... ------------------------------
+16:31:10.766 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] JdbcUtils 初始化完成！
+16:31:10.767 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] ToolUtils 初始化完成！
+16:31:10.807 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] Cache缓存 初始化完成！
+16:31:10.807 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-12-03 16:31:10]服务已启动 , 初始化完成！   ------------------------------
+16:31:10.807 [main] INFO  com.csx.main.ApplicationRunner  - 总共用时：105 毫秒
+16:31:26.786 [http-nio-9001-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:31:47.977 [http-nio-9001-exec-5] WARN  org.apache.shiro.authc.AbstractAuthenticator  - Authentication failed for token submission [org.apache.shiro.authc.UsernamePasswordToken - admin, rememberMe=false].  Possible unexpected error? (Typical or expected login exceptions should extend from AuthenticationException).
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'salt' in 'field list'
+### The error may exist in com/csx/common/mapper/SysUserMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT user_id,user_enname,user_chname,user_password,user_sex,user_birthdate,user_tel,user_email,user_addr,user_is_first,user_login_time,user_error_num,user_is_lock,user_is_onlion,salt,comm_cdate,comm_udate,comm_cuser,comm_uuser,comm_delfalg,comm_v1,comm_v2,comm_v3,comm_v4,comm_v5 FROM sys_user_info WHERE user_id=?
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'salt' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'salt' in 'field list'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:239) ~[spring-jdbc-5.3.9.jar:5.3.9]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70) ~[spring-jdbc-5.3.9.jar:5.3.9]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:88) ~[mybatis-spring-2.0.4.jar:2.0.4]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440) ~[mybatis-spring-2.0.4.jar:2.0.4]
+	at com.sun.proxy.$Proxy91.selectOne(Unknown Source) ~[?:?]
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:159) ~[mybatis-spring-2.0.4.jar:2.0.4]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:108) ~[mybatis-plus-core-3.3.2.jar:3.3.2]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:96) ~[mybatis-plus-core-3.3.2.jar:3.3.2]
+	at com.sun.proxy.$Proxy92.selectById(Unknown Source) ~[?:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_251]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.9.jar:5.3.9]
+	at com.sun.proxy.$Proxy93.selectById(Unknown Source) ~[?:?]
+	at com.csx.common.auth.AuthRealm.doGetAuthenticationInfo(AuthRealm.java:50) ~[classes/:?]
+	at org.apache.shiro.realm.AuthenticatingRealm.getAuthenticationInfo(AuthenticatingRealm.java:571) ~[shiro-core-1.7.1.jar:1.7.1]
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doSingleRealmAuthentication(ModularRealmAuthenticator.java:180) ~[shiro-core-1.7.1.jar:1.7.1]
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doAuthenticate(ModularRealmAuthenticator.java:273) ~[shiro-core-1.7.1.jar:1.7.1]
+	at org.apache.shiro.authc.AbstractAuthenticator.authenticate(AbstractAuthenticator.java:198) [shiro-core-1.7.1.jar:1.7.1]
+	at org.apache.shiro.mgt.AuthenticatingSecurityManager.authenticate(AuthenticatingSecurityManager.java:106) [shiro-core-1.7.1.jar:1.7.1]
+	at org.apache.shiro.mgt.DefaultSecurityManager.login(DefaultSecurityManager.java:275) [shiro-core-1.7.1.jar:1.7.1]
+	at org.apache.shiro.subject.support.DelegatingSubject.login(DelegatingSubject.java:260) [shiro-core-1.7.1.jar:1.7.1]
+	at com.csx.common.service.LoginService.login(LoginService.java:57) [classes/:?]
+	at com.csx.common.controller.LoginController.login(LoginController.java:33) [classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_251]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) [spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) [spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) [spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) [spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) [spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) [spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1064) [spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) [spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) [spring-webmvc-5.3.9.jar:5.3.9]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [tomcat-embed-core-9.0.50.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.3.9.jar:5.3.9]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [tomcat-embed-core-9.0.50.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:228) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61) [shiro-web-1.7.1.jar:1.7.1]
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108) [shiro-web-1.7.1.jar:1.7.1]
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137) [shiro-web-1.7.1.jar:1.7.1]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) [shiro-web-1.7.1.jar:1.7.1]
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66) [shiro-web-1.7.1.jar:1.7.1]
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108) [shiro-web-1.7.1.jar:1.7.1]
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137) [shiro-web-1.7.1.jar:1.7.1]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) [shiro-web-1.7.1.jar:1.7.1]
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66) [shiro-web-1.7.1.jar:1.7.1]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:450) [shiro-web-1.7.1.jar:1.7.1]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365) [shiro-web-1.7.1.jar:1.7.1]
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90) [shiro-core-1.7.1.jar:1.7.1]
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83) [shiro-core-1.7.1.jar:1.7.1]
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387) [shiro-core-1.7.1.jar:1.7.1]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362) [shiro-web-1.7.1.jar:1.7.1]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) [shiro-web-1.7.1.jar:1.7.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.9.jar:5.3.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.9.jar:5.3.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.9.jar:5.3.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1723) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_251]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_251]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_251]
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'salt' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:497) ~[druid-1.2.4.jar:1.2.4]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_251]
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59) ~[mybatis-3.5.4.jar:3.5.4]
+	at com.sun.proxy.$Proxy117.execute(Unknown Source) ~[?:?]
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64) ~[mybatis-3.5.4.jar:3.5.4]
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79) ~[mybatis-3.5.4.jar:3.5.4]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_251]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63) ~[mybatis-3.5.4.jar:3.5.4]
+	at com.sun.proxy.$Proxy121.query(Unknown Source) ~[?:?]
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doQuery(MybatisSimpleExecutor.java:67) ~[mybatis-plus-core-3.3.2.jar:3.3.2]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324) ~[mybatis-3.5.4.jar:3.5.4]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) ~[mybatis-3.5.4.jar:3.5.4]
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.query(MybatisCachingExecutor.java:163) ~[mybatis-plus-core-3.3.2.jar:3.3.2]
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.query(MybatisCachingExecutor.java:90) ~[mybatis-plus-core-3.3.2.jar:3.3.2]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147) ~[mybatis-3.5.4.jar:3.5.4]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140) ~[mybatis-3.5.4.jar:3.5.4]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76) ~[mybatis-3.5.4.jar:3.5.4]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_251]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426) ~[mybatis-spring-2.0.4.jar:2.0.4]
+	... 94 more
+16:31:47.988 [http-nio-9001-exec-5] ERROR com.csx.main.plugin.owner.handle.GlobalExceptionHandler  - 其他异常！原因是：｛Authentication failed for token submission [org.apache.shiro.authc.UsernamePasswordToken - admin, rememberMe=false].  Possible unexpected error? (Typical or expected login exceptions should extend from AuthenticationException).｝
+org.apache.shiro.authc.AuthenticationException: Authentication failed for token submission [org.apache.shiro.authc.UsernamePasswordToken - admin, rememberMe=false].  Possible unexpected error? (Typical or expected login exceptions should extend from AuthenticationException).
+	at org.apache.shiro.authc.AbstractAuthenticator.authenticate(AbstractAuthenticator.java:214) ~[shiro-core-1.7.1.jar:1.7.1]
+	at org.apache.shiro.mgt.AuthenticatingSecurityManager.authenticate(AuthenticatingSecurityManager.java:106) ~[shiro-core-1.7.1.jar:1.7.1]
+	at org.apache.shiro.mgt.DefaultSecurityManager.login(DefaultSecurityManager.java:275) ~[shiro-core-1.7.1.jar:1.7.1]
+	at org.apache.shiro.subject.support.DelegatingSubject.login(DelegatingSubject.java:260) ~[shiro-core-1.7.1.jar:1.7.1]
+	at com.csx.common.service.LoginService.login(LoginService.java:57) ~[classes/:?]
+	at com.csx.common.controller.LoginController.login(LoginController.java:33) ~[classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_251]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1064) [spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) [spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) [spring-webmvc-5.3.9.jar:5.3.9]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [tomcat-embed-core-9.0.50.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.3.9.jar:5.3.9]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [tomcat-embed-core-9.0.50.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:228) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61) [shiro-web-1.7.1.jar:1.7.1]
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108) [shiro-web-1.7.1.jar:1.7.1]
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137) [shiro-web-1.7.1.jar:1.7.1]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) [shiro-web-1.7.1.jar:1.7.1]
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66) [shiro-web-1.7.1.jar:1.7.1]
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108) [shiro-web-1.7.1.jar:1.7.1]
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137) [shiro-web-1.7.1.jar:1.7.1]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) [shiro-web-1.7.1.jar:1.7.1]
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66) [shiro-web-1.7.1.jar:1.7.1]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:450) [shiro-web-1.7.1.jar:1.7.1]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365) [shiro-web-1.7.1.jar:1.7.1]
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90) [shiro-core-1.7.1.jar:1.7.1]
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83) [shiro-core-1.7.1.jar:1.7.1]
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387) [shiro-core-1.7.1.jar:1.7.1]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362) [shiro-web-1.7.1.jar:1.7.1]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) [shiro-web-1.7.1.jar:1.7.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.9.jar:5.3.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.9.jar:5.3.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.9.jar:5.3.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1723) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_251]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_251]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_251]
+Caused by: org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'salt' in 'field list'
+### The error may exist in com/csx/common/mapper/SysUserMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT user_id,user_enname,user_chname,user_password,user_sex,user_birthdate,user_tel,user_email,user_addr,user_is_first,user_login_time,user_error_num,user_is_lock,user_is_onlion,salt,comm_cdate,comm_udate,comm_cuser,comm_uuser,comm_delfalg,comm_v1,comm_v2,comm_v3,comm_v4,comm_v5 FROM sys_user_info WHERE user_id=?
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'salt' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'salt' in 'field list'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:239) ~[spring-jdbc-5.3.9.jar:5.3.9]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70) ~[spring-jdbc-5.3.9.jar:5.3.9]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:88) ~[mybatis-spring-2.0.4.jar:2.0.4]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440) ~[mybatis-spring-2.0.4.jar:2.0.4]
+	at com.sun.proxy.$Proxy91.selectOne(Unknown Source) ~[?:?]
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:159) ~[mybatis-spring-2.0.4.jar:2.0.4]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:108) ~[mybatis-plus-core-3.3.2.jar:3.3.2]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:96) ~[mybatis-plus-core-3.3.2.jar:3.3.2]
+	at com.sun.proxy.$Proxy92.selectById(Unknown Source) ~[?:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_251]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.9.jar:5.3.9]
+	at com.sun.proxy.$Proxy93.selectById(Unknown Source) ~[?:?]
+	at com.csx.common.auth.AuthRealm.doGetAuthenticationInfo(AuthRealm.java:50) ~[classes/:?]
+	at org.apache.shiro.realm.AuthenticatingRealm.getAuthenticationInfo(AuthenticatingRealm.java:571) ~[shiro-core-1.7.1.jar:1.7.1]
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doSingleRealmAuthentication(ModularRealmAuthenticator.java:180) ~[shiro-core-1.7.1.jar:1.7.1]
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doAuthenticate(ModularRealmAuthenticator.java:273) ~[shiro-core-1.7.1.jar:1.7.1]
+	at org.apache.shiro.authc.AbstractAuthenticator.authenticate(AbstractAuthenticator.java:198) ~[shiro-core-1.7.1.jar:1.7.1]
+	... 73 more
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'salt' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:497) ~[druid-1.2.4.jar:1.2.4]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_251]
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59) ~[mybatis-3.5.4.jar:3.5.4]
+	at com.sun.proxy.$Proxy117.execute(Unknown Source) ~[?:?]
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64) ~[mybatis-3.5.4.jar:3.5.4]
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79) ~[mybatis-3.5.4.jar:3.5.4]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_251]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63) ~[mybatis-3.5.4.jar:3.5.4]
+	at com.sun.proxy.$Proxy121.query(Unknown Source) ~[?:?]
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doQuery(MybatisSimpleExecutor.java:67) ~[mybatis-plus-core-3.3.2.jar:3.3.2]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324) ~[mybatis-3.5.4.jar:3.5.4]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) ~[mybatis-3.5.4.jar:3.5.4]
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.query(MybatisCachingExecutor.java:163) ~[mybatis-plus-core-3.3.2.jar:3.3.2]
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.query(MybatisCachingExecutor.java:90) ~[mybatis-plus-core-3.3.2.jar:3.3.2]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147) ~[mybatis-3.5.4.jar:3.5.4]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140) ~[mybatis-3.5.4.jar:3.5.4]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76) ~[mybatis-3.5.4.jar:3.5.4]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_251]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426) ~[mybatis-spring-2.0.4.jar:2.0.4]
+	at com.sun.proxy.$Proxy91.selectOne(Unknown Source) ~[?:?]
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:159) ~[mybatis-spring-2.0.4.jar:2.0.4]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:108) ~[mybatis-plus-core-3.3.2.jar:3.3.2]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:96) ~[mybatis-plus-core-3.3.2.jar:3.3.2]
+	at com.sun.proxy.$Proxy92.selectById(Unknown Source) ~[?:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_251]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.9.jar:5.3.9]
+	at com.sun.proxy.$Proxy93.selectById(Unknown Source) ~[?:?]
+	at com.csx.common.auth.AuthRealm.doGetAuthenticationInfo(AuthRealm.java:50) ~[classes/:?]
+	at org.apache.shiro.realm.AuthenticatingRealm.getAuthenticationInfo(AuthenticatingRealm.java:571) ~[shiro-core-1.7.1.jar:1.7.1]
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doSingleRealmAuthentication(ModularRealmAuthenticator.java:180) ~[shiro-core-1.7.1.jar:1.7.1]
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doAuthenticate(ModularRealmAuthenticator.java:273) ~[shiro-core-1.7.1.jar:1.7.1]
+	at org.apache.shiro.authc.AbstractAuthenticator.authenticate(AbstractAuthenticator.java:198) ~[shiro-core-1.7.1.jar:1.7.1]
+	... 73 more
+16:35:31.189 [QuartzScheduler_quartzScheduler-Administrator1638520270215_ClusterManager] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 260476
+16:35:49.947 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closing ...
+16:35:49.950 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closed
+16:36:00.412 [main] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 12352 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
+16:36:00.425 [main] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
+16:36:09.061 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-9001"]
+16:36:09.062 [main] INFO  org.apache.catalina.core.StandardService  - Starting service [Tomcat]
+16:36:09.062 [main] INFO  org.apache.catalina.core.StandardEngine  - Starting Servlet engine: [Apache Tomcat/9.0.50]
+16:36:09.197 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring embedded WebApplicationContext
+16:36:09.294 [main] INFO  org.apache.catalina.core.StandardContext  - Suspicious URL pattern: [/**] in context [/quartz], see sections 12.1 and 12.2 of the Servlet specification
+16:36:09.294 [main] INFO  org.apache.catalina.core.StandardContext  - Suspicious URL pattern: [/**] in context [/quartz], see sections 12.1 and 12.2 of the Servlet specification
+16:36:10.584 [main] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} inited
+16:36:11.667 [main] INFO  org.activiti.engine.compatibility.DefaultActiviti5CompatibilityHandlerFactory  - Activiti 5 compatibility handler implementation not found or error during instantiation : org.activiti.compatibility.DefaultActiviti5CompatibilityHandler. Activiti 5 backwards compatibility disabled.
+16:36:11.802 [main] INFO  org.activiti.engine.impl.ProcessEngineImpl  - ProcessEngine default created
+16:36:12.291 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-9001"]
+16:36:12.385 [main] INFO  com.csx.main.MainApplication  - Started MainApplication in 12.833 seconds (JVM running for 15.632)
+16:36:12.441 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-12-03 16:36:12]服务已启动 , 开始初始化... ------------------------------
+16:36:12.451 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] JdbcUtils 初始化完成！
+16:36:12.452 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] ToolUtils 初始化完成！
+16:36:12.494 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] Cache缓存 初始化完成！
+16:36:12.494 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-12-03 16:36:12]服务已启动 , 初始化完成！   ------------------------------
+16:36:12.494 [main] INFO  com.csx.main.ApplicationRunner  - 总共用时：105 毫秒
+16:36:19.621 [http-nio-9001-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:37:55.378 [http-nio-9001-exec-7] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_PWDOVER]不存在，取自定义默认值：365
+16:37:55.383 [http-nio-9001-exec-7] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_ISMULTI]不存在，取自定义默认值：
+16:41:16.508 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closing ...
+16:41:16.512 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closed
+16:41:30.447 [main] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 14840 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
+16:41:30.457 [main] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
+16:41:39.974 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-9001"]
+16:41:39.975 [main] INFO  org.apache.catalina.core.StandardService  - Starting service [Tomcat]
+16:41:39.975 [main] INFO  org.apache.catalina.core.StandardEngine  - Starting Servlet engine: [Apache Tomcat/9.0.50]
+16:41:40.136 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring embedded WebApplicationContext
+16:41:40.264 [main] INFO  org.apache.catalina.core.StandardContext  - Suspicious URL pattern: [/**] in context [/quartz], see sections 12.1 and 12.2 of the Servlet specification
+16:41:40.265 [main] INFO  org.apache.catalina.core.StandardContext  - Suspicious URL pattern: [/**] in context [/quartz], see sections 12.1 and 12.2 of the Servlet specification
+16:41:41.467 [main] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} inited
+16:41:42.454 [main] INFO  org.activiti.engine.compatibility.DefaultActiviti5CompatibilityHandlerFactory  - Activiti 5 compatibility handler implementation not found or error during instantiation : org.activiti.compatibility.DefaultActiviti5CompatibilityHandler. Activiti 5 backwards compatibility disabled.
+16:41:42.586 [main] INFO  org.activiti.engine.impl.ProcessEngineImpl  - ProcessEngine default created
+16:41:43.088 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-9001"]
+16:41:43.482 [main] INFO  com.csx.main.MainApplication  - Started MainApplication in 13.848 seconds (JVM running for 16.746)
+16:41:43.552 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-12-03 16:41:43]服务已启动 , 开始初始化... ------------------------------
+16:41:43.564 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] JdbcUtils 初始化完成！
+16:41:43.566 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] ToolUtils 初始化完成！
+16:41:43.607 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] Cache缓存 初始化完成！
+16:41:43.608 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-12-03 16:41:43]服务已启动 , 初始化完成！   ------------------------------
+16:41:43.608 [main] INFO  com.csx.main.ApplicationRunner  - 总共用时：119 毫秒
+16:42:04.784 [http-nio-9001-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:43:29.548 [http-nio-9001-exec-7] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_PWDOVER]不存在，取自定义默认值：365
+16:43:29.553 [http-nio-9001-exec-7] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_ISMULTI]不存在，取自定义默认值：Y
+16:43:29.609 [QuartzScheduler_quartzScheduler-Administrator1638520902886_ClusterManager] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 106119
+16:45:41.194 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closing ...
+16:45:41.199 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closed
+16:45:47.241 [main] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 17936 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
+16:45:47.254 [main] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
+16:45:57.040 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-9001"]
+16:45:57.041 [main] INFO  org.apache.catalina.core.StandardService  - Starting service [Tomcat]
+16:45:57.041 [main] INFO  org.apache.catalina.core.StandardEngine  - Starting Servlet engine: [Apache Tomcat/9.0.50]
+16:45:57.189 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring embedded WebApplicationContext
+16:45:57.291 [main] INFO  org.apache.catalina.core.StandardContext  - Suspicious URL pattern: [/**] in context [/quartz], see sections 12.1 and 12.2 of the Servlet specification
+16:45:57.291 [main] INFO  org.apache.catalina.core.StandardContext  - Suspicious URL pattern: [/**] in context [/quartz], see sections 12.1 and 12.2 of the Servlet specification
+16:45:58.618 [main] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} inited
+18:00:57.380 [main] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 3632 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
+18:00:57.488 [main] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
+18:01:18.561 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-9001"]
+18:01:18.561 [main] INFO  org.apache.catalina.core.StandardService  - Starting service [Tomcat]
+18:01:18.561 [main] INFO  org.apache.catalina.core.StandardEngine  - Starting Servlet engine: [Apache Tomcat/9.0.50]
+18:01:18.856 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring embedded WebApplicationContext
+18:01:19.011 [main] INFO  org.apache.catalina.core.StandardContext  - Suspicious URL pattern: [/**] in context [/quartz], see sections 12.1 and 12.2 of the Servlet specification
+18:01:19.011 [main] INFO  org.apache.catalina.core.StandardContext  - Suspicious URL pattern: [/**] in context [/quartz], see sections 12.1 and 12.2 of the Servlet specification
+18:01:20.143 [main] WARN  net.sf.ehcache.store.disk.DiskStorageFactory  - The index for data file C:\Users\cheng\AppData\Local\Temp\local%0043ache.data is out of date, probably due to an unclean shutdown. Deleting index file C:\Users\cheng\AppData\Local\Temp\local%0043ache.index
+18:01:21.692 [main] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} inited
+18:01:23.993 [main] INFO  org.activiti.engine.compatibility.DefaultActiviti5CompatibilityHandlerFactory  - Activiti 5 compatibility handler implementation not found or error during instantiation : org.activiti.compatibility.DefaultActiviti5CompatibilityHandler. Activiti 5 backwards compatibility disabled.
+18:01:24.240 [main] INFO  org.activiti.engine.impl.ProcessEngineImpl  - ProcessEngine default created
+18:01:25.345 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-9001"]
+18:01:25.771 [main] INFO  com.csx.main.MainApplication  - Started MainApplication in 31.653 seconds (JVM running for 37.178)
+18:01:25.840 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-12-03 18:01:25]服务已启动 , 开始初始化... ------------------------------
+18:01:25.865 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] JdbcUtils 初始化完成！
+18:01:25.868 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] ToolUtils 初始化完成！
+18:01:25.987 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] Cache缓存 初始化完成！
+18:01:25.987 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-12-03 18:01:25]服务已启动 , 初始化完成！   ------------------------------
+18:01:25.988 [main] INFO  com.csx.main.ApplicationRunner  - 总共用时：208 毫秒
+18:01:29.877 [http-nio-9001-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+18:06:25.507 [QuartzScheduler_quartzScheduler-Administrator1638525684902_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 300001
+18:07:53.584 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closing ...
+18:07:53.588 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closed
+18:08:07.797 [main] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 21364 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
+18:08:07.809 [main] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
+18:08:15.954 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-9001"]
+18:08:15.955 [main] INFO  org.apache.catalina.core.StandardService  - Starting service [Tomcat]
+18:08:15.955 [main] INFO  org.apache.catalina.core.StandardEngine  - Starting Servlet engine: [Apache Tomcat/9.0.50]
+18:08:16.094 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring embedded WebApplicationContext
+18:08:16.198 [main] INFO  org.apache.catalina.core.StandardContext  - Suspicious URL pattern: [/**] in context [/quartz], see sections 12.1 and 12.2 of the Servlet specification
+18:08:16.198 [main] INFO  org.apache.catalina.core.StandardContext  - Suspicious URL pattern: [/**] in context [/quartz], see sections 12.1 and 12.2 of the Servlet specification
+18:08:17.470 [main] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} inited
+18:08:18.516 [main] INFO  org.activiti.engine.compatibility.DefaultActiviti5CompatibilityHandlerFactory  - Activiti 5 compatibility handler implementation not found or error during instantiation : org.activiti.compatibility.DefaultActiviti5CompatibilityHandler. Activiti 5 backwards compatibility disabled.
+18:08:18.655 [main] INFO  org.activiti.engine.impl.ProcessEngineImpl  - ProcessEngine default created
+18:08:19.120 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-9001"]
+18:08:19.426 [main] INFO  com.csx.main.MainApplication  - Started MainApplication in 12.881 seconds (JVM running for 17.535)
+18:08:19.493 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-12-03 18:08:19]服务已启动 , 开始初始化... ------------------------------
+18:08:19.502 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] JdbcUtils 初始化完成！
+18:08:19.503 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] ToolUtils 初始化完成！
+18:08:19.543 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] Cache缓存 初始化完成！
+18:08:19.543 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-12-03 18:08:19]服务已启动 , 初始化完成！   ------------------------------
+18:08:19.543 [main] INFO  com.csx.main.ApplicationRunner  - 总共用时：112 毫秒
+18:09:07.671 [http-nio-9001-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+18:09:14.512 [http-nio-9001-exec-3] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_PWDOVER]不存在，取自定义默认值：365
+18:09:14.518 [http-nio-9001-exec-3] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_ISMULTI]不存在，取自定义默认值：Y
+18:09:38.396 [http-nio-9001-exec-6] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_PWDOVER]不存在，取自定义默认值：365
+18:09:38.396 [http-nio-9001-exec-6] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_ISMULTI]不存在，取自定义默认值：Y
+18:09:39.486 [QuartzScheduler_quartzScheduler-Administrator1638526098947_ClusterManager] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 80055
+18:13:58.947 [http-nio-9001-exec-1] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 259430
+18:13:58.960 [http-nio-9001-exec-1] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_PWDOVER]不存在，取自定义默认值：365
+18:13:58.960 [http-nio-9001-exec-1] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_ISMULTI]不存在，取自定义默认值：Y
+18:15:25.813 [http-nio-9001-exec-9] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_PWDOVER]不存在，取自定义默认值：365
+18:15:25.814 [http-nio-9001-exec-9] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_ISMULTI]不存在，取自定义默认值：Y
+18:15:27.005 [QuartzScheduler_quartzScheduler-Administrator1638526098947_ClusterManager] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 88028
+18:15:34.748 [http-nio-9001-exec-2] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_PWDOVER]不存在，取自定义默认值：365
+18:15:34.749 [http-nio-9001-exec-2] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_ISMULTI]不存在，取自定义默认值：Y
+18:15:35.507 [http-nio-9001-exec-7] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_PWDOVER]不存在，取自定义默认值：365
+18:15:35.508 [http-nio-9001-exec-7] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_ISMULTI]不存在，取自定义默认值：Y
+18:15:35.699 [http-nio-9001-exec-1] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_PWDOVER]不存在，取自定义默认值：365
+18:15:35.699 [http-nio-9001-exec-1] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_ISMULTI]不存在，取自定义默认值：Y
+18:15:35.892 [http-nio-9001-exec-4] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_PWDOVER]不存在，取自定义默认值：365
+18:15:35.893 [http-nio-9001-exec-4] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_ISMULTI]不存在，取自定义默认值：Y
+18:17:52.399 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 136476
+18:18:16.510 [http-nio-9001-exec-7] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_PWDOVER]不存在，取自定义默认值：365
+18:18:16.510 [http-nio-9001-exec-7] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_ISMULTI]不存在，取自定义默认值：Y
+18:18:34.465 [http-nio-9001-exec-1] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_PWDOVER]不存在，取自定义默认值：365
+18:18:34.465 [http-nio-9001-exec-1] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_ISMULTI]不存在，取自定义默认值：Y
+18:27:19.398 [QuartzScheduler_quartzScheduler-Administrator1638526098947_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 539990
+18:34:36.301 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 436895

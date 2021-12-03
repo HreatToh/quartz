@@ -5,28 +5,49 @@ import com.csx.common.enums.EvmentEnum;
 import com.csx.common.utils.ToolUtils;
 import lombok.extern.slf4j.Slf4j;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 @Slf4j
-public class AppCofig {
+public final class AppCofig {
 
     /**
      * 系统主配置
      */
-    private static final ThreadLocal<Map<String , SysConfig>> sysConfig = new ThreadLocal<Map<String , SysConfig>>();
+    private static Map<String , SysConfig> sysConfig = new HashMap<String , SysConfig>();
 
     /**
      * 子系统配置
      */
-    private static final ThreadLocal<Map<String , SysConfig>> sysSubConfig = new ThreadLocal<Map<String , SysConfig>>();
+    private static Map<String , SysConfig> sysSubConfig = new HashMap<String , SysConfig>();
 
     /**
      * 环境信息
      */
     public static EvmentEnum evmentEnum;
+
+    private AppCofig(){ }
+    /**
+     * @method  init
+     * @params  List<SysConfig> sysConfigs , List<SysConfig> sysSubConfigs
+     * @return  
+     * @desc    初始化系统配置
+     **/
+    public static void init( List<SysConfig> sysConfigs , List<SysConfig> sysSubConfigs ){
+        Map<String , SysConfig> sysConfigMap = new HashMap<String , SysConfig>();
+        Map<String , SysConfig> sysSubConfigMap = new HashMap<String , SysConfig>();
+        for (int i = 0; i < sysConfigs.size() ; i++) {
+            sysConfigMap.put(sysConfigs.get(i).getItemId() , sysConfigs.get(i));
+        }
+        for (int i = 0; i < sysSubConfigs.size() ; i++) {
+            sysSubConfigMap.put(sysSubConfigs.get(i).getSysId() + "." + sysSubConfigs.get(i).getItemId() , sysSubConfigs.get(i));
+        }
+        sysConfig.putAll(sysConfigMap);
+        sysSubConfig.putAll(sysSubConfigMap);
+    }
     /**
      * @method  getSysConfigList
      * @params  []
@@ -35,7 +56,7 @@ public class AppCofig {
      **/
     public static List<SysConfig> getSysConfigList(){
         List<SysConfig> lists = new ArrayList<SysConfig>();
-        Map<String, SysConfig> map = sysConfig.get();
+        Map<String, SysConfig> map = sysConfig;
 
         if (ToolUtils.isNull(map)){
             log.warn("系统配置集合为：[]");
@@ -55,7 +76,7 @@ public class AppCofig {
      **/
     public static Map<String , String> getSysConfigMap(){
         Map<String , String > configs = new HashMap<String , String >();
-        Map<String, SysConfig> map = sysConfig.get();
+        Map<String, SysConfig> map = sysConfig;
 
         if (ToolUtils.isNull(map)){
             log.warn("系统配置集合为：[]");
@@ -80,6 +101,7 @@ public class AppCofig {
         return getSysConfig(itemId , "");
     }
 
+
     /**
      * @method  getSysConfig
      * @params  itemId
@@ -88,7 +110,7 @@ public class AppCofig {
      **/
     public static String getSysConfig(String itemId , String itemDefVal){
         String value = "";
-        Map<String, SysConfig> configMap = sysConfig.get();
+        Map<String, SysConfig> configMap = sysConfig;
         if (ToolUtils.isNull(configMap) || ToolUtils.isNull(configMap.get(itemId))){
             value = ToolUtils.nvl( itemDefVal , "");
             log.warn(ToolUtils.format("配置项[{}]不存在，取自定义默认值：{}" , itemId , value));
@@ -104,6 +126,35 @@ public class AppCofig {
         }
         return value;
     }
+    /**
+     * @method  getSysConfig
+     * @params  itemId
+     * @return  Boolean
+     * @desc    返回系统配置信息
+     **/
+    public static Boolean getSysConfig(String itemId , Boolean itemDefVal){
+        return ToolUtils.nvl(getSysConfig(itemId , String.valueOf(itemDefVal)) , itemDefVal);
+    }
+
+    /**
+     * @method  getSysConfig
+     * @params  itemId
+     * @return  Boolean
+     * @desc    返回系统配置信息
+     **/
+    public static Integer getSysConfig(String itemId , Integer itemDefVal){
+        return ToolUtils.nvl(getSysConfig(itemId , String.valueOf(itemDefVal)) , itemDefVal);
+    }
+
+    /**
+     * @method  getSysConfig
+     * @params  itemId
+     * @return  Boolean
+     * @desc    返回系统配置信息
+     **/
+    public static BigDecimal getSysConfig(String itemId , BigDecimal itemDefVal){
+        return ToolUtils.nvl(getSysConfig(itemId , String.valueOf(itemDefVal)) , itemDefVal);
+    }
 
     /**
      * @method  getSysSubConfigList
@@ -113,7 +164,7 @@ public class AppCofig {
      **/
     public static List<SysConfig> getSysSubConfigList(String sysId){
         List<SysConfig> list = new ArrayList<SysConfig>();
-        Map<String , SysConfig> configMap = sysSubConfig.get();
+        Map<String , SysConfig> configMap = sysSubConfig;
         if ( ToolUtils.isNull(configMap) ){
             log.warn("子系统配置集合为：[]");
             return list;
@@ -146,7 +197,7 @@ public class AppCofig {
      **/
     public static Map< String , String > getSysSubConfigMap(String sysId){
         Map<String,String> configs = new HashMap<String , String>();
-        Map<String, SysConfig> map = sysSubConfig.get();
+        Map<String, SysConfig> map = sysSubConfig;
 
         if ( ToolUtils.isNull(map) ){
             log.warn("子系统配置集合为：[]");
@@ -194,7 +245,7 @@ public class AppCofig {
     public static String getSysSubConfig(String sysId , String itemId , String itemDefVal){
         String key = ToolUtils.format("{}.{}" , sysId , itemId );
         String value = "";
-        Map<String, SysConfig> configs = sysSubConfig.get();
+        Map<String, SysConfig> configs = sysSubConfig;
 
         if ( ToolUtils.isNull(configs) || ToolUtils.isNull(sysId) || ToolUtils.isNull(itemId) || ToolUtils.isNull(configs.get(key))){
             value = ToolUtils.nvl( itemDefVal , "");

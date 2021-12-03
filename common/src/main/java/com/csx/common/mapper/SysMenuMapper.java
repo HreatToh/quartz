@@ -1,4 +1,4 @@
-package com.csx.sysmm.mapper;
+package com.csx.common.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.csx.common.entity.SysMenu;

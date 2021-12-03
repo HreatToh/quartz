@@ -1,6 +1,6 @@
 package com.csx.common.enums;
 
-import com.csx.common.entity.QueryFormat;
+import com.csx.common.factory.QueryFormat;
 import com.csx.common.utils.ToolUtils;
 
 import java.util.regex.Pattern;

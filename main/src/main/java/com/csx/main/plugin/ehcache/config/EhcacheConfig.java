@@ -14,7 +14,6 @@ import org.springframework.core.io.ClassPathResource;
  * @create  2021/11/19 11:26
  * @desc    初始化缓存配置类
  **/
-@EnableCaching
 @Configuration
 public class EhcacheConfig {
     /** ehcache 配置文件路径    */

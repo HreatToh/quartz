@@ -7,17 +7,16 @@ import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheManager;
 import net.sf.ehcache.Element;
 import net.sf.ehcache.Status;
-import org.springframework.beans.factory.annotation.Value;
+
+import java.io.InputStream;
 
 @Slf4j
 public class CacheUtils {
 
     /** ehcache 缓存配置路径    */
-    @Value("${spring.cache.ehcache.config}")
-    private static String EHCACHE_CONF_PATH;
+    public static String EHCACHE_CONF_PATH;
     /** ehcache 本地缓存名称    */
-    @Value("${spring.cache.ehcache.localname}")
-    private static String LOCAL_CACHE_NAME;
+    public static String LOCAL_CACHE_NAME;
 
     /** 缓存管理器    */
     private static CacheManager cacheManager;
@@ -40,13 +39,18 @@ public class CacheUtils {
      * @desc    初始化缓存管理器
      **/
     public static void initCacheManager(CacheManager manager){
-        if (ToolUtils.isNull(manager)){
-            cacheManager = CacheManager.create(CacheUtils.class.getResourceAsStream(EHCACHE_CONF_PATH));
-        } else {
-            cacheManager = manager ;
-        }
-        if (ToolUtils.isNotNull(cacheManager)) {
-            cache = cacheManager.getCache(LOCAL_CACHE_NAME);
+        try{
+            if (ToolUtils.isNull(manager)){
+                cacheManager = CacheManager.create();
+            } else {
+                cacheManager = manager ;
+            }
+            if (ToolUtils.isNotNull(cacheManager)) {
+                cache = cacheManager.getCache(LOCAL_CACHE_NAME);
+            }
+            cache.removeAll();
+        } catch (Exception e){
+            log.error(ToolUtils.format("初始化[{}]异常！" , cacheManager ) , e);
         }
     }
 
@@ -57,14 +61,13 @@ public class CacheUtils {
      * @return
      * @desc    把一个元素添加到Cache中
      **/
-    public void put(String key, Object value) {
+    public static void put(String key, Object value) {
         try {
-            initCacheManager();
             cache.put(new Element(key, value));
         } catch ( Exception e ){
             log.error(ToolUtils.format("key : {} , value : {} put发生异常！" , key , value) , e);
         } finally {
-            flushAndShutdown();
+            cache.flush();
         }
     }
 
@@ -74,16 +77,15 @@ public class CacheUtils {
      * @return  Object
      * @desc    获取缓存元素
      **/
-    public Object get(String key) {
+    public static Object get(String key) {
         Object o = null;
         try {
-            initCacheManager();
             Element ele = cache.get(key);// 根据Key获取缓存元素
             o = ToolUtils.isNotNull(ele) ? ele.getObjectValue() : null;
         } catch (Exception e){
             log.error(ToolUtils.format("key : {} , value : {} get发生异常！" , key , o ) , e);
         } finally {
-            flushAndShutdown();
+            cache.flush();
         }
         return o;
     }
@@ -94,21 +96,21 @@ public class CacheUtils {
      * @return  Object
      * @desc    获取缓存元素
      **/
-    public Object get(String key , CacheHandler handler ) {
+    public static Object get(String key , CacheHandler handler ) {
         Object o = null;
         try {
-            initCacheManager();
             Element ele = cache.get(key);// 根据Key获取缓存元素
             o = ToolUtils.isNotNull(ele) ? ele.getObjectValue() : null;
 
             if (ToolUtils.isNull( o ) && ToolUtils.isNotNull( handler )){
                 o = handler.handler();
                 cache.put(new Element(key, o));
+                log.debug(ToolUtils.format("缓存[{}]加载成功！" , key ));
             }
         } catch (Exception e){
             log.error(ToolUtils.format("key : {} , value : {} get发生异常！" , key , o ) , e);
         } finally {
-            flushAndShutdown();
+            cache.flush();
         }
         return o;
     }
@@ -118,14 +120,13 @@ public class CacheUtils {
      * @return  
      * @desc    删除缓存
      **/
-    public void remove(String key) {
+    public static void remove(String key) {
         try {
-            initCacheManager();
             cache.remove(key);//移除缓存
         } catch (Exception e){
             log.error(ToolUtils.format("key : {} , value : {} remove发生异常！" , key ) , e);
         } finally {
-            flushAndShutdown();
+            cache.flush();
         }
     }
 
@@ -136,14 +137,13 @@ public class CacheUtils {
      * @return  
      * @desc    移除所有缓存
      **/
-    public void removeAll() {
+    public static void removeAll() {
         try {
-            initCacheManager();
             cache.removeAll();//移除缓存
         } catch (Exception e){
             log.error(ToolUtils.format("key : {} , value : {} removeAll发生异常！" ) , e);
         } finally {
-            flushAndShutdown();
+            cache.flush();
         }
     }
 

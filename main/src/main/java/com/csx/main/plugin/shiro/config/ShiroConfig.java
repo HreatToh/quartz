@@ -1,10 +1,12 @@
 package com.csx.main.plugin.shiro.config;
 
-import com.csx.common.entity.AuthRealm;
+import com.csx.common.auth.AuthRealm;
+import com.csx.common.auth.CustomCredentialsMatcher;
+import com.csx.common.config.AppCofig;
+import com.csx.common.enums.EvmentEnum;
 import com.csx.common.utils.ToolUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
-import org.apache.shiro.crypto.hash.Sha256Hash;
 import org.apache.shiro.mgt.SessionsSecurityManager;
 import org.apache.shiro.spring.web.config.DefaultShiroFilterChainDefinition;
 import org.apache.shiro.spring.web.config.ShiroFilterChainDefinition;
@@ -12,9 +14,6 @@ import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import java.util.List;
-import java.util.Map;
 
 
 /**
@@ -27,9 +26,24 @@ import java.util.Map;
 public class ShiroConfig {
 
 
-    @Value("#{${shiro.pathdefinitions}}")
-    private Map<String , String > pathdefinitions;
-
+    /** 受限地址    */
+    @Value("${shiro.pathdefinitions.authc}")
+    private String[] authc;
+    /** 开放地址    */
+    @Value("${shiro.pathdefinitions.anon}")
+    private String[] anon;
+    /** 使用hex算法还是bas64 ： true：hex false：base64    */
+    @Value("${shiro.isStoredCredentialsHexEncoded}")
+    private Boolean isStoredCredentialsHexEncoded;
+    /** 散列迭代次数    */
+    @Value("${shiro.hashiterations}")
+    private Integer hashiterations;
+    /**  散列算法，SHA-256 : 使用sha256算法  MD5 : 使用MD5算法 MD2 : 使用MD2算法  .. SHA-1 SHA-384 SHA-512    */
+    @Value("${shiro.hashiterations}")
+    private String hashalgorithmname;
+    /** 环境    */
+    @Value("${spring.profiles.active}")
+    private String active;
     /**
      * @method  getHashedCredentialsMatcher
      * @params  
@@ -40,12 +54,26 @@ public class ShiroConfig {
     public HashedCredentialsMatcher getHashedCredentialsMatcher(){
         HashedCredentialsMatcher matcher = new HashedCredentialsMatcher();
         // 散列算法，使用sha256算法
-        matcher.setHashAlgorithmName(Sha256Hash.ALGORITHM_NAME);
+        matcher.setHashAlgorithmName(hashalgorithmname);
         // 数据库存储密码字段使用HEX还是BASE64方式加密
-        matcher.setStoredCredentialsHexEncoded(false);
+        matcher.setStoredCredentialsHexEncoded(isStoredCredentialsHexEncoded);
         // 散列迭代次数
-        matcher.setHashIterations(1024);
+        matcher.setHashIterations(hashiterations);
         return matcher;
+    }
+
+    /**
+     * @method  getCustomCredentialsMatcher
+     * @params  
+     * @return  CustomCredentialsMatcher
+     * @desc    设置用于自定义匹配密码的 CustomCredentialsMatcher
+     **/
+    @Bean
+    public CustomCredentialsMatcher getCustomCredentialsMatcher(){
+        CustomCredentialsMatcher customCredentialsMatcher = new CustomCredentialsMatcher(hashalgorithmname , isStoredCredentialsHexEncoded , hashiterations);
+        /** 设置环境信息    */
+        customCredentialsMatcher.setDev(ToolUtils.equalsIgnoreCase(EvmentEnum.DEV.key() , active));
+        return customCredentialsMatcher;
     }
 
     /**
@@ -70,7 +98,8 @@ public class ShiroConfig {
     public AuthRealm getAuthRealm(){
         AuthRealm authRealm = new AuthRealm();
         // 配置使用哈希密码匹配
-        authRealm.setCredentialsMatcher(getHashedCredentialsMatcher());
+//        authRealm.setCredentialsMatcher(getHashedCredentialsMatcher());
+        authRealm.setCredentialsMatcher(getCustomCredentialsMatcher());
         return authRealm;
     }
 
@@ -84,7 +113,13 @@ public class ShiroConfig {
     @Bean
     public ShiroFilterChainDefinition getShiroFilterChainDefinition(){
         DefaultShiroFilterChainDefinition chainDefinition = new DefaultShiroFilterChainDefinition();
-        chainDefinition.addPathDefinitions(pathdefinitions);
+        for (int i = 0; i < anon.length ; i++) {
+            chainDefinition.addPathDefinition(anon[i] , "anon");
+        }
+        for (int i = 0; i < authc.length ; i++) {
+            chainDefinition.addPathDefinition(authc[i] , "authc");
+        }
+
         return chainDefinition;
     }
 }

@@ -14,6 +14,11 @@
     <description>公共模块</description>
 
     <dependencies>
-
+        <!-- 引入 licence 许可证  -->
+        <dependency>
+            <groupId>com.csx</groupId>
+            <artifactId>licence</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
     </dependencies>
 </project>

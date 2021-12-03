@@ -2,34 +2,80 @@ package com.csx.common.utils;
 
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.net.NetUtil;
+import cn.hutool.core.util.IdUtil;
 import cn.hutool.core.util.StrUtil;
-import com.csx.common.entity.Constants;
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.algorithms.Algorithm;
+import com.csx.common.config.AppCofig;
+import com.csx.common.entity.SysUser;
+import com.csx.common.other.Constants;
 import com.csx.common.enums.EvmentEnum;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.Closeable;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.util.Date;
 
+@Slf4j
 public class ToolUtils extends StrUtil{
 
     /** 是否是管理员    */
-    private static Boolean isAdmin = false;
+    public static Boolean isAdmin = false;
     /** 是否开发环境    */
-    private static Boolean isDev = false;
+    public static Boolean isDev = false;
     /** 是否生产环境    */
-    private static Boolean isProd = false;
+    public static Boolean isProd = false;
     /** 是否测试环境    */
-    private static Boolean isTest = false;
+    public static Boolean isTest = false;
+    /** 当前登录的用户ID    */
+    private static String userId = "";
+    /** 当前登录的用户    */
+    private static SysUser user = null;
 
+    /**
+     * 初始化用户对象 默认剔除pwd
+     * @param user
+     */
+    public static void initUser(SysUser user){
+        user.setUserPassword("");
+        ToolUtils.user = user;
+        ToolUtils.userId = user.getUserId();
+        initUser(userId);
+    }
 
+    /**
+     * 获取当前登录的 用户Id
+     * @return String
+     */
+    public static String getUserId(){
+        return userId;
+    }
+
+    /**
+     * 获取当前登录的用户对象
+     * @return SysUser
+     */
+    public static SysUser getUser(){
+        return user;
+    }
 
     /**
      * 初始化Admin参数
      */
-    public static void initAdmin(String userId){
-        isAdmin = equalsAnyIgnoreCase(userId , Constants.ADMIN);
+    private static void initUser(String userId){
+        isAdmin = equalsAnyIgnoreCase(userId , Constants.Session.ADMIN);
     }
 
+    /**
+     * 判断是否admin
+     * @param userId
+     * @return
+     */
+    public static Boolean isAdmin(String userId){
+        return equalsAnyIgnoreCase(userId , Constants.Session.ADMIN);
+    }
     /**
      * 初始化环境信息
      * @param avtive
@@ -57,13 +103,33 @@ public class ToolUtils extends StrUtil{
         return null;
     }
     /**
-     * 获取当前日期
+     * 获取当前时间
      * 格式 yyyy-MM-dd HH:mm:ss
-     * @return
+     * @return String
      */
-    public static String now(){
+    public static String nowTime(){
         return DateUtil.now();
     }
+
+    /**
+     * 获取当前日期 格式 yyyy-MM-dd
+     * @return String
+     */
+    public static String nowDate() {
+        return DateUtil.today();
+    }
+
+    /**
+     * 获取Id 的方法 默认是uuid不带 -
+     * @return
+     */
+    public static String getId(){
+        return IdUtil.fastSimpleUUID();
+    }
+
+//    public static void main(String[] args) {
+//        Console.log(getId());
+//    }
 
     /**
      * 获取当前日期
@@ -98,6 +164,27 @@ public class ToolUtils extends StrUtil{
     }
 
     /**
+     * 判断是否是Y
+     * @param s
+     * @return
+     */
+    public static Boolean isY(Object s){
+        if (s instanceof String && isNotNull(s) ){
+            return equals(Constants.App.Y , s.toString());
+        }
+        return false;
+    }
+
+    /**
+     * 判断是否是N
+     * @param s
+     * @return
+     */
+    public static Boolean isN(Object s){
+        return !isY(s);
+    }
+
+    /**
      * 如果那么语法
      * @param itemVal
      * @param itemDefval
@@ -105,6 +192,60 @@ public class ToolUtils extends StrUtil{
      */
     public static String nvl(String itemVal, String itemDefval) {
         return nvl(itemVal , itemDefval , true);
+    }
+
+    /**
+     * 如果那么语法
+     * @param itemVal
+     * @param itemDefval
+     * @return
+     */
+    public static Boolean nvl(Object itemVal, Boolean itemDefval) {
+        String value = nvl(itemVal, String.valueOf(itemDefval));
+        Boolean newValue = false;
+        try{
+            newValue = Boolean.parseBoolean(value);
+        } catch (Exception e){
+            log.error(ToolUtils.format("值[{}]不是合法的 Boolean 类型" , itemVal ) , e);
+            newValue = itemDefval;
+        }
+        return newValue;
+    }
+
+    /**
+     * 如果那么语法
+     * @param itemVal
+     * @param itemDefval
+     * @return
+     */
+    public static Integer nvl(Object itemVal, Integer itemDefval) {
+        String value = nvl(itemVal , String.valueOf(itemDefval));
+        Integer newValue = 0;
+        try{
+            newValue = Integer.parseInt(value);
+        } catch (Exception e){
+            log.error(ToolUtils.format("值[{}]不是合法的 Integer 类型" , itemVal ) , e);
+            newValue = itemDefval;
+        }
+        return newValue;
+    }
+
+    /**
+     * 如果那么语法
+     * @param itemVal
+     * @param itemDefval
+     * @return
+     */
+    public static BigDecimal nvl(Object itemVal, BigDecimal itemDefval) {
+        String value = nvl(itemVal, String.valueOf(itemDefval));
+        BigDecimal newValue = null;
+        try{
+            newValue = BigDecimal.valueOf(Double.parseDouble(value));
+        } catch (Exception e){
+            log.error(ToolUtils.format("值[{}]不是合法的 BigDecimal 类型" , itemVal ) , e);
+            newValue = itemDefval;
+        }
+        return newValue;
     }
 
     /**
@@ -130,6 +271,55 @@ public class ToolUtils extends StrUtil{
     }
 
 
+    /**
+     * @method  offset
+     * @params  String date , Integer dayOffset
+     * @return  String
+     * @desc    日期偏移量 yyyy-MM-dd
+     **/
+    public static Date offsetDay(String date , Integer dayOffset ){
+        return DateUtil.offsetDay(DateUtil.parseDate(date) , dayOffset);
+    }
+
+    /**
+     * @method  compare
+     * @params  Date date
+     * @return  Boolean
+     * @desc    比较日期 date > 当前日期 ? true : false
+     **/
+    public static Boolean compareDate( Date date ) {
+        return DateUtil.compare( date , DateUtil.date() ) > 0 ;
+    }
+
+    /**
+     * @method  compare
+     * @params  Date date1 , Date date2
+     * @return  Boolean
+     * @desc    比较日期 date1 > date2 ? true : false
+     **/
+    public static Boolean compareDate(Date date1 , Date date2) {
+        return DateUtil.compare(date1 , date2) > 0 ;
+    }
+
+    /**
+     * @method  compare
+     * @params  Date date1 , Date date2
+     * @return  Boolean
+     * @desc    比较日期 date1 > date2 ? true : false
+     **/
+    public static Boolean compareDate(String date1 , String date2) {
+        return DateUtil.compare(DateUtil.parseDate(date1) , DateUtil.parseDate(date2)) > 0 ;
+    }
+
+    /**
+     * @method  compare
+     * @params  String date1 , String format1 , String date2, String format2
+     * @return  Boolean
+     * @desc    比较日期 date1 > date2 ? true : false
+     **/
+    public static Boolean compareDate(String date1 , String format1 , String date2, String format2) {
+        return DateUtil.compare(DateUtil.parse(date1 , format1) , DateUtil.parse(date2 , format2)) > 0 ;
+    }
 
     /**
      * @method  closeIO
@@ -166,10 +356,31 @@ public class ToolUtils extends StrUtil{
         //获取生成的验证码
         String verifyCodeExpected = (String) request.getSession().getAttribute(com.google.code.kaptcha.Constants.KAPTCHA_SESSION_KEY);
         //获取用户输入的验证码
-        String verifyCodeActual = getParam(request, "kaptchaCode");
-        if (isNull(verifyCodeActual) || !equals(verifyCodeActual,verifyCodeExpected)){
+        String verifyCodeActual = getParam(request, Constants.App.KAPTCHA_CODE_KEY);
+        if (isNull(verifyCodeActual) || !equalsIgnoreCase(verifyCodeActual,verifyCodeExpected)){
             return false;
         }
         return true;
     }
+
+    /**
+     * @method  getToken
+     * @params
+     * @return  String
+     * @desc    获取token的方法
+     **/
+    public static String getToken( String userId ){
+        return JWT.create().withAudience(userId , localhost() , nowTime() , getEvment().toString() ).sign(Algorithm.HMAC256(getLicence()));
+    }
+
+    /**
+     * @method  getLicence
+     * @params  
+     * @return  String
+     * @desc    获取当前系统的 License
+     **/
+    public static String getLicence(){
+        return AppCofig.getSysConfig(Constants.App.SYS_LICENCE , Constants.App.NONE);
+    }
+
 }

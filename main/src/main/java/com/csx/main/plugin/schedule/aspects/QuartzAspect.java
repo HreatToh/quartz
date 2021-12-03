@@ -20,7 +20,7 @@ public class QuartzAspect {
     public void before(){
         StringBuilder format = new StringBuilder();
         format.append("*******************************************").append("   ");
-        format.append(ToolUtils.format("[{}] Quartz 任务开始 start." , ToolUtils.now()));
+        format.append(ToolUtils.format("[{}] Quartz 任务开始 start." , ToolUtils.nowTime()));
         format.append("   ").append("*******************************************");
         log.info(format.toString());
         log.info(ToolUtils.format("IP地址：{}", ToolUtils.localhost()));
@@ -33,7 +33,7 @@ public class QuartzAspect {
     public void after(){
         StringBuilder format = new StringBuilder();
         format.append("*******************************************").append("   ");
-        format.append(ToolUtils.format("[{}] Quartz 任务结束 end." , ToolUtils.now()));
+        format.append(ToolUtils.format("[{}] Quartz 任务结束 end." , ToolUtils.nowTime()));
         format.append("   ").append("*******************************************");
         log.info(format.toString());
         format.delete(0,format.length());

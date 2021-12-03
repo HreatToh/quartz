@@ -1,71 +1,563 @@
-01:11:03.456 [restartedMain] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 5832 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
-01:11:03.472 [restartedMain] DEBUG com.csx.main.MainApplication  - Running with Spring Boot v2.5.3, Spring v5.3.9
-01:11:03.472 [restartedMain] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
-01:11:06.846 [restartedMain] DEBUG com.ibeetl.starter.BeetlSqlStarterClassPathScanner  - Identified candidate component class: URL [jar:file:/E:/Maven/repository/com/alibaba/druid/1.2.4/druid-1.2.4.jar!/com/alibaba/druid/support/monitor/dao/MonitorDao.class]
-01:11:08.266 [restartedMain] DEBUG com.ibeetl.starter.BeetlSqlStarterClassPathScanner  - Bean definition with name 'monitorDao': Generic bean: class [com.alibaba.druid.support.monitor.dao.MonitorDao]; scope=singleton; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [jar:file:/E:/Maven/repository/com/alibaba/druid/1.2.4/druid-1.2.4.jar!/com/alibaba/druid/support/monitor/dao/MonitorDao.class]
-01:11:08.266 [restartedMain] DEBUG com.ibeetl.starter.BeetlSqlStarterClassPathScanner  - 已开启BeetSql自动按照类型注入 'monitorDao'.
-01:11:08.579 [restartedMain] DEBUG org.apache.ibatis.logging.LogFactory  - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
-01:11:10.453 [restartedMain] DEBUG org.apache.shiro.spring.LifecycleBeanPostProcessor  - Initializing bean [getAuthRealm]...
-01:11:10.453 [restartedMain] DEBUG org.apache.shiro.realm.AuthorizingRealm  - No authorizationCache instance set.  Checking for a cacheManager...
-01:11:10.453 [restartedMain] DEBUG org.apache.shiro.realm.AuthorizingRealm  - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
-01:11:11.312 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-9001"]
-01:11:11.312 [restartedMain] INFO  org.apache.catalina.core.StandardService  - Starting service [Tomcat]
-01:11:11.312 [restartedMain] INFO  org.apache.catalina.core.StandardEngine  - Starting Servlet engine: [Apache Tomcat/9.0.50]
-01:11:11.484 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring embedded WebApplicationContext
-01:11:11.531 [restartedMain] DEBUG com.csx.main.plugin.owner.config.GlobalConfig  - 注册过滤器[ loginFilter ]成功
-01:11:11.547 [restartedMain] DEBUG com.csx.main.plugin.owner.config.GlobalConfig  - 注册过滤器[ charFilter ]成功
-01:11:11.562 [restartedMain] DEBUG com.csx.main.plugin.owner.config.GlobalConfig  - 注册过滤器[ druidFilter ]成功
-01:11:11.562 [restartedMain] DEBUG com.csx.main.plugin.owner.config.GlobalConfig  - 注册监听器[ loginListener ]成功
-01:11:11.578 [restartedMain] DEBUG org.apache.shiro.spring.web.ShiroFilterFactoryBean  - Creating Shiro Filter instance.
-01:11:11.593 [restartedMain] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Creating chain [/**] with global filters [invalidRequest] and from String definition [authc]
-01:11:11.593 [restartedMain] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [/**] to filter [invalidRequest] with config [null]
-01:11:11.593 [restartedMain] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [/**] to filter [authc] with config [null]
-01:11:11.593 [restartedMain] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Creating chain [/page/login] with global filters [invalidRequest] and from String definition [anon]
-01:11:11.593 [restartedMain] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [/page/login] to filter [invalidRequest] with config [null]
-01:11:11.593 [restartedMain] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [/page/login] to filter [anon] with config [null]
-01:11:11.593 [restartedMain] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Creating chain [/login] with global filters [invalidRequest] and from String definition [anon]
-01:11:11.593 [restartedMain] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [/login] to filter [invalidRequest] with config [null]
-01:11:11.593 [restartedMain] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [/login] to filter [anon] with config [null]
-01:11:11.593 [restartedMain] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Creating chain [/logout] with global filters [invalidRequest] and from String definition [anon]
-01:11:11.593 [restartedMain] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [/logout] to filter [invalidRequest] with config [null]
-01:11:11.593 [restartedMain] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [/logout] to filter [anon] with config [null]
-01:11:12.031 [restartedMain] DEBUG org.apache.ibatis.logging.LogFactory  - Logging initialized using 'class org.apache.ibatis.logging.log4j2.Log4j2Impl' adapter.
-01:11:12.078 [restartedMain] DEBUG com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean  - Registered plugin: 'AbstractSqlParserHandler(sqlParserList=null, sqlParserFilter=null)'
-01:11:12.218 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.insert
-01:11:12.218 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.delete
-01:11:12.218 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.deleteByMap
-01:11:12.265 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.deleteById
-01:11:12.265 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.deleteBatchIds
-01:11:12.265 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.update
-01:11:12.281 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.updateById
-01:11:12.281 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectById
-01:11:12.281 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectBatchIds
-01:11:12.296 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectByMap
-01:11:12.296 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectOne
-01:11:12.296 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectCount
-01:11:12.312 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectMaps
-01:11:12.312 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectMapsPage
-01:11:12.312 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectObjs
-01:11:12.312 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectList
-01:11:12.312 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectPage
-01:11:12.312 [restartedMain] DEBUG com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean  - Parsed mapper file: 'file [D:\IdeaProject\quartz\common\target\classes\mappers\mysql\ExcetionMapper.xml]'
-01:11:14.466 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.insert
-01:11:14.466 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.delete
-01:11:14.466 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.deleteByMap
-01:11:14.466 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.deleteById
-01:11:14.482 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.deleteBatchIds
-01:11:14.482 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.update
-01:11:14.482 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.updateById
-01:11:14.482 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.selectById
-01:11:14.482 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.selectBatchIds
-01:11:14.482 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.selectByMap
-01:11:14.498 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.selectOne
-01:11:14.498 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.selectCount
-01:11:14.498 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.selectMaps
-01:11:14.498 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.selectMapsPage
-01:11:14.498 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.selectObjs
-01:11:14.498 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.selectList
-01:11:14.498 [restartedMain] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.sysmm.mapper.SysMenuMapper.selectPage
-01:11:14.529 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-0} closing ...
-01:11:14.529 [restartedMain] DEBUG org.apache.shiro.spring.LifecycleBeanPostProcessor  - Destroying bean [getSessionsSecurityManager]...
-01:11:14.545 [restartedMain] INFO  org.apache.catalina.core.StandardService  - Stopping service [Tomcat]
+18:08:07.797 [main] INFO  com.csx.main.MainApplication  - Starting MainApplication using Java 1.8.0_251 on Administrator with PID 21364 (D:\IdeaProject\quartz\main\target\classes started by Admin in D:\IdeaProject\quartz)
+18:08:07.808 [main] DEBUG com.csx.main.MainApplication  - Running with Spring Boot v2.5.3, Spring v5.3.9
+18:08:07.809 [main] INFO  com.csx.main.MainApplication  - The following profiles are active: quartz,activiti,datasource,dev
+18:08:09.664 [main] DEBUG com.ibeetl.starter.BeetlSqlStarterClassPathScanner  - Identified candidate component class: URL [jar:file:/E:/Maven/repository/com/alibaba/druid/1.2.4/druid-1.2.4.jar!/com/alibaba/druid/support/monitor/dao/MonitorDao.class]
+18:08:11.325 [main] DEBUG com.ibeetl.starter.BeetlSqlStarterClassPathScanner  - Bean definition with name 'monitorDao': Generic bean: class [com.alibaba.druid.support.monitor.dao.MonitorDao]; scope=singleton; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [jar:file:/E:/Maven/repository/com/alibaba/druid/1.2.4/druid-1.2.4.jar!/com/alibaba/druid/support/monitor/dao/MonitorDao.class]
+18:08:11.327 [main] DEBUG com.ibeetl.starter.BeetlSqlStarterClassPathScanner  - 已开启BeetSql自动按照类型注入 'monitorDao'.
+18:08:11.525 [main] DEBUG org.apache.ibatis.logging.LogFactory  - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+18:08:13.192 [main] DEBUG org.apache.ibatis.logging.LogFactory  - Logging initialized using 'class org.apache.ibatis.logging.log4j2.Log4j2Impl' adapter.
+18:08:13.331 [main] DEBUG com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean  - Registered plugin: 'AbstractSqlParserHandler(sqlParserList=null, sqlParserFilter=null)'
+18:08:13.467 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.insert
+18:08:13.474 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.delete
+18:08:13.477 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.deleteByMap
+18:08:13.505 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.deleteById
+18:08:13.508 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.deleteBatchIds
+18:08:13.514 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.update
+18:08:13.516 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.updateById
+18:08:13.517 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectById
+18:08:13.519 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectBatchIds
+18:08:13.521 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectByMap
+18:08:13.526 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectOne
+18:08:13.529 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectCount
+18:08:13.532 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectMaps
+18:08:13.534 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectMapsPage
+18:08:13.537 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectObjs
+18:08:13.540 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectList
+18:08:13.542 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.ExcetionMapper.selectPage
+18:08:13.543 [main] DEBUG com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean  - Parsed mapper file: 'file [D:\IdeaProject\quartz\common\target\classes\mappers\mysql\ExcetionMapper.xml]'
+18:08:13.552 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysConfigMapper.getSysConfigAll
+18:08:13.553 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysConfigMapper.getSysSubConfigAll
+18:08:13.553 [main] DEBUG com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean  - Parsed mapper file: 'file [D:\IdeaProject\quartz\common\target\classes\mappers\mysql\SysConfigMapper.xml]'
+18:08:15.400 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysUserMapper.insert
+18:08:15.404 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysUserMapper.delete
+18:08:15.405 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysUserMapper.deleteByMap
+18:08:15.406 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysUserMapper.deleteById
+18:08:15.411 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysUserMapper.deleteBatchIds
+18:08:15.414 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysUserMapper.update
+18:08:15.416 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysUserMapper.updateById
+18:08:15.416 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysUserMapper.selectById
+18:08:15.418 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysUserMapper.selectBatchIds
+18:08:15.419 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysUserMapper.selectByMap
+18:08:15.421 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysUserMapper.selectOne
+18:08:15.424 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysUserMapper.selectCount
+18:08:15.427 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysUserMapper.selectMaps
+18:08:15.430 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysUserMapper.selectMapsPage
+18:08:15.432 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysUserMapper.selectObjs
+18:08:15.433 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysUserMapper.selectList
+18:08:15.435 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysUserMapper.selectPage
+18:08:15.449 [main] DEBUG org.apache.shiro.spring.LifecycleBeanPostProcessor  - Initializing bean [getAuthRealm]...
+18:08:15.449 [main] DEBUG org.apache.shiro.realm.AuthorizingRealm  - No authorizationCache instance set.  Checking for a cacheManager...
+18:08:15.449 [main] DEBUG org.apache.shiro.realm.AuthorizingRealm  - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+18:08:15.954 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-9001"]
+18:08:15.955 [main] INFO  org.apache.catalina.core.StandardService  - Starting service [Tomcat]
+18:08:15.955 [main] INFO  org.apache.catalina.core.StandardEngine  - Starting Servlet engine: [Apache Tomcat/9.0.50]
+18:08:16.094 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring embedded WebApplicationContext
+18:08:16.120 [main] DEBUG com.csx.main.plugin.owner.config.GlobalConfig  - 注册过滤器[ loginFilter ]成功
+18:08:16.130 [main] DEBUG com.csx.main.plugin.owner.config.GlobalConfig  - 注册过滤器[ charFilter ]成功
+18:08:16.141 [main] DEBUG com.csx.main.plugin.owner.config.GlobalConfig  - 注册过滤器[ druidFilter ]成功
+18:08:16.147 [main] DEBUG com.csx.main.plugin.owner.config.GlobalConfig  - 注册监听器[ loginListener ]成功
+18:08:16.157 [main] DEBUG org.apache.shiro.spring.web.ShiroFilterFactoryBean  - Creating Shiro Filter instance.
+18:08:16.163 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Creating chain [/kaptcha] with global filters [invalidRequest] and from String definition [anon]
+18:08:16.163 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [/kaptcha] to filter [invalidRequest] with config [null]
+18:08:16.165 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [/kaptcha] to filter [anon] with config [null]
+18:08:16.165 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Creating chain [/page/login] with global filters [invalidRequest] and from String definition [anon]
+18:08:16.165 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [/page/login] to filter [invalidRequest] with config [null]
+18:08:16.165 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [/page/login] to filter [anon] with config [null]
+18:08:16.165 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Creating chain [/login] with global filters [invalidRequest] and from String definition [anon]
+18:08:16.165 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [/login] to filter [invalidRequest] with config [null]
+18:08:16.165 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [/login] to filter [anon] with config [null]
+18:08:16.166 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Creating chain [/logout] with global filters [invalidRequest] and from String definition [anon]
+18:08:16.166 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [/logout] to filter [invalidRequest] with config [null]
+18:08:16.166 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [/logout] to filter [anon] with config [null]
+18:08:16.166 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Creating chain [/static/**] with global filters [invalidRequest] and from String definition [anon]
+18:08:16.166 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [/static/**] to filter [invalidRequest] with config [null]
+18:08:16.166 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [/static/**] to filter [anon] with config [null]
+18:08:16.166 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Creating chain [*.html] with global filters [invalidRequest] and from String definition [anon]
+18:08:16.166 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [*.html] to filter [invalidRequest] with config [null]
+18:08:16.166 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [*.html] to filter [anon] with config [null]
+18:08:16.166 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Creating chain [*.json] with global filters [invalidRequest] and from String definition [anon]
+18:08:16.166 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [*.json] to filter [invalidRequest] with config [null]
+18:08:16.166 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [*.json] to filter [anon] with config [null]
+18:08:16.166 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Creating chain [*.js] with global filters [invalidRequest] and from String definition [anon]
+18:08:16.166 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [*.js] to filter [invalidRequest] with config [null]
+18:08:16.166 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [*.js] to filter [anon] with config [null]
+18:08:16.167 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Creating chain [*.css] with global filters [invalidRequest] and from String definition [anon]
+18:08:16.167 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [*.css] to filter [invalidRequest] with config [null]
+18:08:16.167 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [*.css] to filter [anon] with config [null]
+18:08:16.167 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Creating chain [*.png] with global filters [invalidRequest] and from String definition [anon]
+18:08:16.167 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [*.png] to filter [invalidRequest] with config [null]
+18:08:16.167 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [*.png] to filter [anon] with config [null]
+18:08:16.167 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Creating chain [/**] with global filters [invalidRequest] and from String definition [authc]
+18:08:16.167 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [/**] to filter [invalidRequest] with config [null]
+18:08:16.167 [main] DEBUG org.apache.shiro.web.filter.mgt.DefaultFilterChainManager  - Attempting to apply path [/**] to filter [authc] with config [null]
+18:08:16.198 [main] INFO  org.apache.catalina.core.StandardContext  - Suspicious URL pattern: [/**] in context [/quartz], see sections 12.1 and 12.2 of the Servlet specification
+18:08:16.198 [main] INFO  org.apache.catalina.core.StandardContext  - Suspicious URL pattern: [/**] in context [/quartz], see sections 12.1 and 12.2 of the Servlet specification
+18:08:16.339 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysMenuMapper.insert
+18:08:16.341 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysMenuMapper.delete
+18:08:16.342 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysMenuMapper.deleteByMap
+18:08:16.344 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysMenuMapper.deleteById
+18:08:16.346 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysMenuMapper.deleteBatchIds
+18:08:16.348 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysMenuMapper.update
+18:08:16.349 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysMenuMapper.updateById
+18:08:16.349 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysMenuMapper.selectById
+18:08:16.350 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysMenuMapper.selectBatchIds
+18:08:16.351 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysMenuMapper.selectByMap
+18:08:16.353 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysMenuMapper.selectOne
+18:08:16.354 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysMenuMapper.selectCount
+18:08:16.355 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysMenuMapper.selectMaps
+18:08:16.357 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysMenuMapper.selectMapsPage
+18:08:16.358 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysMenuMapper.selectObjs
+18:08:16.361 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysMenuMapper.selectList
+18:08:16.362 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysMenuMapper.selectPage
+18:08:16.488 [main] DEBUG net.sf.ehcache.config.ConfigurationFactory  - Configuring ehcache from InputStream
+18:08:16.509 [main] DEBUG net.sf.ehcache.config.BeanHandler  - Ignoring ehcache attribute xmlns:xsi
+18:08:16.509 [main] DEBUG net.sf.ehcache.config.BeanHandler  - Ignoring ehcache attribute xsi:noNamespaceSchemaLocation
+18:08:16.511 [main] DEBUG net.sf.ehcache.config.DiskStoreConfiguration  - Disk Store Path: C:\Users\cheng\AppData\Local\Temp\
+18:08:16.526 [main] DEBUG net.sf.ehcache.CacheManager  - Creating new CacheManager with Configuration Object
+18:08:16.528 [main] DEBUG net.sf.ehcache.util.PropertyUtil  - propertiesString is null.
+18:08:16.538 [main] DEBUG net.sf.ehcache.config.ConfigurationHelper  - No CacheManagerEventListenerFactory class specified. Skipping...
+18:08:16.578 [main] DEBUG net.sf.ehcache.Cache  - No BootstrapCacheLoaderFactory class specified. Skipping...
+18:08:16.578 [main] DEBUG net.sf.ehcache.Cache  - CacheWriter factory not configured. Skipping...
+18:08:16.579 [main] DEBUG net.sf.ehcache.config.ConfigurationHelper  - No CacheExceptionHandlerFactory class specified. Skipping...
+18:08:16.586 [main] DEBUG net.sf.ehcache.Cache  - No BootstrapCacheLoaderFactory class specified. Skipping...
+18:08:16.586 [main] DEBUG net.sf.ehcache.Cache  - CacheWriter factory not configured. Skipping...
+18:08:16.586 [main] DEBUG net.sf.ehcache.config.ConfigurationHelper  - No CacheExceptionHandlerFactory class specified. Skipping...
+18:08:16.600 [main] DEBUG net.sf.ehcache.DiskStorePathManager  - Using diskstore path C:\Users\cheng\AppData\Local\Temp
+18:08:16.600 [main] DEBUG net.sf.ehcache.DiskStorePathManager  - Holding exclusive lock on C:\Users\cheng\AppData\Local\Temp\.ehcache-diskstore.lock
+18:08:16.705 [main] DEBUG net.sf.ehcache.statistics.extended.ExtendedStatisticsImpl  - Mocking Pass-Through Statistic: LOCAL_OFFHEAP_SIZE
+18:08:16.706 [main] DEBUG net.sf.ehcache.statistics.extended.ExtendedStatisticsImpl  - Mocking Pass-Through Statistic: LOCAL_OFFHEAP_SIZE_BYTES
+18:08:16.706 [main] DEBUG net.sf.ehcache.statistics.extended.ExtendedStatisticsImpl  - Mocking Pass-Through Statistic: WRITER_QUEUE_LENGTH
+18:08:16.706 [main] DEBUG net.sf.ehcache.statistics.extended.ExtendedStatisticsImpl  - Mocking Pass-Through Statistic: REMOTE_SIZE
+18:08:16.706 [main] DEBUG net.sf.ehcache.statistics.extended.ExtendedStatisticsImpl  - Mocking Pass-Through Statistic: LAST_REJOIN_TIMESTAMP
+18:08:16.723 [main] DEBUG net.sf.ehcache.statistics.extended.ExtendedStatisticsImpl  - Mocking Operation Statistic: OFFHEAP_GET
+18:08:16.724 [main] DEBUG net.sf.ehcache.statistics.extended.ExtendedStatisticsImpl  - Mocking Operation Statistic: OFFHEAP_PUT
+18:08:16.724 [main] DEBUG net.sf.ehcache.statistics.extended.ExtendedStatisticsImpl  - Mocking Operation Statistic: OFFHEAP_REMOVE
+18:08:16.725 [main] DEBUG net.sf.ehcache.statistics.extended.ExtendedStatisticsImpl  - Mocking Operation Statistic: XA_COMMIT
+18:08:16.726 [main] DEBUG net.sf.ehcache.statistics.extended.ExtendedStatisticsImpl  - Mocking Operation Statistic: XA_ROLLBACK
+18:08:16.726 [main] DEBUG net.sf.ehcache.statistics.extended.ExtendedStatisticsImpl  - Mocking Operation Statistic: XA_RECOVERY
+18:08:16.726 [main] DEBUG net.sf.ehcache.statistics.extended.ExtendedStatisticsImpl  - Mocking Operation Statistic: CLUSTER_EVENT
+18:08:16.727 [main] DEBUG net.sf.ehcache.statistics.extended.ExtendedStatisticsImpl  - Mocking Operation Statistic: NONSTOP
+18:08:16.732 [main] DEBUG net.sf.ehcache.Cache  - Initialised cache: localCache
+18:08:16.732 [main] DEBUG net.sf.ehcache.config.ConfigurationHelper  - CacheDecoratorFactory not configured. Skipping for 'localCache'.
+18:08:16.732 [main] DEBUG net.sf.ehcache.config.ConfigurationHelper  - CacheDecoratorFactory not configured for defaultCache. Skipping for 'localCache'.
+18:08:17.098 [main] DEBUG com.csx.main.plugin.owner.config.GlobalConfig  - 注册拦截器[class com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor]成功
+18:08:17.127 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings  - 
+	c.c.c.c.CodeController:
+	{GET [/kaptcha]}: getKaptchaImage(HttpServletRequest,HttpServletResponse)
+18:08:17.130 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings  - 
+	c.c.c.c.HomeContrller:
+	{POST [/home/getHomeInfo]}: getHomeInfo()
+18:08:17.131 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings  - 
+	c.c.c.c.LoginController:
+	{POST [/login/index]}: index()
+	{ [/login]}: login(Map,ModelMap,HttpServletRequest,HttpServletResponse)
+18:08:17.132 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings  - 
+	c.c.c.c.PageController:
+	{GET [/page/index]}: index(HttpServletRequest,HttpServletResponse,ModelMap)
+	{GET [/page/login]}: login(ModelMap)
+18:08:17.132 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings  - 
+	c.c.s.c.SysConfigController:
+	
+18:08:17.133 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings  - 
+	c.c.s.c.SysMenuController:
+	{POST [/sysmm/menu/getMenuInfo]}: getMenuInfo(Map)
+	{POST [/sysmm/menu/saveMenuInfo]}: saveMenuInfo(Map)
+18:08:17.133 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings  - 
+	c.c.s.c.SysPageController:
+	{GET [/page/{sysId}/{menu}/{mode}]}: gotoPage(String,String,String,Map,ModelMap,HttpServletRequest,HttpServletResponse)
+18:08:17.136 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings  - 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+18:08:17.197 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings  - 'viewControllerHandlerMapping' {/=ParameterizableViewController [view="page/login"]}
+18:08:17.215 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings  - 'beanNameHandlerMapping' {}
+18:08:17.256 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings  - 'resourceHandlerMapping' {/webjars/**=ResourceHttpRequestHandler [Classpath [META-INF/resources/webjars/]], /**=ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]], /static/**=ResourceHttpRequestHandler [Classpath [static/]]}
+18:08:17.470 [main] INFO  com.alibaba.druid.pool.DruidDataSource  - {dataSource-1} inited
+18:08:17.984 [main] DEBUG org.activiti.engine.impl.cfg.ProcessEngineConfigurationImpl  - database product name: 'MySQL'
+18:08:17.984 [main] DEBUG org.activiti.engine.impl.cfg.ProcessEngineConfigurationImpl  - using database type: mysql
+18:08:18.516 [main] INFO  org.activiti.engine.compatibility.DefaultActiviti5CompatibilityHandlerFactory  - Activiti 5 compatibility handler implementation not found or error during instantiation : org.activiti.compatibility.DefaultActiviti5CompatibilityHandler. Activiti 5 backwards compatibility disabled.
+18:08:18.517 [main] DEBUG org.activiti.engine.impl.interceptor.LogInterceptor  - 
+
+18:08:18.517 [main] DEBUG org.activiti.engine.impl.interceptor.LogInterceptor  - --- starting SchemaOperationsProcessEngineBuild --------------------------------------------------------
+18:08:18.517 [main] DEBUG org.activiti.spring.SpringTransactionInterceptor  - Running command with propagation NOT_SUPPORTED
+18:08:18.528 [main] DEBUG org.activiti.engine.impl.agenda.DefaultActivitiEngineAgenda  - Operation class org.activiti.engine.impl.interceptor.CommandInvoker$1 added to agenda
+18:08:18.533 [main] DEBUG org.activiti.engine.impl.db.DbSqlSession  - Executing performSchemaOperationsProcessEngineBuild with setting true
+18:08:18.534 [main] DEBUG org.apache.ibatis.transaction.managed.ManagedTransaction  - Opening JDBC Connection
+18:08:18.596 [main] DEBUG org.activiti.engine.impl.persistence.entity.PropertyEntityImpl.selectProperty  - ==>  Preparing: select * from ACT_GE_PROPERTY where NAME_ = ? 
+18:08:18.607 [main] DEBUG org.activiti.engine.impl.persistence.entity.PropertyEntityImpl.selectProperty  - ==> Parameters: schema.version(String)
+18:08:18.622 [main] DEBUG org.activiti.engine.impl.persistence.entity.PropertyEntityImpl.selectProperty  - <==      Total: 1
+18:08:18.654 [main] DEBUG org.activiti.engine.impl.db.DbSqlSession  - Flushing dbSqlSession
+18:08:18.654 [main] DEBUG org.activiti.engine.impl.db.DbSqlSession  - flush summary: 0 insert, 0 update, 0 delete.
+18:08:18.654 [main] DEBUG org.activiti.engine.impl.db.DbSqlSession  - now executing flush...
+18:08:18.655 [main] DEBUG org.apache.ibatis.transaction.managed.ManagedTransaction  - Closing JDBC Connection [Transaction-aware proxy for target Connection [com.mysql.cj.jdbc.ConnectionImpl@70bca957]]
+18:08:18.655 [main] DEBUG org.activiti.engine.impl.interceptor.LogInterceptor  - --- SchemaOperationsProcessEngineBuild finished --------------------------------------------------------
+18:08:18.655 [main] DEBUG org.activiti.engine.impl.interceptor.LogInterceptor  - 
+
+18:08:18.655 [main] INFO  org.activiti.engine.impl.ProcessEngineImpl  - ProcessEngine default created
+18:08:18.659 [main] DEBUG org.activiti.engine.impl.interceptor.LogInterceptor  - 
+
+18:08:18.659 [main] DEBUG org.activiti.engine.impl.interceptor.LogInterceptor  - --- starting ValidateExecutionRelatedEntityCountCfgCmd --------------------------------------------------------
+18:08:18.659 [main] DEBUG org.activiti.spring.SpringTransactionInterceptor  - Running command with propagation REQUIRED
+18:08:18.660 [main] DEBUG org.activiti.engine.impl.agenda.DefaultActivitiEngineAgenda  - Operation class org.activiti.engine.impl.interceptor.CommandInvoker$1 added to agenda
+18:08:18.660 [main] DEBUG org.apache.ibatis.transaction.managed.ManagedTransaction  - Opening JDBC Connection
+18:08:18.660 [main] DEBUG org.activiti.engine.impl.persistence.entity.PropertyEntityImpl.selectProperty  - ==>  Preparing: select * from ACT_GE_PROPERTY where NAME_ = ? 
+18:08:18.661 [main] DEBUG org.activiti.engine.impl.persistence.entity.PropertyEntityImpl.selectProperty  - ==> Parameters: cfg.execution-related-entities-count(String)
+18:08:18.662 [main] DEBUG org.activiti.engine.impl.persistence.entity.PropertyEntityImpl.selectProperty  - <==      Total: 1
+18:08:18.662 [main] DEBUG org.activiti.engine.impl.db.DbSqlSession  - Flushing dbSqlSession
+18:08:18.662 [main] DEBUG org.activiti.engine.impl.db.DbSqlSession  - flush summary: 0 insert, 0 update, 0 delete.
+18:08:18.662 [main] DEBUG org.activiti.engine.impl.db.DbSqlSession  - now executing flush...
+18:08:18.662 [main] DEBUG org.apache.ibatis.transaction.managed.ManagedTransaction  - Closing JDBC Connection [Transaction-aware proxy for target Connection [com.mysql.cj.jdbc.ConnectionImpl@70bca957]]
+18:08:18.663 [main] DEBUG org.activiti.engine.impl.interceptor.LogInterceptor  - --- ValidateExecutionRelatedEntityCountCfgCmd finished --------------------------------------------------------
+18:08:18.663 [main] DEBUG org.activiti.engine.impl.interceptor.LogInterceptor  - 
+
+18:08:19.066 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysLogMapper.insert
+18:08:19.067 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysLogMapper.delete
+18:08:19.067 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysLogMapper.deleteByMap
+18:08:19.068 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysLogMapper.deleteById
+18:08:19.069 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysLogMapper.deleteBatchIds
+18:08:19.070 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysLogMapper.update
+18:08:19.071 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysLogMapper.updateById
+18:08:19.071 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysLogMapper.selectById
+18:08:19.072 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysLogMapper.selectBatchIds
+18:08:19.073 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysLogMapper.selectByMap
+18:08:19.075 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysLogMapper.selectOne
+18:08:19.076 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysLogMapper.selectCount
+18:08:19.077 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysLogMapper.selectMaps
+18:08:19.078 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysLogMapper.selectMapsPage
+18:08:19.079 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysLogMapper.selectObjs
+18:08:19.080 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysLogMapper.selectList
+18:08:19.081 [main] DEBUG com.baomidou.mybatisplus.core.MybatisConfiguration  - addMappedStatement: com.csx.common.mapper.SysLogMapper.selectPage
+18:08:19.120 [main] INFO  org.apache.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-9001"]
+18:08:19.426 [main] INFO  com.csx.main.MainApplication  - Started MainApplication in 12.881 seconds (JVM running for 17.535)
+18:08:19.493 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-12-03 18:08:19]服务已启动 , 开始初始化... ------------------------------
+18:08:19.494 [main] DEBUG net.sf.ehcache.CacheManager  - Attempting to create an existing singleton. Existing singleton returned.
+18:08:19.495 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.495 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.495 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.495 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.495 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.495 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.495 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.495 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.495 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.495 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.495 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.495 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.495 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.495 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.495 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.495 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.495 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.495 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.495 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.495 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.495 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.496 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.496 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.496 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.496 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.496 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.496 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.496 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.496 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.496 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.496 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.496 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.496 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.496 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.496 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.496 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.496 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.496 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.496 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.496 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.497 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.497 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.497 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.497 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.497 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.497 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.497 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.497 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.497 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.497 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.497 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.497 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.497 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.497 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.497 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.497 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.497 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.498 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.498 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.498 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.498 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.498 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.498 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.498 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.498 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.498 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.499 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.499 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.499 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.499 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.499 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.499 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.499 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.499 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.499 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.499 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.499 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.499 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.499 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.499 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.499 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.499 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.499 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.499 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.499 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.499 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.499 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.500 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.501 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.501 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.501 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.501 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.501 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.501 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.501 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.501 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared heap usage
+18:08:19.501 [main] DEBUG net.sf.ehcache.store.disk.Segment  - cleared disk usage
+18:08:19.502 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] JdbcUtils 初始化完成！
+18:08:19.503 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] ToolUtils 初始化完成！
+18:08:19.527 [main] DEBUG com.csx.common.mapper.SysConfigMapper.getSysConfigAll  - ==>  Preparing: select item_id, item_name, item_val, item_defval, item_type, item_conf, item_desc, item_group, item_order, item_enable, comm_cdate, comm_udate, comm_cuser, comm_uuser, comm_delfalg, comm_v1, comm_v2, comm_v3, comm_v4, comm_v5 from sys_config_info where item_enable = 'Y' and comm_delfalg = 'N' 
+18:08:19.528 [main] DEBUG com.csx.common.mapper.SysConfigMapper.getSysConfigAll  - ==> Parameters: 
+18:08:19.534 [main] DEBUG com.csx.common.mapper.SysConfigMapper.getSysConfigAll  - <==      Total: 5
+18:08:19.536 [main] DEBUG net.sf.ehcache.store.disk.Segment  - put added 0 on heap
+18:08:19.537 [main] DEBUG com.csx.common.utils.CacheUtils  - 缓存[CACHE_SYS_CONFIG]加载成功！
+18:08:19.539 [main] DEBUG com.csx.common.mapper.SysConfigMapper.getSysSubConfigAll  - ==>  Preparing: select sys_id , item_id, item_name, item_val, item_defval, item_type, item_conf, item_desc, item_group, item_order, item_enable, comm_cdate, comm_udate, comm_cuser, comm_uuser, comm_delfalg, comm_v1, comm_v2, comm_v3, comm_v4, comm_v5 from sys_subconfig_info where item_enable = 'Y' and comm_delfalg = 'N' 
+18:08:19.539 [main] DEBUG com.csx.common.mapper.SysConfigMapper.getSysSubConfigAll  - ==> Parameters: 
+18:08:19.542 [main] DEBUG com.csx.common.mapper.SysConfigMapper.getSysSubConfigAll  - <==      Total: 0
+18:08:19.543 [main] DEBUG net.sf.ehcache.store.disk.Segment  - put added 0 on heap
+18:08:19.543 [main] DEBUG com.csx.common.utils.CacheUtils  - 缓存[CACHE_SYS_SUBCONFIG]加载成功！
+18:08:19.543 [main] INFO  com.csx.main.ApplicationRunner  - [初始化] Cache缓存 初始化完成！
+18:08:19.543 [main] INFO  com.csx.main.ApplicationRunner  - ------------------------------[2021-12-03 18:08:19]服务已启动 , 初始化完成！   ------------------------------
+18:08:19.543 [main] INFO  com.csx.main.ApplicationRunner  - 总共用时：112 毫秒
+18:08:19.544 [local%0043ache.data] DEBUG net.sf.ehcache.store.disk.Segment  - fault removed 0 from heap
+18:08:19.544 [local%0043ache.data] DEBUG net.sf.ehcache.store.disk.Segment  - fault added 0 on disk
+18:08:19.544 [local%0043ache.data] DEBUG net.sf.ehcache.store.disk.Segment  - fault removed 0 from heap
+18:08:19.544 [local%0043ache.data] DEBUG net.sf.ehcache.store.disk.Segment  - fault added 0 on disk
+18:09:07.671 [http-nio-9001-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/quartz]  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+18:09:14.509 [http-nio-9001-exec-3] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==>  Preparing: SELECT user_id,user_enname,user_chname,user_password,user_sex,user_birthdate,user_tel,user_email,user_addr,user_is_first,user_login_time,user_error_num,user_is_lock,user_is_onlion,comm_cdate,comm_udate,comm_cuser,comm_uuser,comm_delfalg,comm_v1,comm_v2,comm_v3,comm_v4,comm_v5 FROM sys_user_info WHERE user_id=? 
+18:09:14.510 [http-nio-9001-exec-3] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==> Parameters: admin(String)
+18:09:14.512 [http-nio-9001-exec-3] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - <==      Total: 1
+18:09:14.512 [http-nio-9001-exec-3] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_PWDOVER]不存在，取自定义默认值：365
+18:09:14.518 [http-nio-9001-exec-3] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_ISMULTI]不存在，取自定义默认值：Y
+18:09:14.531 [http-nio-9001-exec-3] DEBUG org.apache.shiro.realm.AuthenticatingRealm  - Looked up AuthenticationInfo [com.csx.common.entity.SysUser@1a289fa6] from doGetAuthenticationInfo
+18:09:14.532 [http-nio-9001-exec-3] DEBUG org.apache.shiro.realm.AuthenticatingRealm  - AuthenticationInfo caching is disabled for info [com.csx.common.entity.SysUser@1a289fa6].  Submitted token: [org.apache.shiro.authc.UsernamePasswordToken - admin, rememberMe=false].
+18:09:14.532 [http-nio-9001-exec-3] DEBUG org.apache.shiro.authc.AbstractAuthenticator  - Authentication successful for token [org.apache.shiro.authc.UsernamePasswordToken - admin, rememberMe=false].  Returned account [com.csx.common.entity.SysUser@1a289fa6]
+18:09:14.532 [http-nio-9001-exec-3] DEBUG org.apache.shiro.mgt.DefaultSecurityManager  - Context already contains a session.  Returning.
+18:09:14.533 [http-nio-9001-exec-3] DEBUG org.apache.shiro.web.servlet.SimpleCookie  - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/quartz; Max-Age=0; Expires=Thu, 02-Dec-2021 10:09:14 GMT; SameSite=lax]
+18:09:14.533 [http-nio-9001-exec-3] DEBUG org.apache.shiro.mgt.AbstractRememberMeManager  - AuthenticationToken did not indicate RememberMe is requested.  RememberMe functionality will not be executed for corresponding account.
+18:09:14.603 [http-nio-9001-exec-3] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==>  Preparing: SELECT user_id,user_enname,user_chname,user_password,user_sex,user_birthdate,user_tel,user_email,user_addr,user_is_first,user_login_time,user_error_num,user_is_lock,user_is_onlion,comm_cdate,comm_udate,comm_cuser,comm_uuser,comm_delfalg,comm_v1,comm_v2,comm_v3,comm_v4,comm_v5 FROM sys_user_info WHERE user_id=? 
+18:09:14.604 [http-nio-9001-exec-3] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==> Parameters: admin(String)
+18:09:14.605 [http-nio-9001-exec-3] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - <==      Total: 1
+18:09:16.032 [http-nio-9001-exec-3] DEBUG com.csx.common.mapper.SysLogMapper.insert  - ==>  Preparing: INSERT INTO sys_log_info ( log_id, sys_id, log_level, log_type, log_msg, log_time, comm_cdate, comm_udate, comm_cuser, comm_uuser, comm_delfalg ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+18:09:16.034 [http-nio-9001-exec-3] DEBUG com.csx.common.mapper.SysLogMapper.insert  - ==> Parameters: 63cd130ea142470b8b9d9f1985d58124(String), SYSMM(String), 信息(String), 用户登录(String), [2021-12-03 18:09:15]用户：admin ，登录成功！(String), 2021-12-03 18:09:15(String), 2021-12-03(String), 2021-12-03(String), admin(String), admin(String), N(String)
+18:09:16.070 [http-nio-9001-exec-3] DEBUG com.csx.common.mapper.SysLogMapper.insert  - <==    Updates: 1
+18:09:38.393 [http-nio-9001-exec-6] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==>  Preparing: SELECT user_id,user_enname,user_chname,user_password,user_sex,user_birthdate,user_tel,user_email,user_addr,user_is_first,user_login_time,user_error_num,user_is_lock,user_is_onlion,comm_cdate,comm_udate,comm_cuser,comm_uuser,comm_delfalg,comm_v1,comm_v2,comm_v3,comm_v4,comm_v5 FROM sys_user_info WHERE user_id=? 
+18:09:38.394 [http-nio-9001-exec-6] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==> Parameters: admin(String)
+18:09:38.396 [http-nio-9001-exec-6] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - <==      Total: 1
+18:09:38.396 [http-nio-9001-exec-6] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_PWDOVER]不存在，取自定义默认值：365
+18:09:38.396 [http-nio-9001-exec-6] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_ISMULTI]不存在，取自定义默认值：Y
+18:09:38.397 [http-nio-9001-exec-6] DEBUG org.apache.shiro.realm.AuthenticatingRealm  - Looked up AuthenticationInfo [com.csx.common.entity.SysUser@71c79a50] from doGetAuthenticationInfo
+18:09:38.397 [http-nio-9001-exec-6] DEBUG org.apache.shiro.realm.AuthenticatingRealm  - AuthenticationInfo caching is disabled for info [com.csx.common.entity.SysUser@71c79a50].  Submitted token: [org.apache.shiro.authc.UsernamePasswordToken - admin, rememberMe=false].
+18:09:38.397 [http-nio-9001-exec-6] DEBUG org.apache.shiro.authc.AbstractAuthenticator  - Authentication successful for token [org.apache.shiro.authc.UsernamePasswordToken - admin, rememberMe=false].  Returned account [com.csx.common.entity.SysUser@71c79a50]
+18:09:38.397 [http-nio-9001-exec-6] DEBUG org.apache.shiro.mgt.DefaultSecurityManager  - Context already contains a session.  Returning.
+18:09:38.397 [http-nio-9001-exec-6] DEBUG org.apache.shiro.web.servlet.SimpleCookie  - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/quartz; Max-Age=0; Expires=Thu, 02-Dec-2021 10:09:38 GMT; SameSite=lax]
+18:09:38.397 [http-nio-9001-exec-6] DEBUG org.apache.shiro.mgt.AbstractRememberMeManager  - AuthenticationToken did not indicate RememberMe is requested.  RememberMe functionality will not be executed for corresponding account.
+18:09:38.445 [http-nio-9001-exec-6] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==>  Preparing: SELECT user_id,user_enname,user_chname,user_password,user_sex,user_birthdate,user_tel,user_email,user_addr,user_is_first,user_login_time,user_error_num,user_is_lock,user_is_onlion,comm_cdate,comm_udate,comm_cuser,comm_uuser,comm_delfalg,comm_v1,comm_v2,comm_v3,comm_v4,comm_v5 FROM sys_user_info WHERE user_id=? 
+18:09:38.445 [http-nio-9001-exec-6] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==> Parameters: admin(String)
+18:09:38.447 [http-nio-9001-exec-6] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - <==      Total: 1
+18:09:39.443 [http-nio-9001-exec-6] DEBUG com.csx.common.mapper.SysLogMapper.insert  - ==>  Preparing: INSERT INTO sys_log_info ( log_id, sys_id, log_level, log_type, log_msg, log_time, comm_cdate, comm_udate, comm_cuser, comm_uuser, comm_delfalg ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+18:09:39.444 [http-nio-9001-exec-6] DEBUG com.csx.common.mapper.SysLogMapper.insert  - ==> Parameters: 9e1e458026a447d28956b44f0bce6287(String), SYSMM(String), 信息(String), 用户登录(String), [2021-12-03 18:09:39]用户：admin ，登录成功！(String), 2021-12-03 18:09:39(String), 2021-12-03(String), 2021-12-03(String), admin(String), admin(String), N(String)
+18:09:39.486 [QuartzScheduler_quartzScheduler-Administrator1638526098947_ClusterManager] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 80055
+18:09:39.486 [QuartzScheduler_quartzScheduler-Administrator1638526098947_ClusterManager] DEBUG com.alibaba.druid.pool.DruidDataSource  - skip not validate connection.
+18:09:39.494 [http-nio-9001-exec-6] DEBUG com.csx.common.mapper.SysLogMapper.insert  - <==    Updates: 1
+18:13:58.947 [http-nio-9001-exec-1] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 259430
+18:13:58.948 [http-nio-9001-exec-1] DEBUG com.alibaba.druid.pool.DruidDataSource  - skip not validate connection.
+18:13:58.958 [http-nio-9001-exec-1] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==>  Preparing: SELECT user_id,user_enname,user_chname,user_password,user_sex,user_birthdate,user_tel,user_email,user_addr,user_is_first,user_login_time,user_error_num,user_is_lock,user_is_onlion,comm_cdate,comm_udate,comm_cuser,comm_uuser,comm_delfalg,comm_v1,comm_v2,comm_v3,comm_v4,comm_v5 FROM sys_user_info WHERE user_id=? 
+18:13:58.958 [http-nio-9001-exec-1] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==> Parameters: admin(String)
+18:13:58.960 [http-nio-9001-exec-1] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - <==      Total: 1
+18:13:58.960 [http-nio-9001-exec-1] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_PWDOVER]不存在，取自定义默认值：365
+18:13:58.960 [http-nio-9001-exec-1] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_ISMULTI]不存在，取自定义默认值：Y
+18:13:58.960 [http-nio-9001-exec-1] DEBUG org.apache.shiro.realm.AuthenticatingRealm  - Looked up AuthenticationInfo [com.csx.common.entity.SysUser@26b5feaf] from doGetAuthenticationInfo
+18:13:58.960 [http-nio-9001-exec-1] DEBUG org.apache.shiro.realm.AuthenticatingRealm  - AuthenticationInfo caching is disabled for info [com.csx.common.entity.SysUser@26b5feaf].  Submitted token: [org.apache.shiro.authc.UsernamePasswordToken - admin, rememberMe=false].
+18:13:58.960 [http-nio-9001-exec-1] DEBUG org.apache.shiro.authc.AbstractAuthenticator  - Authentication successful for token [org.apache.shiro.authc.UsernamePasswordToken - admin, rememberMe=false].  Returned account [com.csx.common.entity.SysUser@26b5feaf]
+18:13:58.960 [http-nio-9001-exec-1] DEBUG org.apache.shiro.mgt.DefaultSecurityManager  - Context already contains a session.  Returning.
+18:13:58.961 [http-nio-9001-exec-1] DEBUG org.apache.shiro.web.servlet.SimpleCookie  - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/quartz; Max-Age=0; Expires=Thu, 02-Dec-2021 10:13:58 GMT; SameSite=lax]
+18:13:58.961 [http-nio-9001-exec-1] DEBUG org.apache.shiro.mgt.AbstractRememberMeManager  - AuthenticationToken did not indicate RememberMe is requested.  RememberMe functionality will not be executed for corresponding account.
+18:13:58.980 [http-nio-9001-exec-1] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==>  Preparing: SELECT user_id,user_enname,user_chname,user_password,user_sex,user_birthdate,user_tel,user_email,user_addr,user_is_first,user_login_time,user_error_num,user_is_lock,user_is_onlion,comm_cdate,comm_udate,comm_cuser,comm_uuser,comm_delfalg,comm_v1,comm_v2,comm_v3,comm_v4,comm_v5 FROM sys_user_info WHERE user_id=? 
+18:13:58.980 [http-nio-9001-exec-1] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==> Parameters: admin(String)
+18:13:58.982 [http-nio-9001-exec-1] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - <==      Total: 1
+18:14:00.588 [http-nio-9001-exec-1] DEBUG com.csx.common.mapper.SysLogMapper.insert  - ==>  Preparing: INSERT INTO sys_log_info ( log_id, sys_id, log_level, log_type, log_msg, log_time, comm_cdate, comm_udate, comm_cuser, comm_uuser, comm_delfalg ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+18:14:00.590 [http-nio-9001-exec-1] DEBUG com.csx.common.mapper.SysLogMapper.insert  - ==> Parameters: 81190b1701d64b6095c6e10a6cce31c6(String), SYSMM(String), 信息(String), 用户登录(String), [2021-12-03 18:14:00]用户：admin ，登录成功！(String), 2021-12-03 18:14:00(String), 2021-12-03(String), 2021-12-03(String), admin(String), admin(String), N(String)
+18:14:00.662 [http-nio-9001-exec-1] DEBUG com.csx.common.mapper.SysLogMapper.insert  - <==    Updates: 1
+18:15:25.812 [http-nio-9001-exec-9] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==>  Preparing: SELECT user_id,user_enname,user_chname,user_password,user_sex,user_birthdate,user_tel,user_email,user_addr,user_is_first,user_login_time,user_error_num,user_is_lock,user_is_onlion,comm_cdate,comm_udate,comm_cuser,comm_uuser,comm_delfalg,comm_v1,comm_v2,comm_v3,comm_v4,comm_v5 FROM sys_user_info WHERE user_id=? 
+18:15:25.812 [http-nio-9001-exec-9] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==> Parameters: admin(String)
+18:15:25.813 [http-nio-9001-exec-9] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - <==      Total: 1
+18:15:25.813 [http-nio-9001-exec-9] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_PWDOVER]不存在，取自定义默认值：365
+18:15:25.814 [http-nio-9001-exec-9] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_ISMULTI]不存在，取自定义默认值：Y
+18:15:25.814 [http-nio-9001-exec-9] DEBUG org.apache.shiro.realm.AuthenticatingRealm  - Looked up AuthenticationInfo [com.csx.common.entity.SysUser@6a4498ba] from doGetAuthenticationInfo
+18:15:25.814 [http-nio-9001-exec-9] DEBUG org.apache.shiro.realm.AuthenticatingRealm  - AuthenticationInfo caching is disabled for info [com.csx.common.entity.SysUser@6a4498ba].  Submitted token: [org.apache.shiro.authc.UsernamePasswordToken - admin, rememberMe=false].
+18:15:25.814 [http-nio-9001-exec-9] DEBUG org.apache.shiro.authc.AbstractAuthenticator  - Authentication successful for token [org.apache.shiro.authc.UsernamePasswordToken - admin, rememberMe=false].  Returned account [com.csx.common.entity.SysUser@6a4498ba]
+18:15:25.814 [http-nio-9001-exec-9] DEBUG org.apache.shiro.mgt.DefaultSecurityManager  - Context already contains a session.  Returning.
+18:15:25.814 [http-nio-9001-exec-9] DEBUG org.apache.shiro.web.servlet.SimpleCookie  - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/quartz; Max-Age=0; Expires=Thu, 02-Dec-2021 10:15:25 GMT; SameSite=lax]
+18:15:25.814 [http-nio-9001-exec-9] DEBUG org.apache.shiro.mgt.AbstractRememberMeManager  - AuthenticationToken did not indicate RememberMe is requested.  RememberMe functionality will not be executed for corresponding account.
+18:15:25.861 [http-nio-9001-exec-9] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==>  Preparing: SELECT user_id,user_enname,user_chname,user_password,user_sex,user_birthdate,user_tel,user_email,user_addr,user_is_first,user_login_time,user_error_num,user_is_lock,user_is_onlion,comm_cdate,comm_udate,comm_cuser,comm_uuser,comm_delfalg,comm_v1,comm_v2,comm_v3,comm_v4,comm_v5 FROM sys_user_info WHERE user_id=? 
+18:15:25.862 [http-nio-9001-exec-9] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==> Parameters: admin(String)
+18:15:25.863 [http-nio-9001-exec-9] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - <==      Total: 1
+18:15:26.972 [http-nio-9001-exec-9] DEBUG com.csx.common.mapper.SysLogMapper.insert  - ==>  Preparing: INSERT INTO sys_log_info ( log_id, sys_id, log_level, log_type, log_msg, log_time, comm_cdate, comm_udate, comm_cuser, comm_uuser, comm_delfalg ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+18:15:26.973 [http-nio-9001-exec-9] DEBUG com.csx.common.mapper.SysLogMapper.insert  - ==> Parameters: d7913b43f32d4b39ae405b8776f515d4(String), SYSMM(String), 信息(String), 用户登录(String), [2021-12-03 18:15:26]用户：admin ，登录成功！(String), 2021-12-03 18:15:26(String), 2021-12-03(String), 2021-12-03(String), admin(String), admin(String), N(String)
+18:15:27.005 [QuartzScheduler_quartzScheduler-Administrator1638526098947_ClusterManager] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 88028
+18:15:27.005 [QuartzScheduler_quartzScheduler-Administrator1638526098947_ClusterManager] DEBUG com.alibaba.druid.pool.DruidDataSource  - skip not validate connection.
+18:15:27.053 [http-nio-9001-exec-9] DEBUG com.csx.common.mapper.SysLogMapper.insert  - <==    Updates: 1
+18:15:34.745 [http-nio-9001-exec-2] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==>  Preparing: SELECT user_id,user_enname,user_chname,user_password,user_sex,user_birthdate,user_tel,user_email,user_addr,user_is_first,user_login_time,user_error_num,user_is_lock,user_is_onlion,comm_cdate,comm_udate,comm_cuser,comm_uuser,comm_delfalg,comm_v1,comm_v2,comm_v3,comm_v4,comm_v5 FROM sys_user_info WHERE user_id=? 
+18:15:34.745 [http-nio-9001-exec-2] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==> Parameters: admin(String)
+18:15:34.748 [http-nio-9001-exec-2] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - <==      Total: 1
+18:15:34.748 [http-nio-9001-exec-2] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_PWDOVER]不存在，取自定义默认值：365
+18:15:34.749 [http-nio-9001-exec-2] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_ISMULTI]不存在，取自定义默认值：Y
+18:15:34.749 [http-nio-9001-exec-2] DEBUG org.apache.shiro.realm.AuthenticatingRealm  - Looked up AuthenticationInfo [com.csx.common.entity.SysUser@3a334dd1] from doGetAuthenticationInfo
+18:15:34.749 [http-nio-9001-exec-2] DEBUG org.apache.shiro.realm.AuthenticatingRealm  - AuthenticationInfo caching is disabled for info [com.csx.common.entity.SysUser@3a334dd1].  Submitted token: [org.apache.shiro.authc.UsernamePasswordToken - admin, rememberMe=false].
+18:15:34.749 [http-nio-9001-exec-2] DEBUG org.apache.shiro.authc.AbstractAuthenticator  - Authentication successful for token [org.apache.shiro.authc.UsernamePasswordToken - admin, rememberMe=false].  Returned account [com.csx.common.entity.SysUser@3a334dd1]
+18:15:34.749 [http-nio-9001-exec-2] DEBUG org.apache.shiro.mgt.DefaultSecurityManager  - Context already contains a session.  Returning.
+18:15:34.749 [http-nio-9001-exec-2] DEBUG org.apache.shiro.web.servlet.SimpleCookie  - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/quartz; Max-Age=0; Expires=Thu, 02-Dec-2021 10:15:34 GMT; SameSite=lax]
+18:15:34.749 [http-nio-9001-exec-2] DEBUG org.apache.shiro.mgt.AbstractRememberMeManager  - AuthenticationToken did not indicate RememberMe is requested.  RememberMe functionality will not be executed for corresponding account.
+18:15:34.795 [http-nio-9001-exec-2] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==>  Preparing: SELECT user_id,user_enname,user_chname,user_password,user_sex,user_birthdate,user_tel,user_email,user_addr,user_is_first,user_login_time,user_error_num,user_is_lock,user_is_onlion,comm_cdate,comm_udate,comm_cuser,comm_uuser,comm_delfalg,comm_v1,comm_v2,comm_v3,comm_v4,comm_v5 FROM sys_user_info WHERE user_id=? 
+18:15:34.795 [http-nio-9001-exec-2] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==> Parameters: admin(String)
+18:15:34.796 [http-nio-9001-exec-2] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - <==      Total: 1
+18:15:35.505 [http-nio-9001-exec-7] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==>  Preparing: SELECT user_id,user_enname,user_chname,user_password,user_sex,user_birthdate,user_tel,user_email,user_addr,user_is_first,user_login_time,user_error_num,user_is_lock,user_is_onlion,comm_cdate,comm_udate,comm_cuser,comm_uuser,comm_delfalg,comm_v1,comm_v2,comm_v3,comm_v4,comm_v5 FROM sys_user_info WHERE user_id=? 
+18:15:35.505 [http-nio-9001-exec-7] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==> Parameters: admin(String)
+18:15:35.507 [http-nio-9001-exec-7] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - <==      Total: 1
+18:15:35.507 [http-nio-9001-exec-7] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_PWDOVER]不存在，取自定义默认值：365
+18:15:35.508 [http-nio-9001-exec-7] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_ISMULTI]不存在，取自定义默认值：Y
+18:15:35.508 [http-nio-9001-exec-7] DEBUG org.apache.shiro.realm.AuthenticatingRealm  - Looked up AuthenticationInfo [com.csx.common.entity.SysUser@570f24d4] from doGetAuthenticationInfo
+18:15:35.508 [http-nio-9001-exec-7] DEBUG org.apache.shiro.realm.AuthenticatingRealm  - AuthenticationInfo caching is disabled for info [com.csx.common.entity.SysUser@570f24d4].  Submitted token: [org.apache.shiro.authc.UsernamePasswordToken - admin, rememberMe=false].
+18:15:35.508 [http-nio-9001-exec-7] DEBUG org.apache.shiro.authc.AbstractAuthenticator  - Authentication successful for token [org.apache.shiro.authc.UsernamePasswordToken - admin, rememberMe=false].  Returned account [com.csx.common.entity.SysUser@570f24d4]
+18:15:35.508 [http-nio-9001-exec-7] DEBUG org.apache.shiro.mgt.DefaultSecurityManager  - Context already contains a session.  Returning.
+18:15:35.508 [http-nio-9001-exec-7] DEBUG org.apache.shiro.web.servlet.SimpleCookie  - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/quartz; Max-Age=0; Expires=Thu, 02-Dec-2021 10:15:35 GMT; SameSite=lax]
+18:15:35.508 [http-nio-9001-exec-7] DEBUG org.apache.shiro.mgt.AbstractRememberMeManager  - AuthenticationToken did not indicate RememberMe is requested.  RememberMe functionality will not be executed for corresponding account.
+18:15:35.553 [http-nio-9001-exec-7] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==>  Preparing: SELECT user_id,user_enname,user_chname,user_password,user_sex,user_birthdate,user_tel,user_email,user_addr,user_is_first,user_login_time,user_error_num,user_is_lock,user_is_onlion,comm_cdate,comm_udate,comm_cuser,comm_uuser,comm_delfalg,comm_v1,comm_v2,comm_v3,comm_v4,comm_v5 FROM sys_user_info WHERE user_id=? 
+18:15:35.553 [http-nio-9001-exec-7] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==> Parameters: admin(String)
+18:15:35.555 [http-nio-9001-exec-7] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - <==      Total: 1
+18:15:35.697 [http-nio-9001-exec-1] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==>  Preparing: SELECT user_id,user_enname,user_chname,user_password,user_sex,user_birthdate,user_tel,user_email,user_addr,user_is_first,user_login_time,user_error_num,user_is_lock,user_is_onlion,comm_cdate,comm_udate,comm_cuser,comm_uuser,comm_delfalg,comm_v1,comm_v2,comm_v3,comm_v4,comm_v5 FROM sys_user_info WHERE user_id=? 
+18:15:35.697 [http-nio-9001-exec-1] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==> Parameters: admin(String)
+18:15:35.698 [http-nio-9001-exec-1] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - <==      Total: 1
+18:15:35.699 [http-nio-9001-exec-1] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_PWDOVER]不存在，取自定义默认值：365
+18:15:35.699 [http-nio-9001-exec-1] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_ISMULTI]不存在，取自定义默认值：Y
+18:15:35.699 [http-nio-9001-exec-1] DEBUG org.apache.shiro.realm.AuthenticatingRealm  - Looked up AuthenticationInfo [com.csx.common.entity.SysUser@32097aad] from doGetAuthenticationInfo
+18:15:35.699 [http-nio-9001-exec-1] DEBUG org.apache.shiro.realm.AuthenticatingRealm  - AuthenticationInfo caching is disabled for info [com.csx.common.entity.SysUser@32097aad].  Submitted token: [org.apache.shiro.authc.UsernamePasswordToken - admin, rememberMe=false].
+18:15:35.699 [http-nio-9001-exec-1] DEBUG org.apache.shiro.authc.AbstractAuthenticator  - Authentication successful for token [org.apache.shiro.authc.UsernamePasswordToken - admin, rememberMe=false].  Returned account [com.csx.common.entity.SysUser@32097aad]
+18:15:35.699 [http-nio-9001-exec-1] DEBUG org.apache.shiro.mgt.DefaultSecurityManager  - Context already contains a session.  Returning.
+18:15:35.700 [http-nio-9001-exec-1] DEBUG org.apache.shiro.web.servlet.SimpleCookie  - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/quartz; Max-Age=0; Expires=Thu, 02-Dec-2021 10:15:35 GMT; SameSite=lax]
+18:15:35.700 [http-nio-9001-exec-1] DEBUG org.apache.shiro.mgt.AbstractRememberMeManager  - AuthenticationToken did not indicate RememberMe is requested.  RememberMe functionality will not be executed for corresponding account.
+18:15:35.728 [http-nio-9001-exec-1] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==>  Preparing: SELECT user_id,user_enname,user_chname,user_password,user_sex,user_birthdate,user_tel,user_email,user_addr,user_is_first,user_login_time,user_error_num,user_is_lock,user_is_onlion,comm_cdate,comm_udate,comm_cuser,comm_uuser,comm_delfalg,comm_v1,comm_v2,comm_v3,comm_v4,comm_v5 FROM sys_user_info WHERE user_id=? 
+18:15:35.729 [http-nio-9001-exec-1] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==> Parameters: admin(String)
+18:15:35.730 [http-nio-9001-exec-1] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - <==      Total: 1
+18:15:35.891 [http-nio-9001-exec-4] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==>  Preparing: SELECT user_id,user_enname,user_chname,user_password,user_sex,user_birthdate,user_tel,user_email,user_addr,user_is_first,user_login_time,user_error_num,user_is_lock,user_is_onlion,comm_cdate,comm_udate,comm_cuser,comm_uuser,comm_delfalg,comm_v1,comm_v2,comm_v3,comm_v4,comm_v5 FROM sys_user_info WHERE user_id=? 
+18:15:35.891 [http-nio-9001-exec-4] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==> Parameters: admin(String)
+18:15:35.892 [http-nio-9001-exec-4] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - <==      Total: 1
+18:15:35.892 [http-nio-9001-exec-4] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_PWDOVER]不存在，取自定义默认值：365
+18:15:35.893 [http-nio-9001-exec-4] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_ISMULTI]不存在，取自定义默认值：Y
+18:15:35.893 [http-nio-9001-exec-4] DEBUG org.apache.shiro.realm.AuthenticatingRealm  - Looked up AuthenticationInfo [com.csx.common.entity.SysUser@771e8ed6] from doGetAuthenticationInfo
+18:15:35.893 [http-nio-9001-exec-4] DEBUG org.apache.shiro.realm.AuthenticatingRealm  - AuthenticationInfo caching is disabled for info [com.csx.common.entity.SysUser@771e8ed6].  Submitted token: [org.apache.shiro.authc.UsernamePasswordToken - admin, rememberMe=false].
+18:15:35.893 [http-nio-9001-exec-4] DEBUG org.apache.shiro.authc.AbstractAuthenticator  - Authentication successful for token [org.apache.shiro.authc.UsernamePasswordToken - admin, rememberMe=false].  Returned account [com.csx.common.entity.SysUser@771e8ed6]
+18:15:35.893 [http-nio-9001-exec-4] DEBUG org.apache.shiro.mgt.DefaultSecurityManager  - Context already contains a session.  Returning.
+18:15:35.893 [http-nio-9001-exec-4] DEBUG org.apache.shiro.web.servlet.SimpleCookie  - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/quartz; Max-Age=0; Expires=Thu, 02-Dec-2021 10:15:35 GMT; SameSite=lax]
+18:15:35.893 [http-nio-9001-exec-4] DEBUG org.apache.shiro.mgt.AbstractRememberMeManager  - AuthenticationToken did not indicate RememberMe is requested.  RememberMe functionality will not be executed for corresponding account.
+18:15:35.917 [http-nio-9001-exec-2] DEBUG com.csx.common.mapper.SysLogMapper.insert  - ==>  Preparing: INSERT INTO sys_log_info ( log_id, sys_id, log_level, log_type, log_msg, log_time, comm_cdate, comm_udate, comm_cuser, comm_uuser, comm_delfalg ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+18:15:35.918 [http-nio-9001-exec-2] DEBUG com.csx.common.mapper.SysLogMapper.insert  - ==> Parameters: e4cf3ef8f7fe47fcbee2b25d86d0216e(String), SYSMM(String), 信息(String), 用户登录(String), [2021-12-03 18:15:35]用户：admin ，登录成功！(String), 2021-12-03 18:15:35(String), 2021-12-03(String), 2021-12-03(String), admin(String), admin(String), N(String)
+18:15:35.921 [http-nio-9001-exec-4] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==>  Preparing: SELECT user_id,user_enname,user_chname,user_password,user_sex,user_birthdate,user_tel,user_email,user_addr,user_is_first,user_login_time,user_error_num,user_is_lock,user_is_onlion,comm_cdate,comm_udate,comm_cuser,comm_uuser,comm_delfalg,comm_v1,comm_v2,comm_v3,comm_v4,comm_v5 FROM sys_user_info WHERE user_id=? 
+18:15:35.921 [http-nio-9001-exec-4] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==> Parameters: admin(String)
+18:15:35.924 [http-nio-9001-exec-4] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - <==      Total: 1
+18:15:35.944 [http-nio-9001-exec-2] DEBUG com.csx.common.mapper.SysLogMapper.insert  - <==    Updates: 1
+18:15:37.224 [http-nio-9001-exec-7] DEBUG com.csx.common.mapper.SysLogMapper.insert  - ==>  Preparing: INSERT INTO sys_log_info ( log_id, sys_id, log_level, log_type, log_msg, log_time, comm_cdate, comm_udate, comm_cuser, comm_uuser, comm_delfalg ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+18:15:37.224 [http-nio-9001-exec-7] DEBUG com.csx.common.mapper.SysLogMapper.insert  - ==> Parameters: c2cdf4bf28414586adb5d9f21781b865(String), SYSMM(String), 信息(String), 用户登录(String), [2021-12-03 18:15:37]用户：admin ，登录成功！(String), 2021-12-03 18:15:37(String), 2021-12-03(String), 2021-12-03(String), admin(String), admin(String), N(String)
+18:15:37.244 [http-nio-9001-exec-7] DEBUG com.csx.common.mapper.SysLogMapper.insert  - <==    Updates: 1
+18:15:37.372 [http-nio-9001-exec-1] DEBUG com.csx.common.mapper.SysLogMapper.insert  - ==>  Preparing: INSERT INTO sys_log_info ( log_id, sys_id, log_level, log_type, log_msg, log_time, comm_cdate, comm_udate, comm_cuser, comm_uuser, comm_delfalg ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+18:15:37.372 [http-nio-9001-exec-1] DEBUG com.csx.common.mapper.SysLogMapper.insert  - ==> Parameters: 7424bdb213f047119b82e3102f8b8b8e(String), SYSMM(String), 信息(String), 用户登录(String), [2021-12-03 18:15:37]用户：admin ，登录成功！(String), 2021-12-03 18:15:37(String), 2021-12-03(String), 2021-12-03(String), admin(String), admin(String), N(String)
+18:15:37.402 [http-nio-9001-exec-1] DEBUG com.csx.common.mapper.SysLogMapper.insert  - <==    Updates: 1
+18:15:37.475 [http-nio-9001-exec-4] DEBUG com.csx.common.mapper.SysLogMapper.insert  - ==>  Preparing: INSERT INTO sys_log_info ( log_id, sys_id, log_level, log_type, log_msg, log_time, comm_cdate, comm_udate, comm_cuser, comm_uuser, comm_delfalg ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+18:15:37.475 [http-nio-9001-exec-4] DEBUG com.csx.common.mapper.SysLogMapper.insert  - ==> Parameters: e461b61d91b844fda17665611133c5a2(String), SYSMM(String), 信息(String), 用户登录(String), [2021-12-03 18:15:37]用户：admin ，登录成功！(String), 2021-12-03 18:15:37(String), 2021-12-03(String), 2021-12-03(String), admin(String), admin(String), N(String)
+18:15:37.494 [http-nio-9001-exec-4] DEBUG com.csx.common.mapper.SysLogMapper.insert  - <==    Updates: 1
+18:17:52.399 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 136476
+18:17:52.399 [quartzScheduler_QuartzSchedulerThread] DEBUG com.alibaba.druid.pool.DruidDataSource  - skip not validate connection.
+18:18:16.508 [http-nio-9001-exec-7] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==>  Preparing: SELECT user_id,user_enname,user_chname,user_password,user_sex,user_birthdate,user_tel,user_email,user_addr,user_is_first,user_login_time,user_error_num,user_is_lock,user_is_onlion,comm_cdate,comm_udate,comm_cuser,comm_uuser,comm_delfalg,comm_v1,comm_v2,comm_v3,comm_v4,comm_v5 FROM sys_user_info WHERE user_id=? 
+18:18:16.508 [http-nio-9001-exec-7] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==> Parameters: admin(String)
+18:18:16.510 [http-nio-9001-exec-7] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - <==      Total: 1
+18:18:16.510 [http-nio-9001-exec-7] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_PWDOVER]不存在，取自定义默认值：365
+18:18:16.510 [http-nio-9001-exec-7] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_ISMULTI]不存在，取自定义默认值：Y
+18:18:16.510 [http-nio-9001-exec-7] DEBUG org.apache.shiro.realm.AuthenticatingRealm  - Looked up AuthenticationInfo [com.csx.common.entity.SysUser@7780f9cd] from doGetAuthenticationInfo
+18:18:16.510 [http-nio-9001-exec-7] DEBUG org.apache.shiro.realm.AuthenticatingRealm  - AuthenticationInfo caching is disabled for info [com.csx.common.entity.SysUser@7780f9cd].  Submitted token: [org.apache.shiro.authc.UsernamePasswordToken - admin, rememberMe=false].
+18:18:16.510 [http-nio-9001-exec-7] DEBUG org.apache.shiro.authc.AbstractAuthenticator  - Authentication successful for token [org.apache.shiro.authc.UsernamePasswordToken - admin, rememberMe=false].  Returned account [com.csx.common.entity.SysUser@7780f9cd]
+18:18:16.510 [http-nio-9001-exec-7] DEBUG org.apache.shiro.mgt.DefaultSecurityManager  - Context already contains a session.  Returning.
+18:18:16.511 [http-nio-9001-exec-7] DEBUG org.apache.shiro.web.servlet.SimpleCookie  - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/quartz; Max-Age=0; Expires=Thu, 02-Dec-2021 10:18:16 GMT; SameSite=lax]
+18:18:16.511 [http-nio-9001-exec-7] DEBUG org.apache.shiro.mgt.AbstractRememberMeManager  - AuthenticationToken did not indicate RememberMe is requested.  RememberMe functionality will not be executed for corresponding account.
+18:18:16.534 [http-nio-9001-exec-7] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==>  Preparing: SELECT user_id,user_enname,user_chname,user_password,user_sex,user_birthdate,user_tel,user_email,user_addr,user_is_first,user_login_time,user_error_num,user_is_lock,user_is_onlion,comm_cdate,comm_udate,comm_cuser,comm_uuser,comm_delfalg,comm_v1,comm_v2,comm_v3,comm_v4,comm_v5 FROM sys_user_info WHERE user_id=? 
+18:18:16.535 [http-nio-9001-exec-7] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==> Parameters: admin(String)
+18:18:16.536 [http-nio-9001-exec-7] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - <==      Total: 1
+18:18:17.608 [http-nio-9001-exec-7] DEBUG com.csx.common.mapper.SysLogMapper.insert  - ==>  Preparing: INSERT INTO sys_log_info ( log_id, sys_id, log_level, log_type, log_msg, log_time, comm_cdate, comm_udate, comm_cuser, comm_uuser, comm_delfalg ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+18:18:17.608 [http-nio-9001-exec-7] DEBUG com.csx.common.mapper.SysLogMapper.insert  - ==> Parameters: 3bbe3b7384864687aa7d30aaa526b69b(String), SYSMM(String), 信息(String), 用户登录(String), [2021-12-03 18:18:17]用户：admin ，登录成功！(String), 2021-12-03 18:18:17(String), 2021-12-03(String), 2021-12-03(String), admin(String), admin(String), N(String)
+18:18:17.633 [http-nio-9001-exec-7] DEBUG com.csx.common.mapper.SysLogMapper.insert  - <==    Updates: 1
+18:18:34.462 [http-nio-9001-exec-1] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==>  Preparing: SELECT user_id,user_enname,user_chname,user_password,user_sex,user_birthdate,user_tel,user_email,user_addr,user_is_first,user_login_time,user_error_num,user_is_lock,user_is_onlion,comm_cdate,comm_udate,comm_cuser,comm_uuser,comm_delfalg,comm_v1,comm_v2,comm_v3,comm_v4,comm_v5 FROM sys_user_info WHERE user_id=? 
+18:18:34.462 [http-nio-9001-exec-1] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==> Parameters: admin(String)
+18:18:34.465 [http-nio-9001-exec-1] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - <==      Total: 1
+18:18:34.465 [http-nio-9001-exec-1] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_PWDOVER]不存在，取自定义默认值：365
+18:18:34.465 [http-nio-9001-exec-1] WARN  com.csx.common.config.AppCofig  - 配置项[SYS_LOGIN_ISMULTI]不存在，取自定义默认值：Y
+18:18:34.465 [http-nio-9001-exec-1] DEBUG org.apache.shiro.realm.AuthenticatingRealm  - Looked up AuthenticationInfo [com.csx.common.entity.SysUser@66f8b793] from doGetAuthenticationInfo
+18:18:34.465 [http-nio-9001-exec-1] DEBUG org.apache.shiro.realm.AuthenticatingRealm  - AuthenticationInfo caching is disabled for info [com.csx.common.entity.SysUser@66f8b793].  Submitted token: [org.apache.shiro.authc.UsernamePasswordToken - admin, rememberMe=false].
+18:18:34.465 [http-nio-9001-exec-1] DEBUG org.apache.shiro.authc.AbstractAuthenticator  - Authentication successful for token [org.apache.shiro.authc.UsernamePasswordToken - admin, rememberMe=false].  Returned account [com.csx.common.entity.SysUser@66f8b793]
+18:18:34.465 [http-nio-9001-exec-1] DEBUG org.apache.shiro.mgt.DefaultSecurityManager  - Context already contains a session.  Returning.
+18:18:34.466 [http-nio-9001-exec-1] DEBUG org.apache.shiro.web.servlet.SimpleCookie  - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/quartz; Max-Age=0; Expires=Thu, 02-Dec-2021 10:18:34 GMT; SameSite=lax]
+18:18:34.466 [http-nio-9001-exec-1] DEBUG org.apache.shiro.mgt.AbstractRememberMeManager  - AuthenticationToken did not indicate RememberMe is requested.  RememberMe functionality will not be executed for corresponding account.
+18:18:34.492 [http-nio-9001-exec-1] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==>  Preparing: SELECT user_id,user_enname,user_chname,user_password,user_sex,user_birthdate,user_tel,user_email,user_addr,user_is_first,user_login_time,user_error_num,user_is_lock,user_is_onlion,comm_cdate,comm_udate,comm_cuser,comm_uuser,comm_delfalg,comm_v1,comm_v2,comm_v3,comm_v4,comm_v5 FROM sys_user_info WHERE user_id=? 
+18:18:34.493 [http-nio-9001-exec-1] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - ==> Parameters: admin(String)
+18:18:34.494 [http-nio-9001-exec-1] DEBUG com.csx.common.mapper.SysUserMapper.selectById  - <==      Total: 1
+18:18:35.570 [http-nio-9001-exec-1] DEBUG com.csx.common.mapper.SysLogMapper.insert  - ==>  Preparing: INSERT INTO sys_log_info ( log_id, sys_id, log_level, log_type, log_msg, log_time, comm_cdate, comm_udate, comm_cuser, comm_uuser, comm_delfalg ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+18:18:35.570 [http-nio-9001-exec-1] DEBUG com.csx.common.mapper.SysLogMapper.insert  - ==> Parameters: 64cec78c103f4733a4b1dd934c4c7a47(String), SYSMM(String), 信息(String), 用户登录(String), [2021-12-03 18:18:35]用户：admin ，登录成功！(String), 2021-12-03 18:18:35(String), 2021-12-03(String), 2021-12-03(String), admin(String), admin(String), N(String)
+18:18:35.591 [http-nio-9001-exec-1] DEBUG com.csx.common.mapper.SysLogMapper.insert  - <==    Updates: 1
+18:27:19.398 [QuartzScheduler_quartzScheduler-Administrator1638526098947_MisfireHandler] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 539990
+18:27:19.398 [QuartzScheduler_quartzScheduler-Administrator1638526098947_MisfireHandler] DEBUG com.alibaba.druid.pool.DruidDataSource  - skip not validate connection.
+18:34:36.301 [quartzScheduler_QuartzSchedulerThread] WARN  com.alibaba.druid.pool.DruidAbstractDataSource  - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, version : 1.2.4, lastPacketReceivedIdleMillis : 436895
+18:34:36.302 [quartzScheduler_QuartzSchedulerThread] DEBUG com.alibaba.druid.pool.DruidDataSource  - skip not validate connection.

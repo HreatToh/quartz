@@ -1,4 +1,4 @@
-package com.csx.common.entity;
+package com.csx.common.factory;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.csx.common.enums.QueryFormatEnum;
