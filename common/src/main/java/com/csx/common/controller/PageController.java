@@ -5,6 +5,7 @@ import cn.hutool.json.JSONUtil;
 import com.csx.base.controller.BaseController;
 import com.csx.common.config.AppCofig;
 import com.csx.common.other.Constants;
+import com.csx.common.other.JsonMap;
 import com.csx.common.utils.ToolUtils;
 import com.csx.licence.entity.Licence;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/page")
@@ -41,18 +44,29 @@ public class PageController extends BaseController {
      **/
     @GetMapping( name = "首页" , value = "/index")
     public String index(HttpServletRequest request , HttpServletResponse response , ModelMap modelMap){
-        String licenceJson = ToolUtils.nvl(request.getAttribute(Constants.App.SYS_LICENCE) , Constants.App.NONE);
-        if (ToolUtils.equalsIgnoreCase(Constants.App.NONE , licenceJson)){
-            modelMap.addAttribute("isLicence" , false);
-        }else{
-            modelMap.addAttribute("isLicence" , true);
-            modelMap.addAttribute("licence" , Licence.decode(licenceJson));
-        }
-        modelMap.addAttribute("home_url" , AppCofig.getSysConfig(Constants.App.SYS_HOME_PAGE_URL ,  "page/home" ));
-        modelMap.addAttribute("side_icon" , AppCofig.getSysConfig(Constants.App.SYS_HOME_SIDE_ICON , "/static/images/logo.png"));
-        modelMap.addAttribute("side_title" , AppCofig.getSysConfig(Constants.App.SYS_HOME_SIDE_TITLE , "Quartz "));
-        modelMap.addAttribute(Constants.App.HEADER_AUTHORIZATION , request.getSession().getAttribute(Constants.App.HEADER_AUTHORIZATION));
+        /** 初始化Customer配置    */
+        initCustomerSetting(modelMap);
         return "/index";
+    }
+
+    /**
+     * @method  initCustomerSetting
+     * @params  ModelMap modelMap
+     * @return  
+     * @desc    初始化Customer 配置
+     **/
+    private void initCustomerSetting(ModelMap modelMap) {
+        JsonMap<String , Object> options = JsonMap.newInstance();
+        options.append("iniUrl",AppCofig.getSysConfig(Constants.App.SYS_HOME_OPTIONS_INIURL , "/json/init.json"));
+        options.append("clearUrl",AppCofig.getSysConfig(Constants.App.SYS_HOME_OPTIONS_CLEARURL , "/json/clear.json"));
+        options.append("urlHashLocation",AppCofig.getSysConfig(Constants.App.SYS_HOME_OPTIONS_URLHASHLOCATION , true));
+        options.append("bgColorDefault",AppCofig.getSysConfig(Constants.App.SYS_HOME_OPTIONS_BGCOLORDEFAULT , false));
+        options.append("multiModule",AppCofig.getSysConfig(Constants.App.SYS_HOME_OPTIONS_MULTIMODULE , true));
+        options.append("menuChildOpen",AppCofig.getSysConfig(Constants.App.SYS_HOME_OPTIONS_MENUCHILDOPEN , false));
+        options.append("loadingTime",AppCofig.getSysConfig(Constants.App.SYS_HOME_OPTIONS_LOADINGTIME , 1));
+        options.append("pageAnim",AppCofig.getSysConfig(Constants.App.SYS_HOME_OPTIONS_PAGEANIM , true));
+        options.append("maxTabNum",AppCofig.getSysConfig(Constants.App.SYS_HOME_OPTIONS_MAXTABNUM , 20));
+        modelMap.addAttribute("customerOptions" , options);
     }
 
 }

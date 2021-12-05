@@ -28,6 +28,8 @@ public class SysConfigService extends BaseService {
 
     @Autowired
     private SysConfigMapper sysConfigMapper;
+    @Autowired
+    private CacheService cacheService;
 
     /**
      * @method  getSysConfigAll
@@ -36,16 +38,7 @@ public class SysConfigService extends BaseService {
      * @desc    获取所有的系统配置信息
      **/
     public List<SysConfig> getSysConfigAll(){
-        return (List<SysConfig>) CacheUtils.get( Constants.Cache.CACHE_SYS_CONFIG , new CacheHandler() {
-            @Override
-            public Object handler() throws Exception {
-                List<SysConfig> list = sysConfigMapper.getSysConfigAll();
-                if (ToolUtils.isNull(list) ){
-                    return new ArrayList<SysConfig>();
-                }
-                return list;
-            }
-        });
+        return cacheService.getSysConfigAll();
     }
     /**
      * @method  getSysConfigAll
@@ -54,15 +47,6 @@ public class SysConfigService extends BaseService {
      * @desc    获取所有的子系统配置信息
      **/
     public List<SysConfig> getSysSubConfigAll() {
-        return (List<SysConfig>) CacheUtils.get( Constants.Cache.CACHE_SYS_SUBCONFIG , new CacheHandler() {
-            @Override
-            public Object handler() throws Exception {
-                List<SysConfig> list = sysConfigMapper.getSysSubConfigAll();
-                if (ToolUtils.isNull(list) ){
-                    return new ArrayList<SysConfig>();
-                }
-                return list;
-            }
-        });
+        return cacheService.getSysSubConfigAll();
     }
 }

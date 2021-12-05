@@ -119,6 +119,15 @@ public class Licence implements Serializable {
     }
 
     /**
+     * @method  parse
+     * @params  String json
+     * @return  Licence
+     * @desc    解析json 为Licence 对象
+     **/
+    public static Licence parse(String json){
+        return JSONUtil.toBean(json , Licence.class);
+    }
+    /**
      * @method  decode
      * @params  String encode
      * @return  Licence
@@ -139,5 +148,15 @@ public class Licence implements Serializable {
      **/
     public static Licence getInstance(String json){
         return JSONUtil.toBean(json , Licence.class);
+    }
+
+    /**
+     * @method  Json
+     * @params
+     * @return  String
+     * @desc    返回对象的json
+     **/
+    public String Json(){
+        return JSONUtil.toJsonStr(this);
     }
 }

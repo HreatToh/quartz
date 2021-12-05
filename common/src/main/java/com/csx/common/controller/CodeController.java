@@ -57,6 +57,7 @@ public class CodeController {
             out.flush();
         } catch (Exception e){
             log.error(ToolUtils.format("[{}] 获取验证码失败！" , "/kaptcha" ) , e);
+            throw e;/** 抛给统一的异常处理接口    */
         } finally {
             ToolUtils.closeIO(out);
         }

@@ -219,6 +219,8 @@ public class BaseService {
             sysLogMapper.insert(sysLog);
         } catch (Exception e){
             log.error(ToolUtils.format("[{}]记录日志异常！" , ToolUtils.nowTime() ) , e);
+            /** 将异常抛给统一异常处理    */
+            throw e;
         }
     }
 }

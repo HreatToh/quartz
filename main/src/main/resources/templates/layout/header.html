@@ -1,7 +1,7 @@
 <!-- templates\layout\header.html -->
 <head>
     <meta charset="utf-8">
-    <title>Quartz , 欢迎您...</title>
+    <title id="appName">欢迎您...</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Access-Control-Allow-Origin" content="*">
@@ -9,6 +9,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
+    <meta id="ctxPath" content="${ctxPath!}">
     <!--引入 Jquery -->
     <script src="${ctxPath}/static/lib/jquery-3.4.1/jquery-3.4.1.min.js"></script>
 
@@ -25,6 +26,7 @@
     <link rel="stylesheet" href="${ctxPath}/static/lib/layui-v2.6.3/css/layui.css" media="all">
     <link rel="stylesheet" href="${ctxPath}/static/css/layuimini.css?v=2.0.4.2" media="all">
     <link rel="stylesheet" href="${ctxPath}/static/css/themes/default.css" media="all">
+    <link rel="stylesheet" href="${ctxPath}/static/css/loaderstyle.css" media="all">
     <link rel="stylesheet" href="${ctxPath}/static/lib/font-awesome-4.7.0/css/font-awesome.min.css" media="all">
     <script src="${ctxPath}/static/lib/layui-v2.6.3/layui.js" charset="utf-8"></script>
     <script src="${ctxPath}/static/js/lay-config.js?v=2.0.0" charset="utf-8"></script>

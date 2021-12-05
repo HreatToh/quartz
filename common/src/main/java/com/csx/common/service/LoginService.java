@@ -69,7 +69,7 @@ public class LoginService extends BaseService {
         } catch (IncorrectCredentialsException e){
             return onIncorrectCredentialsException(token , e);
         }
-        return ResultBody.success("登录成功！" , response.getHeader(Constants.App.HEADER_AUTHORIZATION));
+        return ResultBody.success("登录成功！" , (Object) response.getHeader(Constants.App.HEADER_AUTHORIZATION));
     }
 
     /**
@@ -98,7 +98,7 @@ public class LoginService extends BaseService {
             session.setAttribute(Constants.Session.SESSION_TOKEN_KEY , _token);
             /** 初始化工具类的User对象    */
             ToolUtils.initUser(sysUser);
-            SYSLOGINFO("SYSMM" , "用户登录" , ToolUtils.format("[{}]用户：{} ，登录成功！" , ToolUtils.nowTime() , username));
+            SYSLOGINFO("SYSMM" , "用户登录" , ToolUtils.format("[{}]用户：{} 登录IP：{} ，登录成功！" , ToolUtils.nowTime() , username , ToolUtils.localhost()));
         } catch (Exception e){
             log.error(ToolUtils.format("[{}]登录成功，初始化信息异常！" , ToolUtils.nowTime() ) , e);
         }

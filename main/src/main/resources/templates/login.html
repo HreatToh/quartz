@@ -9,6 +9,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
+    <meta id="ctxPath" content="${ctxPath!}">
     <!--引入 Jquery -->
     <script src="${ctxPath}/static/lib/jquery-3.4.1/jquery-3.4.1.min.js"></script>
 
@@ -18,6 +19,7 @@
     <!--引入 layui -->
     <link rel="stylesheet" href="${ctxPath}/static/lib/layui-v2.6.3/css/layui.css" media="all">
     <script src="${ctxPath}/static/lib/layui-v2.6.3/layui.js" charset="utf-8"></script>
+    <script src="${ctxPath}/static/js/lay-config.js?v=2.0.0" charset="utf-8"></script>
     <!--引入 jquery 粒子效果-->
     <script src="${ctxPath}/static/lib/jq-module/jquery.particleground.min.js" charset="utf-8"></script>
     <!--[if lt IE 9]>
@@ -75,9 +77,8 @@
     </div>
 </div>
 <script>
-    layui.use(['form'], function () {
-        var form = layui.form,
-            layer = layui.layer;
+    layui.use(['form' , 'customer'], function () {
+        var form = layui.form, layer = layui.layer , customer = layui.customer;
 
         // 登录过期的时候，跳出ifram框架
         if (top.location != self.location) top.location = self.location;
@@ -107,26 +108,27 @@
         // 进行登录操作
         form.on('submit(login)', function (data) {
             data = data.field;
-            if (data.username == '') {
+            if ( isNull(data.username) ) {
                 layer.msg('用户名不能为空');
                 return false;
             }
-            if (data.password == '') {
-                layer.msg('密码不能为空');
+            if ( isNull(data.password) ) {
+                layer.msg('密码不能为空')
                 return false;
             }
-            if (data['${kaptcha!}'] == '') {
+
+            if ( isNull(data['${kaptcha!}']) ) {
                 layer.msg('验证码不能为空');
                 return false;
             }
             $.post('${ctxPath}/login' , data , function (result) {
                 if (result && result.code == '200'){
                     $.Application.Authorization = result.data;
-                    $.Application.success(layer , result.msg , function () {
+                    layer.msg(result.msg , customer.ICON_SUCCESS ,  function () {
                         window.location = '${ctxPath}/page/index';
                     });
                 }else {
-                    $.Application.fail(layer , result.msg);
+                    layer.msg(result.msg , customer.ICON_FAIL );
                 }
             });
             return false;

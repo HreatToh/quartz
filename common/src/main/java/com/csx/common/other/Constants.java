@@ -57,6 +57,28 @@ public class Constants {
         public static final String SYS_LOGIN_ISMULTI = "SYS_LOGIN_ISMULTI";
         /** 系统认证    */
         public static final String SYS_LICENCE = "SYS_LICENCE";
+
+        /**  自定义的初始化接口          */
+        public static final String SYS_HOME_OPTIONS_INIURL = "SYS_HOME_OPTIONS_INIURL";
+        /**  自定义的缓存清理接口        */
+        public static final String SYS_HOME_OPTIONS_CLEARURL = "SYS_HOME_OPTIONS_CLEARURL";
+        /**  自定义的是否打开hash定位    */
+        public static final String SYS_HOME_OPTIONS_URLHASHLOCATION = "SYS_HOME_OPTIONS_URLHASHLOCATION";
+        /**  自定义的主题默认配置        */
+        public static final String SYS_HOME_OPTIONS_BGCOLORDEFAULT = "SYS_HOME_OPTIONS_BGCOLORDEFAULT";
+        /**  自定义的是否开启多模块      */
+        public static final String SYS_HOME_OPTIONS_MULTIMODULE = "SYS_HOME_OPTIONS_MULTIMODULE";
+        /**  自定义的是否默认展开菜单    */
+        public static final String SYS_HOME_OPTIONS_MENUCHILDOPEN = "SYS_HOME_OPTIONS_MENUCHILDOPEN";
+        /**  自定义的初始化加载时间      */
+        public static final String SYS_HOME_OPTIONS_LOADINGTIME = "SYS_HOME_OPTIONS_LOADINGTIME";
+        /**  自定义的iframe窗口动画      */
+        public static final String SYS_HOME_OPTIONS_PAGEANIM = "SYS_HOME_OPTIONS_PAGEANIM";
+        /**  自定义的最大的tab打开数量   */
+        public static final String SYS_HOME_OPTIONS_MAXTABNUM = "SYS_HOME_OPTIONS_MAXTABNUM";
+        /** 首页窗口标题    */
+        public static final String SYS_HOME_PAGE_TITLE = "SYS_HOME_PAGE_TITLE";
+
         /** 回车换行符 \n\r   */
         public static final String _N_R = "\n\r";
         /** 斜杠 /   */
@@ -67,6 +89,7 @@ public class Constants {
         public static final String BLANK = "";
         /** NONE 无    */
         public static final String NONE = "NONE";
+
     }
 
 
@@ -78,7 +101,10 @@ public class Constants {
         public static final String CACHE_SYS_CONFIG = "CACHE_SYS_CONFIG";
         /** 缓存子系统配置    */
         public static final String CACHE_SYS_SUBCONFIG = "CACHE_SYS_SUBCONFIG";
-
+        /** 缓存当前用户的菜单    */
+        public static final String CACHE_CURRENT_SYS_MENU = "CACHE_CURRENT_SYS_MENU";
+        /** 缓存当前用户的系统信息    */
+        public static final String CACHE_CURRENT_SYS_SYSTEM = "CACHE_CURRENT_SYS_SYSTEM";
     }
 
 

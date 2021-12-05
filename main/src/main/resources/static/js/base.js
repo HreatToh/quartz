@@ -4,6 +4,7 @@
  * @desc    基础
  **/
 
+
 // 日期格式化,不是插件的代码,只用于处理时间格式化
 Date.prototype.format = function(fmt){
     var o = {
@@ -26,4 +27,22 @@ Date.prototype.format = function(fmt){
         }
     }
     return fmt;
+}
+/**
+ * @method  isNotNull
+ * @params  o
+ * @return  boolean
+ * @desc    判断变量是否为空 如果 true 则不为空 false 则为空
+ **/
+function isNotNull( o ) {
+    return o != null && o != undefined && o != '';
+}
+/**
+ * @method  isNull
+ * @params  o
+ * @return  boolean
+ * @desc    判断变量是否为空 如果 true 则为空 false 则不为空
+ **/
+function isNull( o ) {
+    return !isNotNull(o);
 }

@@ -4,6 +4,8 @@ import cn.hutool.json.JSONUtil;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.Serializable;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 @Slf4j
 public class BaseEntity implements Serializable {
@@ -114,6 +116,14 @@ public class BaseEntity implements Serializable {
      */
     public String json() {
         return JSONUtil.toJsonStr(this);
+    }
+
+    /**
+     * 转换成map
+     * @return
+     */
+    public Map<String , Object > map(){
+        return JSONUtil.toBean(JSONUtil.toJsonStr(this) , LinkedHashMap.class);
     }
     /**
      * 转换成 Bean

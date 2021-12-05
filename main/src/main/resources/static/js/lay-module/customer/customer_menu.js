@@ -5,10 +5,7 @@
  * description:layuimini 菜单框架扩展
  */
 layui.define(["element","laytpl" ,"jquery"], function (exports) {
-    var element = layui.element,
-        $ = layui.$,
-        laytpl = layui.laytpl,
-        layer = layui.layer;
+    var element = layui.element, $ = layui.$, laytpl = layui.laytpl, layer = layui.layer , token , ctxPath = rootPath;
 
     var menu = {
 
@@ -19,11 +16,13 @@ layui.define(["element","laytpl" ,"jquery"], function (exports) {
          * @param options.menuChildOpen 是否展开子菜单
          */
         render: function (options) {
+            token = options.token;
+            options.subSystemList = options.subSystemList || [];
             options.menuList = options.menuList || [];
             options.multiModule = options.multiModule || false;
             options.menuChildOpen = options.menuChildOpen || false;
             if (options.multiModule) {
-                menu.renderMultiModule(options.menuList, options.menuChildOpen);
+                menu.renderMultiModule(options.subSystemList, options.menuChildOpen);
             } else {
                 menu.renderSingleModule(options.menuList, options.menuChildOpen);
             }
@@ -50,16 +49,34 @@ layui.define(["element","laytpl" ,"jquery"], function (exports) {
             element.init();
         },
 
+
+        /**
+         * 渲染一级菜单
+         */
+        compileSubSystem: function( subSystem , isSub){
+            var systemHtml = '<li {{#if( d.sysId){ }}  data-menu="multi_module_headerId_{{d.sysId}}" {{#}}} class="layui-nav-item menu-li  {{d.className}}"  {{#if( d.sysId){ }}  id="multi_module_headerId_{{d.sysId}}" {{#}}}> <a {{#if( d.sysUrl){ }} layuimini-href="{{d.sysUrl}}" {{#}}} {{#if( d.sysId){ }}  layuimini-id="{{d.sysId}}"  {{#}}} {{#if( d.sysTarget){ }}  target="{{d.sysTarget}}" {{#}}} href="javascript:;">{{#if( d.sysIcon){ }}  <i class="{{d.sysIcon}}"></i> {{#}}} <span class="layui-left-nav">{{d.sysName}}</span></a>  {{# if(d.systemChildren){}} {{d.systemChildren}} {{#}}} </li>' ;
+            if(isSub){
+                systemHtml = '<dd class="menu-dd {{d.childOpenClass}} {{ d.className }}"> <a href="javascript:;"  {{#if( d.sysId){ }}  data-menu="{{d.sysId}}" {{#}}} {{#if( d.sysId){ }}  id="{{d.sysId}}" {{#}}} {{#if(( !d.systemChildren || !d.systemChildren.length ) && d.sysUrl){ }} layuimini-href="{{d.sysUrl}}" {{#}}} {{#if( d.sysId){ }}  layuimini-id="{{d.sysId}}"  {{#}}} {{#if( d.sysTarget){ }}  target="{{d.sysTarget}}" {{#}}}> {{#if( d.sysIcon){ }}  <i class="{{d.sysIcon}}"></i> {{#}}} <span class="layui-left-nav"> {{d.sysName}}</span></a> {{# if(d.systemChildren){}} {{d.systemChildren}} {{#}}}</dd>'
+            }
+            return laytpl(systemHtml).render(subSystem);
+        },
         /**
          * 渲染一级菜单
          */
         compileMenu: function(menu,isSub){
-            var menuHtml = '<li {{#if( d.menu){ }}  data-menu="{{d.menu}}" {{#}}} class="layui-nav-item menu-li {{d.childOpenClass}} {{d.className}}"  {{#if( d.id){ }}  id="{{d.id}}" {{#}}}> <a {{#if( d.href){ }} layuimini-href="{{d.href}}" {{#}}} {{#if( d.menuId){ }}  layuimini-id="{{d.menuId}}"  {{#}}} {{#if( d.target){ }}  target="{{d.target}}" {{#}}} href="javascript:;">{{#if( d.icon){ }}  <i class="{{d.icon}}"></i> {{#}}} <span class="layui-left-nav">{{d.title}}</span></a>  {{# if(d.children){}} {{d.children}} {{#}}} </li>' ;
+            var menuHtml = '<li {{#if( d.menuId){ }}  data-menu="{{d.menuId}}" {{#}}} class="layui-nav-item menu-li {{d.childOpenClass}} {{d.className}}"  {{#if( d.menuId){ }}  id="multi_module_menuId_{{d.menuId}}" {{#}}}> <a {{#if( d.menuUrl){ }} layuimini-href="{{d.menuUrl}}" {{#}}} {{#if( d.menuId){ }}  layuimini-id="{{d.menuId}}"  {{#}}} {{#if( d.menuTarget){ }}  target="{{d.menuTarget}}" {{#}}} href="javascript:;">{{#if( d.menuIcon){ }}  <i class="{{d.menuIcon}}"></i> {{#}}} <span class="layui-left-nav">{{d.menuName}}</span></a>  {{# if(d.menuChildren){}} {{d.menuChildren}} {{#}}} </li>' ;
             if(isSub){
-                menuHtml = '<dd class="menu-dd {{d.childOpenClass}} {{ d.className }}"> <a href="javascript:;"  {{#if( d.menu){ }}  data-menu="{{d.menu}}" {{#}}} {{#if( d.id){ }}  id="{{d.id}}" {{#}}} {{#if(( !d.child || !d.child.length ) && d.href){ }} layuimini-href="{{d.href}}" {{#}}} {{#if( d.menuId){ }}  layuimini-id="{{d.menuId}}"  {{#}}} {{#if( d.target){ }}  target="{{d.target}}" {{#}}}> {{#if( d.icon){ }}  <i class="{{d.icon}}"></i> {{#}}} <span class="layui-left-nav"> {{d.title}}</span></a> {{# if(d.children){}} {{d.children}} {{#}}}</dd>'
+                menuHtml = '<dd class="menu-dd {{d.childOpenClass}} {{ d.className }}"> <a href="javascript:;"  {{#if( d.menuId){ }}  data-menu="{{d.menuId}}" {{#}}} {{#if( d.menuId){ }}  id="{{d.menuId}}" {{#}}} {{#if(( !d.menuChildren || !d.menuChildren.length ) && d.menuUrl){ }} layuimini-href="{{d.menuUrl}}" {{#}}} {{#if( d.menuId){ }}  layuimini-id="{{d.menuId}}"  {{#}}} {{#if( d.menuTarget){ }}  target="{{d.menuTarget}}" {{#}}}> {{#if( d.menuIcon){ }}  <i class="{{d.menuIcon}}"></i> {{#}}} <span class="layui-left-nav"> {{d.menuName}}</span></a> {{# if(d.children){}} {{d.children}} {{#}}}</dd>'
             }
             return laytpl(menuHtml).render(menu);
         },
+
+        /**
+         * 渲染 菜单容器
+         * @param menu
+         * @param isSub
+         * @returns {string|*}
+         */
         compileMenuContainer :function(menu,isSub){
             var wrapperHtml = '<ul class="layui-nav layui-nav-tree layui-left-nav-tree {{d.className}}" id="{{d.id}}">{{d.children}}</ul>' ;
             if(isSub){
@@ -78,38 +95,48 @@ layui.define(["element","laytpl" ,"jquery"], function (exports) {
             }
             return _list ;
         },
+        /**
+         * 渲染孩子菜单
+         * @param menuList
+         * @param options
+         * @returns {string|*}
+         */
         renderChildrenMenu:function(menuList,options){
-            var me = this ;
+            var me = menu;
             menuList = menuList || [] ;
-            var html = this.each(menuList,function (idx,menu) {
-                if(menu.child && menu.child.length){
-                    menu.children = me.renderChildrenMenu(menu.child,{ childOpenClass: options.childOpenClass || '' });
+            var html = me.each(menuList,function (idx,menu) {
+                if(menu.menuChildren && menu.menuChildren.length){
+                    menu.menuChildren = me.renderChildrenMenu(menu.menuChildren,{ childOpenClass: options.childOpenClass || '' });
                 }
                 menu.className = "" ;
                 menu.childOpenClass = options.childOpenClass || ''
                 return me.compileMenu(menu,true)
             }).join("");
-            return me.compileMenuContainer({ children:html },true)
+            return me.compileMenuContainer({ children : html },true)
         },
+
+        /**
+         *  渲染左侧菜单
+         * @param leftMenus
+         * @param options
+         * @returns {string|*}
+         */
         renderLeftMenu :function(leftMenus,options){
             options = options || {};
-            var me = this ;
-            var leftMenusHtml =  me.each(leftMenus || [],function (idx,leftMenu) { // 左侧菜单遍历
-                var children = me.renderChildrenMenu(leftMenu.child, { childOpenClass:options.childOpenClass });
-                var leftMenuHtml = me.compileMenu({
-                    menuId: leftMenu.menuId,
-                    href: leftMenu.href,
-                    target: leftMenu.target,
-                    childOpenClass: options.childOpenClass,
-                    icon: leftMenu.icon,
-                    title: leftMenu.title,
-                    children: children,
-                    className: '',
-                });
+            // 左侧菜单遍历
+            var leftMenusHtml =  menu.each(leftMenus || [],function (idx,leftMenu) {
+                if (leftMenu.menuUrl && leftMenu.menuUrl != '#'){
+                    leftMenu.menuUrl = ctxPath + leftMenu.menuUrl;
+                }
+                var menuChildren = menu.renderChildrenMenu(leftMenu.menuChildren, { childOpenClass : options.childOpenClass });
+                leftMenu.menuChildren = menuChildren;
+                leftMenu.childOpenClass = options.childOpenClass;
+                leftMenu.className = '';
+                var leftMenuHtml = menu.compileMenu(leftMenu);
                 return leftMenuHtml ;
             }).join("");
 
-            leftMenusHtml = me.compileMenuContainer({ id:options.parentMenuId,className:options.leftMenuCheckDefault,children:leftMenusHtml }) ;
+            leftMenusHtml = menu.compileMenuContainer({ id: options.parentId ,className:options.leftMenuCheckDefault,children:leftMenusHtml }) ;
             return leftMenusHtml ;
         },
         /**
@@ -117,9 +144,8 @@ layui.define(["element","laytpl" ,"jquery"], function (exports) {
          * @param menuList 菜单数据
          * @param menuChildOpen 是否默认展开
          */
-        renderMultiModule: function (menuList, menuChildOpen) {
-            menuList = menuList || [];
-            var me = this ;
+        renderMultiModule: function (subSystemList, menuChildOpen) {
+            subSystemList = subSystemList || [];
             var headerMenuHtml = '',
                 headerMobileMenuHtml = '',
                 leftMenuHtml = '',
@@ -128,25 +154,19 @@ layui.define(["element","laytpl" ,"jquery"], function (exports) {
                 headerMenuCheckDefault = 'layui-this';
 
             if (menuChildOpen) childOpenClass = ' layui-nav-itemed';
-            var headerMenuHtml = this.each(menuList, function (index, val) { //顶部菜单渲染
-                var menu = 'multi_module_' + index ;
-                var id = menu+"HeaderId";
-                var topMenuItemHtml = "" ;
-                topMenuItemHtml = me.compileMenu({
-                    className:headerMenuCheckDefault,
-                    menu:menu,
-                    id:id,
-                    title:val.title,
-                    href:"",
-                    target:"",
-                    children:""
+            var headerMenuHtml = menu.each(subSystemList, function (index, subSystem) { //顶部菜单渲染
+                /** 开始渲染头部系统菜单    */
+                subSystem.className = headerMenuCheckDefault;
+                subSystem.sysUrl = ctxPath + subSystem.sysUrl;
+
+                var topMenuItemHtml = menu.compileSubSystem(subSystem);
+                /** 开始渲染左侧菜单    */
+                leftMenuHtml += menu.renderLeftMenu( subSystem.menus,{
+                    parentId: "multi_module_headerId_" + subSystem.sysId ,
+                    childOpenClass: childOpenClass,
+                    leftMenuCheckDefault: leftMenuCheckDefault
                 });
-                leftMenuHtml+=me.renderLeftMenu(val.child,{
-                    parentMenuId:menu,
-                    childOpenClass:childOpenClass,
-                    leftMenuCheckDefault:leftMenuCheckDefault
-                });
-                headerMobileMenuHtml +=me.compileMenu({ id:id,menu:menu,id:id,icon:val.icon, title:val.title, menuId:val.menuId },true);
+                headerMobileMenuHtml += menu.compileSubSystem( subSystem ,true);
                 headerMenuCheckDefault = "";
                 leftMenuCheckDefault = "layui-hide" ;
                 return topMenuItemHtml ;
@@ -167,16 +187,16 @@ layui.define(["element","laytpl" ,"jquery"], function (exports) {
              * 菜单模块切换
              */
             $('body').on('click', '[data-menu]', function () {
-                var loading = layer.load(0, {shade: false, time: 2 * 1000});
-                var menuId = $(this).attr('data-menu');
+                var loading = layer.load(0, {shade: true, time: 2 * 1000});
+                var headId = $(this).attr('data-menu');
                 // header
                 $(".layuimini-header-menu .layui-nav-item.layui-this").removeClass('layui-this');
                 $(this).addClass('layui-this');
                 // left
-                $(".layuimini-menu-left .layui-nav.layui-nav-tree.layui-this").addClass('layui-hide');
-                $(".layuimini-menu-left .layui-nav.layui-nav-tree.layui-this.layui-hide").removeClass('layui-this');
-                $("#" + menuId).removeClass('layui-hide');
-                $("#" + menuId).addClass('layui-this');
+                $(".layuimini-menu-left .layui-nav.layui-nav-tree").removeClass('layui-this');
+                $(".layuimini-menu-left .layui-nav.layui-nav-tree").addClass('layui-hide');
+                $(".layuimini-menu-left .layui-nav.layui-nav-tree#" + headId).removeClass('layui-hide');
+                $(".layuimini-menu-left .layui-nav.layui-nav-tree#" + headId).addClass('layui-this');
                 layer.close(loading);
             });
 

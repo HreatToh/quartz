@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.csx.common.mapper.SysPermissionMapper">
+    <!--  菜单的所有列  -->
+    <sql id="sysMenuColSql">
+        smi.sys_id, smi.menu_id, smi.menu_name, smi.menu_type, smi.menu_icon, smi.menu_url, smi.menu_parent_id, smi.menu_path,
+        smi.menu_order, smi.menu_class, smi.menu_target, smi.comm_cdate, smi.comm_udate, smi.comm_cuser, smi.comm_uuser,
+        smi.comm_delfalg, smi.comm_v1, smi.comm_v2, smi.comm_v3, smi.comm_v4, smi.comm_v5
+    </sql>
+    <!-- 权限表的所有列 -->
+    <sql id="sysPermissionColSql">
+        spi.sys_id, spi.permission_type, spi.permission_object_id, spi.permission_resource_id, spi.permission_resource_type,
+        spi.permission_resource_handle, spi.permission_time, spi.comm_cdate, spi.comm_udate, spi.comm_cuser, spi.comm_uuser,
+        spi.comm_delfalg, spi.comm_v1, spi.comm_v2, spi.comm_v3, spi.comm_v4, spi.comm_v5
+    </sql>
+    <!-- 系统表的所有列 -->
+    <sql id="sysSystemColSql">
+        sys_id, sys_name, sys_url, sys_parent_id, sys_path, sys_icon, sys_target, sys_order,
+        comm_cdate, comm_udate, comm_cuser, comm_uuser, comm_delfalg, comm_v1, comm_v2, comm_v3,
+        comm_v4, comm_v5
+    </sql>
+    <!-- 获取用户菜单权限 -->
+    <select id="getSysMenuByUserId" resultType="com.csx.common.entity.SysMenu" parameterType="java.lang.String">
+        select <include refid="sysMenuColSql" /> from sys_menu_info smi inner join sys_permission_info spi on smi.sys_id = spi.sys_id and smi.menu_id = spi.permission_resource_id
+        <where>
+            smi.comm_delfalg = 'N' and spi.comm_delfalg = 'N' and spi.permission_type = 'user' and spi.permission_resource_type = 'menu' and spi.permission_object_id = #{userId}
+        </where>
+        order by smi.sys_id , smi.menu_id , smi.menu_order asc
+    </select>
+    <!-- 获取用户的系统权限 -->
+    <select id="getSysSystemByUserId" resultType="com.csx.common.entity.SysSystem" parameterType="java.lang.String">
+        select <include refid="sysSystemColSql"/> from sys_system_info ssi
+        <where>
+            ssi.comm_delfalg = 'N' and exists ( select 1 from sys_permission_info spi
+            where spi.comm_delfalg = 'N' and spi.permission_type = 'user' and spi.permission_object_id = #{userId} and ssi.sys_id = spi.sys_id )
+        </where>
+        order by sys_order asc
+    </select>
+</mapper>

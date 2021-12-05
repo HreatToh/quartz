@@ -5,13 +5,8 @@
  * description:layuimini tab框架扩展
  */
 layui.define(["element", "layer", "jquery"], function (exports) {
-    var element = layui.element,
-        layer = layui.layer,
-        $ = layui.$;
-
-
+    var element = layui.element, layer = layui.layer, $ = layui.$ , ctxPath = rootPath;
     var tab = {
-
         /**
          * 初始化tab
          * @param options
@@ -24,6 +19,7 @@ layui.define(["element", "layer", "jquery"], function (exports) {
             options.menuList = options.menuList || [];  // todo 后期菜单想改为不操作dom, 而是直接操作初始化传过来的数据
             options.homeInfo = options.homeInfo || {};
             options.listenSwichCallback = options.listenSwichCallback || function () {
+
             };
             tab.listen(options);
             tab.listenRoll();

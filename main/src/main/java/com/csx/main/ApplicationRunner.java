@@ -36,8 +36,6 @@ public class ApplicationRunner implements org.springframework.boot.ApplicationRu
     private Environment environment;
     @Autowired
     private CacheService cacheService;
-    @Autowired
-    private SysConfigService sysConfigService;
 
 
     /** ehcache 缓存配置路径    */
@@ -52,10 +50,10 @@ public class ApplicationRunner implements org.springframework.boot.ApplicationRu
         long startTime = DateUtil.current();
         log.info(ToolUtils.format("------------------------------[{}]服务已启动 , 开始初始化... ------------------------------" , DateUtil.now()));
         initCacheUtils();
+        initCache();
         initJdbcUtils();
         initToolUtils();
         initAppCofig();
-        initCache();
         long endTime = DateUtil.current();
         log.info(ToolUtils.format("------------------------------[{}]服务已启动 , 初始化完成！   ------------------------------" , DateUtil.now()));
         log.info(ToolUtils.format("总共用时：{} 毫秒" , endTime - startTime ));
@@ -82,7 +80,13 @@ public class ApplicationRunner implements org.springframework.boot.ApplicationRu
         /*************** 初始化缓存 结束 ***************/
     }
 
-
+    /**
+     * 初始化缓存
+     */
+    private void initCache() {
+        cacheService.initCache();
+        log.info("[初始化] Cache缓存 初始化完成！");
+    }
     /**
      * 初始化 jdbc 工具类
      */
@@ -109,20 +113,9 @@ public class ApplicationRunner implements org.springframework.boot.ApplicationRu
      */
     private void initAppCofig() {
         /*************** 初始化系统配置 开始 ***************/
-        List<SysConfig> sysConfigAll = sysConfigService.getSysConfigAll();
-        List<SysConfig> sysSubConfigAll = sysConfigService.getSysSubConfigAll();
+        List<SysConfig> sysConfigAll = cacheService.getSysConfigAll();
+        List<SysConfig> sysSubConfigAll = cacheService.getSysSubConfigAll();
         AppCofig.init(sysConfigAll , sysSubConfigAll);
         /*************** 初始化系统配置 结束 ***************/
     }
-
-    /**
-     * 初始化缓存
-     */
-    private void initCache() {
-
-        cacheService.initCache();
-        log.info("[初始化] Cache缓存 初始化完成！");
-    }
-
-
 }

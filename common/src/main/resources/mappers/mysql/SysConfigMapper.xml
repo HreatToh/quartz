@@ -4,20 +4,24 @@
 
     <!--系统配置表所有的列-->
     <sql id="sysConfigColSql">
-        item_id, item_name, item_val, item_defval, item_type, item_conf, item_desc, item_group, item_order, item_enable, comm_cdate, comm_udate, comm_cuser, comm_uuser, comm_delfalg, comm_v1, comm_v2, comm_v3, comm_v4, comm_v5
+        sci.item_id, sci.item_name, sci.item_val, sci.item_defval, sci.item_type, sci.item_conf, sci.item_desc,
+        sci.item_group, sci.item_order, sci.item_enable, sci.comm_cdate, sci.comm_udate, sci.comm_cuser, sci.comm_uuser,
+        sci.comm_delfalg, sci.comm_v1, sci.comm_v2, sci.comm_v3, sci.comm_v4, sci.comm_v5
     </sql>
     <!--子系统配置表所有的列-->
     <sql id="sysSubConfigColSql">
-        sys_id , item_id, item_name, item_val, item_defval, item_type, item_conf, item_desc, item_group, item_order, item_enable, comm_cdate, comm_udate, comm_cuser, comm_uuser, comm_delfalg, comm_v1, comm_v2, comm_v3, comm_v4, comm_v5
+        ssi.sys_id , ssi.item_id, ssi.item_name, ssi.item_val, ssi.item_defval, ssi.item_type, ssi.item_conf, ssi.item_desc,
+        ssi.item_group, ssi.item_order, ssi.item_enable, ssi.comm_cdate, ssi.comm_udate, ssi.comm_cuser, ssi.comm_uuser,
+        ssi.comm_delfalg, ssi.comm_v1, ssi.comm_v2, ssi.comm_v3, ssi.comm_v4, ssi.comm_v5
     </sql>
     <!-- 获取所有的系统配置 -->
     <select id="getSysConfigAll" resultType="com.csx.common.entity.SysConfig">
-        select <include refid="sysConfigColSql"/> from sys_config_info where item_enable = 'Y' and comm_delfalg = 'N'
+        select <include refid="sysConfigColSql"/> from sys_config_info sci where sci.item_enable = 'Y' and sci.comm_delfalg = 'N'
     </select>
 
     <!-- 获取所有的子系统配置 -->
     <select id="getSysSubConfigAll" resultType="com.csx.common.entity.SysConfig">
-        select <include refid="sysSubConfigColSql"/> from sys_subconfig_info where item_enable = 'Y' and comm_delfalg = 'N'
+        select <include refid="sysSubConfigColSql"/> from sys_subconfig_info ssi where ssi.item_enable = 'Y' and ssi.comm_delfalg = 'N'
     </select>
 
 </mapper>

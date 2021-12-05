@@ -1,4 +1,5 @@
 #------------------------------------------ 系统配置表 ------------------------------------------
+drop table sys_config_info;
 create table sys_config_info
 (
     item_id      varchar(200)  not null comment '配置id'
@@ -27,6 +28,7 @@ comment '系统配置表';
 #------------------------------------------ 系统配置表 ------------------------------------------
 
 #------------------------------------------ 子系统配置表 ------------------------------------------
+drop table sys_subconfig_info;
 -- auto-generated definition
 create table sys_subconfig_info (
     sys_id       varchar(200)  not null comment '系统id',
@@ -56,9 +58,10 @@ comment '子系统配置表';
 #------------------------------------------ 子系统配置表 ------------------------------------------
 
 #------------------------------------------ 异常信息表 ------------------------------------------
+drop table sys_exception_info;
 create table sys_exception_info
 (
-    exp_id       varchar(40)    null comment '主键id',
+    exp_id       varchar(40)    not null comment '主键id',
     exp_ip       varchar(20)    null comment '服务器',
     exp_port     varchar(10)    null comment '端口',
     exp_class_name varchar(200) null comment '类名',
@@ -83,6 +86,7 @@ alter table sys_exception_info add constraint sys_exception_info_pk primary key 
 #------------------------------------------ 异常信息表 ------------------------------------------
 
 #------------------------------------------ 菜单信息表 ------------------------------------------
+drop table sys_menu_info;
 create table sys_menu_info
 (
     sys_id 			varchar(10) not null comment '系统编号',
@@ -112,8 +116,9 @@ create table sys_menu_info
 #------------------------------------------ 菜单信息表 ------------------------------------------
 
 #------------------------------------------ 子系统信息表 ------------------------------------------
+drop table sys_system_info;
 create table sys_system_info (
-     sys_id          varchar(10)     null comment '系统名称',
+     sys_id          varchar(10)     not null comment '系统名称',
      sys_name        varchar(100)    null comment '系统名称',
      sys_url         varchar(100)    null comment '系统接口地址',
      sys_parent_id   varchar(10)     null comment '系统父级菜单id',
@@ -137,6 +142,7 @@ create unique index sys_system_info_sys_id_uindex on sys_system_info (sys_id);
 #------------------------------------------ 子系统信息表 ------------------------------------------
 
 #------------------------------------------ 用户信息表 ------------------------------------------
+drop table sys_user_info;
 create table sys_user_info (
     user_id         varchar(100) not null comment '用户id',
     user_enname     varchar(100)     null comment '用户英文名',
@@ -171,6 +177,7 @@ alter table sys_user_info change user_login_date user_login_time varchar(30) nul
 #------------------------------------------ 用户信息表 ------------------------------------------
 
 #------------------------------------------ 系统日志表 ------------------------------------------
+drop table sys_log_info;
 create table sys_log_info
 (
     sys_id    		varchar(20)   	 null     comment '系统编号',
@@ -194,3 +201,48 @@ create table sys_log_info
 create unique index sys_log_info_log_id_uindex on sys_log_info (log_id);
 alter table sys_log_info add constraint sys_log_info_pk primary key (log_id);
 #------------------------------------------ 系统日志表 ------------------------------------------
+#------------------------------------------ 角色信息表 ------------------------------------------
+drop table sys_role_info;
+create table sys_role_info (
+    sys_id          varchar(20)      null     comment '系统编号',
+    role_id         varchar(30)      not null comment '角色ID',
+    role_name       varchar(100)     null     comment '角色名称',
+    role_desc       varchar(500)     null     comment '角色描述',
+    role_time       varchar(30)  	 null     comment '角色创建时间',
+    comm_cdate      varchar(10)      null     comment '创建时间',
+    comm_udate      varchar(10)      null     comment '更新时间',
+    comm_cuser      varchar(50)      null     comment '创建人',
+    comm_uuser      varchar(50)      null     comment '修改人',
+    comm_delfalg    varchar(2)       null     comment '是否删除标记',
+    comm_v1         varchar(200)     null     comment '扩展字段1',
+    comm_v2         varchar(200)     null     comment '扩展字段2',
+    comm_v3         varchar(200)     null     comment '扩展字段3',
+    comm_v4         varchar(200)     null     comment '扩展字段4',
+    comm_v5         varchar(200)     null     comment '扩展字段5'
+)  comment '角色信息表';
+create unique index sys_role_info_role_id_uindex on sys_role_info (role_id);
+alter table sys_role_info add constraint sys_role_info_pk primary key (role_id);
+#------------------------------------------ 角色信息表 ------------------------------------------
+#------------------------------------------ 用户角色权限表 ------------------------------------------
+drop table sys_permission_info;
+create table sys_permission_info (
+    sys_id                      varchar(20)  null comment '系统编号',
+    permission_type             varchar(10)  null comment '权限类型：user代表用户 ，role代表角色',
+    permission_object_id        varchar(30)  null comment '对象ID',
+    permission_resource_id      varchar(500) null comment '资源ID',
+    permission_resource_type    varchar(10)  null comment '资源类型',
+    permission_resource_handle  varchar(500) null comment '资源权限：add-新增,del-删除,update-修改,view-查看,deal-处理...',
+    permission_time             varchar(30)  null comment '权限创建时间',
+    comm_cdate                  varchar(10)  null comment '创建时间',
+    comm_udate                  varchar(10)  null comment '更新时间',
+    comm_cuser                  varchar(50)  null comment '创建人',
+    comm_uuser                  varchar(50)  null comment '修改人',
+    comm_delfalg                varchar(2)   null comment '是否删除标记',
+    comm_v1                     varchar(200) null comment '扩展字段1',
+    comm_v2                     varchar(200) null comment '扩展字段2',
+    comm_v3                     varchar(200) null comment '扩展字段3',
+    comm_v4                     varchar(200) null comment '扩展字段4',
+    comm_v5                     varchar(200) null comment '扩展字段5'
+) comment '用户角色权限表';
+alter table sys_permission_info add constraint sys_role_info_pk primary key (sys_id , permission_type , permission_object_id , permission_resource_id , permission_resource_type);
+#------------------------------------------ 用户角色权限表 ------------------------------------------
