@@ -59,11 +59,11 @@ public class CustomCredentialsMatcher extends SimpleCredentialsMatcher {
             return ToolUtils.equals(password , realppassword);
         }
 
-
         /** 密码是否加密认证    不是则直接比*/
         if (ToolUtils.isN(AppCofig.getSysConfig( Constants.App.SYS_LOGIN_PWDSIGN , "Y"))){
             return ToolUtils.equals(password , realppassword);
         }
+
         //加密类型，密码，盐值，迭代次数
         Object tokenCredentials = getTokenCredentials(token);
         //数据库存储密码

@@ -9,7 +9,7 @@ server:
     context-path: /quartz
     session:
       # session 到期时间
-      timeout: 30m
+      timeout: 3600
 #配置log4j2配置文件路径
 logging:
   config: classpath:log4j2/log4j2.xml
@@ -67,7 +67,7 @@ application:
   interceptor:
     authorizationinterceptor:
       include: /**
-      exclude: / , /kaptcha, /page/login , /login , /static/**, css/**, js/**, img/**, json/**, fonts/**, *.html, *.json , *.js , *.json , *.css , *.png
+      exclude: / , /kaptcha , /login , /static/**, css/**, js/**, img/**, json/**, fonts/**, *.html, *.json , *.js , *.json , *.css , *.png
   filter:
     loginfilter:
       include: /**
@@ -77,6 +77,9 @@ application:
       exclude: /static/**, /druid/**
     druidfilter:
       include: /**]
+      exclude: /static/**, /druid/**
+    paramfilter:
+      include: /**
       exclude: /static/**, /druid/**
 
 #####################################################################################################################################

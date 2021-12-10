@@ -30,9 +30,10 @@ public class PageController extends BaseController {
      * @desc    去往登录页的方法
      **/
     @GetMapping( name = "登录页" , value = "/login")
-    public String login(ModelMap modelMap){
+    public String login(HttpServletRequest request , HttpServletResponse response , ModelMap modelMap){
         modelMap.addAttribute("kaptcha" , Constants.App.KAPTCHA_CODE_KEY);
         modelMap.addAttribute("login_title" , AppCofig.getSysConfig(Constants.App.SYS_LOGIN_PAGE_TITLE , "欢迎登录！"));
+        modelMap.addAttribute("isTimeOut" , ToolUtils.isNull(request.getSession().getAttribute(Constants.Session.SESSION_TOKEN_KEY)));
         return "/login";
     }
 
@@ -56,9 +57,10 @@ public class PageController extends BaseController {
      * @desc    初始化Customer 配置
      **/
     private void initCustomerSetting(ModelMap modelMap) {
-        JsonMap<String , Object> options = JsonMap.newInstance();
-        options.append("iniUrl",AppCofig.getSysConfig(Constants.App.SYS_HOME_OPTIONS_INIURL , "/json/init.json"));
-        options.append("clearUrl",AppCofig.getSysConfig(Constants.App.SYS_HOME_OPTIONS_CLEARURL , "/json/clear.json"));
+        JsonMap<String , Object> options = JsonMap.newInstance(false);
+        options.append("iniUrl",AppCofig.getSysConfig(Constants.App.SYS_HOME_OPTIONS_INIURL , ""));
+        options.append("licenceUrl",AppCofig.getSysConfig(Constants.App.SYS_HOME_OPTIONS_LICENCEURL , ""));
+        options.append("clearUrl",AppCofig.getSysConfig(Constants.App.SYS_HOME_OPTIONS_CLEARURL , ""));
         options.append("urlHashLocation",AppCofig.getSysConfig(Constants.App.SYS_HOME_OPTIONS_URLHASHLOCATION , true));
         options.append("bgColorDefault",AppCofig.getSysConfig(Constants.App.SYS_HOME_OPTIONS_BGCOLORDEFAULT , false));
         options.append("multiModule",AppCofig.getSysConfig(Constants.App.SYS_HOME_OPTIONS_MULTIMODULE , true));

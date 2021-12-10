@@ -10,6 +10,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <meta id="ctxPath" content="${ctxPath!}">
+    <meta id="isTimeOut" content="${isTimeOut!}">
     <!--引入 Jquery -->
     <script src="${ctxPath}/static/lib/jquery-3.4.1/jquery-3.4.1.min.js"></script>
 
@@ -80,11 +81,9 @@
     layui.use(['form' , 'customer'], function () {
         var form = layui.form, layer = layui.layer , customer = layui.customer;
 
-        // 登录过期的时候，跳出ifram框架
-        if (top.location != self.location) top.location = self.location;
-
         // 粒子线条背景
         $(document).ready(function(){
+
             $('.layui-container').particleground({
                 dotColor:'#eee',
                 lineColor:'#c9c9c9',
@@ -121,15 +120,21 @@
                 layer.msg('验证码不能为空');
                 return false;
             }
+
+            var loading = customer.loading('正在登录...');
             $.post('${ctxPath}/login' , data , function (result) {
                 if (result && result.code == '200'){
-                    $.Application.Authorization = result.data;
-                    layer.msg(result.msg , customer.ICON_SUCCESS ,  function () {
+                    customer.success(result.msg ,  function () {
+                        layer.close(loading);
                         window.location = '${ctxPath}/page/index';
                     });
                 }else {
-                    layer.msg(result.msg , customer.ICON_FAIL );
+                    layer.close(loading);
+                    customer.error(result.msg );
                 }
+            }).fail(function () {
+                layer.close(loading);
+                customer.error('请求失败！');
             });
             return false;
         });

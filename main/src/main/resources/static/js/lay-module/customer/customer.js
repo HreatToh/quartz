@@ -1,6 +1,6 @@
-layui.define(["jquery", "customer_menu", "element","customer_tab", "customer_theme"], function (exports) {
-    var $ = layui.$, layer = layui.layer, menu = layui.customer_menu, theme = layui.customer_theme,
-        element = layui.element , tab = layui.customer_tab , ctxPath = rootPath;
+layui.define(["customer_menu", "element","customer_tab", "customer_theme","form"], function (exports) {
+    var layer = layui.layer, menu = layui.customer_menu, theme = layui.customer_theme,
+        element = layui.element , tab = layui.customer_tab , ctxPath = rootPath , form = layui.form ;
 
     var customer = {
 
@@ -10,7 +10,7 @@ layui.define(["jquery", "customer_menu", "element","customer_tab", "customer_the
          * @return  index
          * @desc    成功图标对象
          **/
-        ICON_SUCCESS : {icon: 1},
+        ICON_SUCCESS : 1,
 
         /**
          * @method  fail
@@ -18,7 +18,7 @@ layui.define(["jquery", "customer_menu", "element","customer_tab", "customer_the
          * @return  index
          * @desc    失败图标对象
          **/
-        ICON_FAIL : {icon: 2},
+        ICON_FAIL : 2,
 
         /**
          * 后台框架初始化
@@ -35,6 +35,7 @@ layui.define(["jquery", "customer_menu", "element","customer_tab", "customer_the
         render: function (options) {
             options.iniUrl = ctxPath + options.iniUrl || null;
             options.clearUrl = ctxPath + options.clearUrl || null;
+            options.licenceUrl = ctxPath + options.licenceUrl || null;
             options.urlHashLocation = options.urlHashLocation || false;
             options.bgColorDefault = options.bgColorDefault || 0;
             options.multiModule = options.multiModule || false;
@@ -59,10 +60,8 @@ layui.define(["jquery", "customer_menu", "element","customer_tab", "customer_the
                 customer.renderAnim(options.pageAnim);
                 /** 初始化监听    */
                 customer.listen();
-                customer.deleteLoader(options.loadingTime);
                 /** 初始化菜单    */
                 menu.render({
-                    token: data.homeInfo.token,
                     subSystemList: data.subSystemInfo,
                     menuList: [],
                     multiModule: options.multiModule,
@@ -73,8 +72,7 @@ layui.define(["jquery", "customer_menu", "element","customer_tab", "customer_the
                     bgColorDefault: options.bgColorDefault,
                     listen: true,
                 });
-                console.log(data);
-                return;
+
                 tab.render({
                     filter: 'layuiminiTab',
                     urlHashLocation: options.urlHashLocation,
@@ -87,9 +85,109 @@ layui.define(["jquery", "customer_menu", "element","customer_tab", "customer_the
                         customer.renderDevice();
                     }
                 });
-                customer.deleteLoader(options.loadingTime);
+                /** 开始 licence 认证    */
+                customer.renderLicence(options.licenceUrl,function (result) {
+                    if (result.code == 200 ){
+                        /** 删除加载层    */
+                        customer.deleteLoader(options.loadingTime);
+                        $.cus.token = result.data;
+                        customer.renderLicenceFooter(result.msg)
+                        /** 初始化字典缓存    */
+                        $.cusFn.initDict();
+                    } else {
+                        /** 去授权信息    */
+                        result.loadingTime = options.loadingTime;
+                        customer.authLicence(result);
+                    }
+                });
             }).fail(function () {
                 customer.error('菜单接口有误！');
+            });
+        },
+
+        /**
+         * 许可证认证
+         * @param data
+         */
+        authLicence: function(data){
+            var id = data.threadId;
+            var content = '<form class="layui-form layui-form-pane" style="padding: 5px;background: #eee;" lay-filter="' + id + '" action="">' +
+                '   <div class="layui-form-item layui-form-text pane">' +
+                '       <label class="layui-form-label" style="font-family: 楷体;font-weight: 800;">' + data.msg + '</label>' +
+                '       <div class="layui-input-block">' +
+                '           <textarea name="licenceCode" required lay-verify="required" placeholder="请输入认证码..." class="layui-textarea"></textarea>' +
+                '       </div>' +
+                '   </div>' +
+                '</form>';
+            return layer.open({
+                title: ['Licence 系统认证','font-family: 华文行楷;']
+                ,id: id
+                ,type: 1
+                ,area: ['500px', '260px']
+                ,move: false
+                ,closeBtn: 0
+                ,offset: 'auto'
+                ,content: content
+                ,fixed: true
+                ,resize: false
+                ,shade: 0.3
+                ,anim : 3
+                ,btnAlign: 'c'
+                ,btn: ['开始认证', '退出系统']
+                ,yes: function(index, layero){
+                    $.post(ctxPath + '/home/authLicence' , form.val(id) , function (result) {
+                        if (result && result.code == '200'){
+                            $.cus.token = result.data;
+                            customer.success('认证成功！');
+                            customer.deleteLoader(data.loadingTime);
+                            customer.renderLicenceFooter(result.msg)
+                            layer.close(index);
+                        }else{
+                            customer.error(result.msg);
+                        }
+                    });
+                }
+                ,btn2: function(index, layero){
+                    layer.close(index);
+                    customer.loginout();
+                }
+            });
+        },
+
+        /**
+         * 渲染认证信息脚标
+         * @param text
+         */
+        renderLicenceFooter: function(text){
+            var html = '<span class="layui-badge-rim" style="position: relative;top: 32%;"> <i class="fa fa-connectdevelop"></i> ' + text+ '</span>' +
+                '<span class="layui-badge-rim" style="position: relative;top: 32%;left: 30%;" id="currentTime"></span>';
+            $('.layui-body-foot').html(html);
+            setInterval(function () {
+                $('#currentTime').html("系统时间：" + new Date().format('yyyy年MM月dd日 HH时mm分ss秒'));
+            } , 1000);
+        },
+        /**
+         * 许可证认证
+         * @param licence
+         */
+        renderLicence: function( licenceUrl , callback ){
+            $.post(licenceUrl , callback).fail(function () {
+                customer.error('认证接口不存在！' , function () {
+                    /** 不存在则登出！    */
+                    customer.loginout();
+                });
+            });
+        },
+        /**
+         * 登出
+         */
+        loginout: function(){
+            $.post(ctxPath + '/logout' , function () {
+                sessionStorage.clear();
+                $.cus.clear();
+                customer.msg('退成登录成功！' , function () {
+                    window.location.href = ctxPath + '/page/login';
+                });
             });
         },
 
@@ -136,27 +234,13 @@ layui.define(["jquery", "customer_menu", "element","customer_tab", "customer_the
          */
         renderHome: function (data) {
             sessionStorage.setItem('layuiminiHomeHref', ctxPath + data.homeUrl);
-            $('#layuiminiHomeTabId').html('<span class="layuimini-tab-active"></span><span class="disable-close">' + data.homeName + '</span><i class="layui-icon layui-unselect layui-tab-close">ဆ</i>');
-            $('#layuiminiHomeTabId').attr('lay-id', "homeTabContent");
-            $('#layuiminiHomeTabId').attr('lay-href', ctxPath + data.homeUrl);
+            $('#layuiminiHomeTabId_homeTabContent').html('<span class="layuimini-tab-active"></span><span class="disable-close">' + data.homeName + '</span><i class="layui-icon layui-unselect layui-tab-close">ဆ</i>');
+            $('#layuiminiHomeTabId_homeTabContent').attr('lay-id', "homeTabContent");
+            $('#layuiminiHomeTabId_homeTabContent').attr('lay-href', ctxPath + data.homeUrl);
             $('#appName').html(data.AppName + ' [' + data.environment + ']');
-            customer.reloadPage('homeTabContent' , ctxPath + data.homeUrl);
+            tab.reloadPage('homeTabContent' , ctxPath + data.homeUrl);
         },
 
-        /**
-         * 刷新页面
-         * @param layId
-         * @param layUrl
-         */
-        reloadPage: function (layId , layUrl){
-            $.ajax({
-                url: layUrl,
-                cache: false,
-                success: function(html){
-                    $('#layuiminiHomeTabContent_' + layId ).html(html);
-                }
-            });
-        },
 
         /**
          * 初始化logo
@@ -254,8 +338,8 @@ layui.define(["jquery", "customer_menu", "element","customer_tab", "customer_the
          * @param title
          * @returns {*}
          */
-        success: function (title) {
-            return layer.msg(title, {icon: 1, shade: this.shade, scrollbar: false, time: 2000, shadeClose: true});
+        success: function (title , callback) {
+            return customer.msg(title, {icon: 1, shade: this.shade, scrollbar: false, time: 1000, shadeClose: true} , callback);
         },
 
         /**
@@ -263,10 +347,38 @@ layui.define(["jquery", "customer_menu", "element","customer_tab", "customer_the
          * @param title
          * @returns {*}
          */
-        error: function (title) {
-            return layer.msg(title, {icon: 2, shade: this.shade, scrollbar: false, time: 3000, shadeClose: true});
+        error: function (title , callback) {
+            return customer.msg(title, {icon: 2, shade: this.shade, scrollbar: false, time: 3000, shadeClose: true} , callback);
         },
 
+        /**
+         * 加载层...
+         * @returns {*}
+         */
+        loading: function(msg , options ){
+            msg = msg || '加载中..';
+            options = options || {
+                icon: 16
+                ,shade: 0.3
+                ,time: false
+            };
+            return layer.msg( msg , options);
+        },
+        /**
+         * 信息框...
+         * @returns {*}
+         */
+        msg: function(title , options , callback ){
+            if ($.isFunction(options) && !callback){
+                callback = options;
+                options = {};
+            }else{
+                options = options || {};
+                callback = callback || function(){};
+            }
+            options = $.extend({icon: 1, shade: this.shade, scrollbar: false, time: 1000, shadeClose: true},options);
+            return layer.msg(title, options , callback);
+        },
 
         /**
          * 判断是否为手机
@@ -296,7 +408,7 @@ layui.define(["jquery", "customer_menu", "element","customer_tab", "customer_the
              * 清理
              */
             $('body').on('click', '[data-clear]', function () {
-                var loading = layer.load(0, {shade: false, time: 2 * 1000});
+                var loading = customer.loading('正在清理...');
                 sessionStorage.clear();
 
                 // 判断是否清理服务端
@@ -323,9 +435,9 @@ layui.define(["jquery", "customer_menu", "element","customer_tab", "customer_the
              * 刷新
              */
             $('body').on('click', '[data-refresh]', function () {
-                var layId = $('#layuiminiHomeTabId').attr('lay-id');
-                var layUrl = $('#layuiminiHomeTabId').attr('lay-href');
-                customer.reloadPage(layId , layUrl);
+                var layId = $('#layuiminiHomeTabId_homeTabContent').attr('lay-id');
+                var layUrl = $('#layuiminiHomeTabId_homeTabContent').attr('lay-href');
+                tab.reloadPage(layId , layUrl);
                 customer.success('刷新成功');
             });
 
@@ -388,6 +500,30 @@ layui.define(["jquery", "customer_menu", "element","customer_tab", "customer_the
              */
             $('body').on('click', '.layuimini-make', function () {
                 customer.renderDevice();
+            });
+
+            /**
+             * 点击登出事件
+             */
+            $('.login-out').on("click", function () {
+                layer.confirm('是否要退出登录么？', function(index, layero){
+                    customer.loginout();
+                });
+            });
+            /**
+             * 窗口改变事件
+             */
+            window.addEventListener('resize' ,function () {
+                // var width = $(window).width() - 200;
+                var width = $('.layui-body').width();
+                var height = $('.layui-body').height() ;
+                var containerHeight = height - 55 ;
+                var mainHeight = containerHeight - 20 ;
+                console.log('窗口改变了！');
+                console.log('窗口高度：' + height);
+                console.log('窗口宽度：' + width);
+                $('[id^=layuiminiHomeTabContent].layuimini-container').height(containerHeight);
+                $('[id^=layuiminiHomeTabContent].layuimini-container').css('overflow' , 'auto');
             });
         }
     };

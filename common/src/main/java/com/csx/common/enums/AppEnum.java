@@ -13,15 +13,16 @@ public enum AppEnum {
     LOCKEDACCOUNT("803" , "用户已经被锁定！"),
     DISABLEDACCOUNT("804" , "用户已经被禁用！"),
     EXPIREDCREDENTIALS("805" , "密码已经过期，请管理员重置密码！"),
-    CONCURRENTACCESS("806" , "用户已经登录，请注销后重新登录！"),
+    CONCURRENTACCESS("806" , "该用户已经超过允许同时登录的数量，请注销后重新登录！"),
     FAIL("999","请求失败!") ,
     BODY_NOT_MATCH("400","请求的数据格式不符!"),
     SIGNATURE_NOT_MATCH("401","请求的数字签名不匹配!"),
     NOT_FOUND("404", "未找到该资源!"),
     INTERNAL_SERVER_ERROR("500", "服务器内部错误!"),
     SERVER_BUSY("503","服务器正忙，请稍后再试!") ,
-    LICENSE_EXPIRED("900","Licence 已过期!") ,
-    LICENSE_ERROR("901","Licence 不正确!") ;
+    LICENSE_EXPIRED("900","[Licence 许可证]：已过期，请重新授权！") ,
+    LICENSE_ERROR("901","[Licence 许可证]：Licence 不正确，请重新授权！") ,
+    LICENSE_NOTEXIST("902","[Licence 许可证]：检测到系统未授权，请授权！") ;
 
     /** 错误码 */
     private String code;

@@ -1,5 +1,6 @@
 package com.csx.common.service;
 
+import cn.hutool.core.map.MapUtil;
 import com.csx.base.service.BaseService;
 import com.csx.common.config.AppCofig;
 import com.csx.common.entity.SysUser;
@@ -9,8 +10,7 @@ import com.csx.common.other.Constants;
 import com.csx.common.other.ResultBody;
 import com.csx.common.enums.AppEnum;
 import com.csx.common.mapper.LoginMapper;
-import com.csx.common.utils.JdbcUtils;
-import com.csx.common.utils.ToolUtils;
+import com.csx.common.utils.*;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
@@ -37,6 +37,8 @@ public class LoginService extends BaseService {
     private LoginMapper loginMapper;
     @Autowired
     private SysUserMapper sysUserMapper;
+    @Autowired
+    private CacheService cacheService;
 
     /**
      * @method  login
@@ -47,8 +49,8 @@ public class LoginService extends BaseService {
     public ResultBody login(Map<String,Object> params , ModelMap modelMap , HttpServletRequest request , HttpServletResponse response) {
         UsernamePasswordToken token = null;
         try{
-            String username = ToolUtils.nvl(params.get("username") , "");
-            String password = ToolUtils.nvl(params.get("password") , "");
+            String username = MapUtil.getStr(params , "username");
+            String password = MapUtil.getStr(params , "password");
             if (!ToolUtils.checkVerifyCode(request) && !ToolUtils.isDev){
                 return ResultBody.success("验证码不正确！");
             }
@@ -86,18 +88,18 @@ public class LoginService extends BaseService {
         try{
             session = request.getSession();
             username = token.getUsername();
-            int update = JdbcUtils.update("update sys_user_info set user_error_num = ? , user_login_time = ? , user_is_onlion = ? where user_id = ?", "0", ToolUtils.nowTime(), Constants.App.Y, username);
+            int update = JdbcUtils.update("update sys_user_info set user_error_num = ? , user_login_time = ?  where user_id = ?", "0", ToolUtils.nowTime(), username);
             if (update != 1){
                 throw new AppException("更新用户信息失败！");
             }
             sysUser = sysUserMapper.selectById(username);
-            sysUser.setUserPassword(Constants.App.BLANK);
-            _token = ToolUtils.getToken(username);
+            sysUser.setUserPassword(Constants.App.$BLANK);
+            _token = ToolUtils.getToken(sysUser);
             /** 设置Session    */
             session.setAttribute(Constants.Session.SESSION_USER_KEY , sysUser);
             session.setAttribute(Constants.Session.SESSION_TOKEN_KEY , _token);
-            /** 初始化工具类的User对象    */
-            ToolUtils.initUser(sysUser);
+            ThreadLocalUtils.initUser(sysUser);
+            OnlineUtils.set(sysUser.getUserId() , session.getId());
             SYSLOGINFO("SYSMM" , "用户登录" , ToolUtils.format("[{}]用户：{} 登录IP：{} ，登录成功！" , ToolUtils.nowTime() , username , ToolUtils.localhost()));
         } catch (Exception e){
             log.error(ToolUtils.format("[{}]登录成功，初始化信息异常！" , ToolUtils.nowTime() ) , e);
@@ -181,5 +183,24 @@ public class LoginService extends BaseService {
     private ResultBody onLockedAccountException(UsernamePasswordToken token, LockedAccountException e) {
         log.error(ToolUtils.format("[{}]登录失败，{}！" , ToolUtils.nowTime() , e.getMessage() ) , e);
         return ResultBody.success(AppEnum.LOCKEDACCOUNT);
+    }
+
+    /**
+     * @method  logout
+     * @params  Map<String, Object> params, ModelMap modelMap, HttpServletRequest request, HttpServletResponse response
+     * @return  ResultBody
+     * @desc    登出接口
+     **/
+    public ResultBody logout(Map<String, Object> params, ModelMap modelMap, HttpServletRequest request, HttpServletResponse response) {
+        HttpSession session = request.getSession();
+        /** 清理缓存在线信息    */
+        OnlineUtils.remove(ToolUtils.getUserId() , request.getSession().getId());
+        /** 清理Session   SESSION_USER_KEY 用户信息 */
+        session.removeAttribute(Constants.Session.SESSION_USER_KEY);
+        /** 清理Session   SESSION_TOKEN_KEY 用户token信息 */
+        session.removeAttribute(Constants.Session.SESSION_TOKEN_KEY);
+        /** 设置session失效    */
+        session.invalidate();
+        return ResultBody.success("清理成功！");
     }
 }

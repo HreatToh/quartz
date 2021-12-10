@@ -1,11 +1,15 @@
 package com.csx.main.plugin.owner.listener;
 
+import com.csx.common.entity.SysUser;
 import com.csx.common.other.Constants;
+import com.csx.common.utils.CacheUtils;
+import com.csx.common.utils.OnlineUtils;
 import com.csx.common.utils.ToolUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
@@ -27,10 +31,7 @@ public class LoginListener implements HttpSessionListener {
      */
     @Override
     public void sessionCreated(HttpSessionEvent se) {
-        if ( se.getSession().isNew() && ToolUtils.isNotNull(se.getSession().getAttribute(Constants.Session.SESSION_USER_KEY))){
-            ONLINE_COUNT ++ ;
-            log.debug("当前在线人数：" + ONLINE_COUNT);
-        }
+        log.debug("Session 创建....");
     }
 
     /**
@@ -39,9 +40,9 @@ public class LoginListener implements HttpSessionListener {
      */
     @Override
     public void sessionDestroyed(HttpSessionEvent se) {
-        if ( se.getSession().isNew() && ToolUtils.isNotNull(se.getSession().getAttribute(Constants.Session.SESSION_USER_KEY))){
-            ONLINE_COUNT -- ;
-            log.debug("当前在线人数：" + ONLINE_COUNT);
-        }
+        log.debug("Session 销毁....");
+         HttpSession session = se.getSession();
+        SysUser sysUser = (SysUser) session.getAttribute(Constants.Session.SESSION_USER_KEY);
+        OnlineUtils.remove(sysUser.getUserId() , session.getId());
     }
 }

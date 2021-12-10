@@ -4,9 +4,7 @@
  * version:2.0
  * description:layuimini 统计框架扩展
  */
-layui.define(["jquery"], function (exports) {
-    var $ = layui.$;
-
+layui.define([], function (exports) {
     var miniTongji = {
 
         /**

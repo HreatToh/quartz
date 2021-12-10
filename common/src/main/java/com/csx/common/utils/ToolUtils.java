@@ -1,6 +1,8 @@
 package com.csx.common.utils;
 
+import cn.hutool.core.codec.Base64;
 import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.lang.Console;
 import cn.hutool.core.net.NetUtil;
 import cn.hutool.core.util.IdUtil;
 import cn.hutool.core.util.StrUtil;
@@ -17,40 +19,26 @@ import java.io.Closeable;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.Map;
 
 @Slf4j
 public class ToolUtils extends StrUtil{
 
-    /** 是否是管理员    */
-    public static Boolean isAdmin = false;
     /** 是否开发环境    */
     public static Boolean isDev = false;
     /** 是否生产环境    */
     public static Boolean isProd = false;
     /** 是否测试环境    */
     public static Boolean isTest = false;
-    /** 当前登录的用户ID    */
-    private static String userId = "";
-    /** 当前登录的用户    */
-    private static SysUser user = null;
 
-    /**
-     * 初始化用户对象 默认剔除pwd
-     * @param user
-     */
-    public static void initUser(SysUser user){
-        user.setUserPassword("");
-        ToolUtils.user = user;
-        ToolUtils.userId = user.getUserId();
-        initUser(userId);
-    }
+
 
     /**
      * 获取当前登录的 用户Id
      * @return String
      */
     public static String getUserId(){
-        return userId;
+        return ThreadLocalUtils.getUser().getUserId();
     }
 
     /**
@@ -58,16 +46,17 @@ public class ToolUtils extends StrUtil{
      * @return SysUser
      */
     public static SysUser getUser(){
-        return user;
+        return ThreadLocalUtils.getUser();
     }
 
     /**
-     * 初始化Admin参数
+     * 判断是否admin
+     * @param
+     * @return
      */
-    private static void initUser(String userId){
-        isAdmin = equalsAnyIgnoreCase(userId , Constants.Session.ADMIN);
+    public static Boolean isAdmin(){
+        return equalsAnyIgnoreCase(getUserId() , Constants.Session.ADMIN);
     }
-
     /**
      * 判断是否admin
      * @param userId
@@ -369,8 +358,8 @@ public class ToolUtils extends StrUtil{
      * @return  String
      * @desc    获取token的方法
      **/
-    public static String getToken( String userId ){
-        return JWT.create().withAudience(userId , localhost() , nowTime() , getEvment().toString() ).sign(Algorithm.HMAC256(getLicence()));
+    public static String getToken( SysUser user ){
+        return JWT.create().withAudience(user.json() , localhost() , nowTime() , getEvment().toString() ).sign(Algorithm.HMAC256(getLicence()));
     }
 
     /**
@@ -380,7 +369,55 @@ public class ToolUtils extends StrUtil{
      * @desc    获取当前系统的 License
      **/
     public static String getLicence(){
-        return AppCofig.getSysConfig(Constants.App.SYS_LICENCE , Constants.App.NONE);
+        return AppCofig.getSysConfig(Constants.App.SYS_LICENCE , Constants.App.$NONE);
     }
 
+    /**
+     * @method  encodeBase64
+     * @params  String text
+     * @return  String
+     * @desc    base64加密
+     **/
+    public static String encodeBase64(String text){
+        return Base64.encode(text);
+    }
+
+    /**
+     * @method  decodeBase64
+     * @params  String text
+     * @return  String
+     * @desc    base64解密
+     **/
+    public static String decodeBase64(String text){
+        return Base64.decodeStr(text);
+    }
+
+
+    /**
+     * 加密参数
+     * @param params
+     * @return
+     */
+    public static Map<String , Object> encodeParam(Map<String , Object> params){
+        for (Map.Entry<String , Object> entry : params.entrySet() ) {
+            if (isNotNull(entry.getValue()) && entry.getValue() instanceof String) {
+                params.put(entry.getKey() , encodeBase64(nvl(entry.getValue() , "")));
+            }
+        }
+        return params;
+    }
+
+    /**
+     * 解密参数
+     * @param params
+     * @return
+     */
+    public static Map<String , Object> decodeParam(Map<String , Object> params){
+        for (Map.Entry<String , Object> entry : params.entrySet() ) {
+            if (isNotNull(entry.getValue()) && entry.getValue() instanceof String) {
+                params.put(entry.getKey() , decodeBase64(nvl(entry.getValue() , "")));
+            }
+        }
+        return params;
+    }
 }

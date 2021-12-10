@@ -1,6 +1,8 @@
 package com.csx.base.service;
 
 import cn.hutool.core.exceptions.ExceptionUtil;
+import cn.hutool.core.map.MapUtil;
+import cn.hutool.core.util.ArrayUtil;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -10,11 +12,10 @@ import com.csx.common.factory.QueryFormatFactory;
 import com.csx.common.enums.AppEnum;
 import com.csx.common.mapper.SysLogMapper;
 import com.csx.common.other.Constants;
-import com.csx.common.utils.JdbcUtils;
+import com.csx.common.other.Permission;
 import com.csx.common.utils.SpringUtils;
 import com.csx.common.utils.ToolUtils;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
 
 import javax.servlet.http.HttpServletRequest;
@@ -63,11 +64,11 @@ public class BaseService {
         Integer page = MIN_PAGE_NUM ;
         Integer size = MAX_PAGE_SIZE_NUM;
 
-        if (ToolUtils.isNotNull(params.get("page_num")) && params.get("page_num") instanceof Integer){
-            page = Integer.parseInt(ToolUtils.nvl(params.get("page_num") , "1"));
+        if (ToolUtils.isNotNull(params.get(Constants.Pager.PAGE_NUM)) && params.get(Constants.Pager.PAGE_NUM) instanceof Integer){
+            page = ToolUtils.nvl(params.get(Constants.Pager.PAGE_NUM) , 1);
         }
-        if (ToolUtils.isNotNull(params.get("page_size_num")) && params.get("page_size_num") instanceof Integer){
-            size = Integer.parseInt(ToolUtils.nvl(params.get("page_size_num") , "1"));
+        if (ToolUtils.isNotNull(params.get(Constants.Pager.PAGE_SIZE_NUM)) && params.get(Constants.Pager.PAGE_SIZE_NUM) instanceof Integer){
+            size = ToolUtils.nvl(params.get(Constants.Pager.PAGE_SIZE_NUM) , MAX_PAGE_SIZE_NUM);
         }
         return new Page<T>(page ,size);
     }
@@ -108,7 +109,41 @@ public class BaseService {
                 queryWrapper.orderBy(true ,ToolUtils.equalsIgnoreCase( order , "ASC") , field );
             }
         }
+        /** 如果是admin则默认获取所有菜单 否则根据权限获取菜单   */
+        if (!ToolUtils.isAdmin()){
+            StringBuffer permissionSql = new StringBuffer();
+            String permissionType = MapUtil.getStr(params , Permission.TYPE);
+            String resourceType = MapUtil.getStr(params , Permission.RESOURCE_TYPE);
+            permissionSql.append("select permission_resource_id from sys_permission_info where 1 = 1");
+            if (ToolUtils.isNotBlank(permissionType)){
+                permissionSql.append(" and ").append(" permission_type = '").append(permissionType).append("' ");
+            }
+            if (ToolUtils.isNotBlank(ToolUtils.getUserId())){
+                permissionSql.append(" and ").append(" permission_object_id = '").append(ToolUtils.getUserId()).append("' ");
+            }
+
+            if (ToolUtils.isNotBlank(resourceType)){
+                if (!ToolUtils.contains(resourceType , "'")){
+                    resourceType = resourceType.replace("," , "','");
+                }
+                permissionSql.append(" and ").append(" permission_resource_type in ('").append(resourceType).append("') ");
+            }
+            queryWrapper.inSql("menu_id" , permissionSql.toString());
+            permissionSql.delete(0 , permissionSql.length());
+        }
         return queryWrapper;
+    }
+
+    /**
+     * @method  initPermission
+     * @params  Map<String , Object> params , String permissionType , String resourceType
+     * @return  Map<String , Object>
+     * @desc    初始化权限map
+     **/
+    public Map<String , Object> initPermission( Map<String , Object> params , String permissionType , String resourceType){
+        params.put(Permission.TYPE , permissionType);
+        params.put(Permission.RESOURCE_TYPE , resourceType);
+        return params;
     }
 
     /**
@@ -137,7 +172,7 @@ public class BaseService {
      **/
     public void SYSLOGERROR(String sysId , String logType , String logMsg , Throwable e){
         StringBuffer sb = new StringBuffer();
-        sb.append("说明：").append(logMsg).append(Constants.App._N_R);
+        sb.append("说明：").append(logMsg).append(Constants.App.$N$R);
         sb.append("异常：").append(ExceptionUtil.stacktraceToString(e , 1500));
         SYSLOG(sysId , ToolUtils.getId() , LogEnum.ERROR , logType , sb.toString() , null);
         sb.delete(0,sb.length());

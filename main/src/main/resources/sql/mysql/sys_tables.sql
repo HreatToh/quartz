@@ -157,7 +157,7 @@ create table sys_user_info (
     user_login_date varchar(10)      null comment '登录时间',
     user_error_num  varchar(10)		 null comment '密码错误次数',
     user_is_lock    varchar(2)       null comment '是否锁定: Y-是 N-否',
-    user_is_onlion  varchar(2)       null comment '是否在线: Y-是 N-否',
+    user_is_online  varchar(2)       null comment '是否在线: Y-是 N-否',
     comm_cdate      varchar(10)      null comment '创建时间',
     comm_udate      varchar(10)      null comment '更新时间',
     comm_cuser      varchar(50)      null comment '创建人',

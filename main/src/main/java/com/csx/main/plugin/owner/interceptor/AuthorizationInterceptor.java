@@ -4,9 +4,9 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTVerificationException;
-import com.csx.common.config.AppCofig;
 import com.csx.common.entity.SysUser;
 import com.csx.common.other.Constants;
+import com.csx.common.utils.ThreadLocalUtils;
 import com.csx.common.utils.ToolUtils;
 import com.csx.licence.entity.Licence;
 import lombok.extern.slf4j.Slf4j;
@@ -47,6 +47,7 @@ public class AuthorizationInterceptor implements HandlerInterceptor {
             String uri = request.getRequestURI();
             String licence = ToolUtils.getLicence();
 
+            /** 如果请求的token为空则从seesion中获取    */
             if (ToolUtils.isBlank(token)){
                 token = (String) session.getAttribute(Constants.Session.SESSION_TOKEN_KEY);
             }
@@ -63,29 +64,32 @@ public class AuthorizationInterceptor implements HandlerInterceptor {
                 return gotoLoginPage(request , response);
             }
 
-            /** 验证token是否合法    */
-            JWTVerifier jwt = JWT.require(Algorithm.HMAC256(licence)).build();
             try {
+                /** 验证token是否合法    */
+                JWTVerifier jwt = JWT.require(Algorithm.HMAC256(licence)).build();
                 jwt.verify(token);
             } catch (JWTVerificationException e) {
                 log.error("token验证不通过，返回登录页！" , e);
                 return gotoLoginPage(request , response);
             }
 
-            /** 获取token信息 存储在Request域中    */
-            if (!ToolUtils.equalsIgnoreCase(licence , Constants.App.NONE)){
-                licence =  Licence.decodeJson(licence);
-            }
 
             try{
-                request.setAttribute(Constants.App.SYS_LICENCE , licence);
+                /** 获取token信息 存储在Request域中    */
+                if (!ToolUtils.equalsIgnoreCase(licence , Constants.App.$NONE)){
+                    licence =  Licence.decodeJson(licence);
+                }
             } catch (Exception e){
                 log.error(ToolUtils.format("[{}]解析License异常！" , ToolUtils.nowTime() ) , e);
                 return gotoLoginPage(request , response);
             }
-
+            ThreadLocalUtils.initUser(user);
+            /** 如果是登录页 并且认证通过则重定向到首页    */
+            if (ToolUtils.endWith(uri , "/page/login")){
+                response.sendRedirect(request.getContextPath() + "/page/index");
+            }
             /** 如果访问首页 则打印初始化信息    */
-            if (ToolUtils.contains(uri , "/page/index")){
+            if (ToolUtils.endWith(uri , "/page/index")){
                 initParams(request);
             }
 
@@ -104,6 +108,9 @@ public class AuthorizationInterceptor implements HandlerInterceptor {
      * @desc    返回登录页
      **/
     private boolean gotoLoginPage(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        if (ToolUtils.endWith(request.getRequestURI() , "/page/login")){
+            return true;
+        }
         response.sendRedirect(request.getContextPath() + "/page/login");
         return false;
     }
@@ -120,5 +127,7 @@ public class AuthorizationInterceptor implements HandlerInterceptor {
      */
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
+        /** 调用结束之后移出user    */
+        ThreadLocalUtils.removeUser();
     }
 }

@@ -2,6 +2,8 @@ package com.csx.common.config;
 
 import com.csx.common.entity.SysConfig;
 import com.csx.common.enums.EvmentEnum;
+import com.csx.common.service.CacheService;
+import com.csx.common.utils.SpringUtils;
 import com.csx.common.utils.ToolUtils;
 import lombok.extern.slf4j.Slf4j;
 
@@ -102,6 +104,37 @@ public final class AppCofig {
     }
 
 
+    /**
+     * 设置系统配置信息
+     * @param itemId
+     * @param itemVal
+     */
+    public static void setSysConfig(String itemId , String itemVal){
+        SysConfig sysConfig = AppCofig.sysConfig.get(itemId);
+        if (ToolUtils.isNull(sysConfig)){
+            log.warn(ToolUtils.format("配置项[{}]不存在，设置值[{}]失败！" , itemId , itemVal));
+            return;
+        }
+        sysConfig.setItemVal(itemVal);
+        AppCofig.sysConfig.put(itemId , sysConfig);
+    }
+
+
+    /**
+     * 设置子系统配置信息
+     * @param itemId
+     * @param itemVal
+     */
+    public static void setSysConfig(String sysId , String itemId , String itemVal){
+        String key = ToolUtils.format("{}.{}" , sysId , itemId );
+        SysConfig sysConfig = AppCofig.sysSubConfig.get(key);
+        if (ToolUtils.isNull(sysConfig)){
+            log.warn(ToolUtils.format("配置项[{}]不存在，设置值[{}]失败！" , key , itemVal));
+            return;
+        }
+        sysConfig.setItemVal(itemVal);
+        AppCofig.sysSubConfig.put(key , sysConfig);
+    }
     /**
      * @method  getSysConfig
      * @params  itemId
@@ -262,5 +295,22 @@ public final class AppCofig {
         }
 
         return value;
+    }
+
+    /**
+     * @method  clear
+     * @params  
+     * @return  
+     * @desc    清理缓存
+     **/
+    public static void clear(){
+        try{
+            sysConfig.clear();
+            sysSubConfig.clear();
+            CacheService cacheService = SpringUtils.getBean(CacheService.class);
+            init(cacheService.getSysConfigAll() , cacheService.getSysSubConfigAll());
+        } catch (Exception e){
+            log.error(ToolUtils.format("清理 AppConfig 缓存" , ToolUtils.nowTime() ) , e);
+        }
     }
 }

@@ -21,17 +21,7 @@ public class SysMenuController extends BaseController {
     private SysMenuService sysMenuService;
 
 
-    /**
-     * @method getMenuInfo
-     * @params @RequestParam Map<String ,Object> params
-     * @return ResultBody
-     * @desc   获取菜单信息
-     **/
-    @RequestMapping( name = "获取菜单信息" , value = "getMenuInfo" , method = RequestMethod.POST )
-    public ResultBody getMenuInfo(@RequestParam Map<String ,Object> params){
-        return sysMenuService.getMenuInfo(params);
-    }
-    
+
     /**
      * @method  saveMenuInfo
      * @params  @RequestParam Map<String ,Object> params
@@ -43,4 +33,14 @@ public class SysMenuController extends BaseController {
         return sysMenuService.saveMenuInfo(params);
     }
 
+    /**
+     * @method getMenuList
+     * @params @RequestParam Map<String ,Object> params
+     * @return ResultBody
+     * @desc   获取菜单信息
+     **/
+    @RequestMapping( name = "获取菜单列表 根据权限" , value = "getMenuList" , method = RequestMethod.POST)
+    public ResultBody getMenuList(@RequestParam Map<String ,Object> params){
+        return sysMenuService.getMenuList(params);
+    }
 }

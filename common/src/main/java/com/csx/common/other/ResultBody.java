@@ -88,8 +88,8 @@ public class ResultBody {
      * 默认成功 不带数据
      * @return
      */
-    public static ResultBody success(String msg , Object o){
-        return success(AppEnum.SUCCESS.getCode() , msg , o);
+    public static ResultBody success(String msg , Object data){
+        return success(AppEnum.SUCCESS.getCode() , msg , data);
     }
     /**
      * 默认成功 不带数据

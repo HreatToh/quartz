@@ -54,14 +54,14 @@ layui.define(["element", "layer", "jquery"], function (exports) {
             ele.tabAdd('layuiminiTab', {
                 title: '<span class="layuimini-tab-active"></span><span>' + options.title + '</span><i class="layui-icon layui-unselect layui-tab-close">ဆ</i>' //用于演示
                 // , content: '<iframe width="100%" height="100%" frameborder="no" border="0" marginwidth="0" marginheight="0"   src="' + options.href + '"></iframe>'
-                , content: '<div width="100%" height="100%" style="margin: 0 5px" id="layuiminiHomeTabContent_' + options.tabId + '" href="' + options.href + '"></div>'
+                , content: '<div width="100%" height="100%" style="margin: 5px" id="layuiminiHomeTabContent_' + options.tabId + '" href="' + options.href + '" class="layuimini-container"><div class="layuimini-main"></div></div>'
                 , id: options.tabId
             });
             $.ajax({
                 url: options.href,
                 cache: false,
                 success: function(html){
-                    $('#layuiminiHomeTabContent_' + options.tabId ).html(html);
+                    $('#layuiminiHomeTabContent_' + options.tabId ).find('.layuimini-main').html(html);
                 }
             });
             $('.layuimini-menu-left').attr('layuimini-tab-tag', 'add');

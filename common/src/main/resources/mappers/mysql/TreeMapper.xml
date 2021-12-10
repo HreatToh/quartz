@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.csx.common.mapper.TreeMapper">
+
+    <!-- 获取菜单树形数据结构 -->
+    <select id="getTreeMenu" parameterType="java.util.Map" resultType="com.csx.common.other.TreeNode">
+        select
+            ssi.sys_id as id
+            , ssi.sys_name as name
+            , ssi.sys_name as title
+            , ssi.sys_parent_id as pid
+            , '' as icon
+            , ssi.sys_icon as icon_skin
+            , '' as url
+            , 'system' as type
+            , ssi.sys_order as sort
+            , 'true' as open
+            , 'false' as checked
+        from sys_system_info ssi inner join sys_permission_info spi on ssi.sys_id = spi.sys_id
+        <where>
+            spi.permission_type = 'user'
+            and spi.permission_resource_type = 'role'
+            and spi.permission_object_id = #{userId}
+        </where>
+        union all
+        select
+            smi.menu_id as id
+            , smi.menu_name as name
+            , smi.menu_name as title
+            , case
+                when smi.menu_parent_id is null then smi.sys_id
+                else smi.menu_parent_id
+            end as pid
+            , '' as icon
+            , smi.menu_icon as icon_skin
+            , '' as url
+            , smi.menu_type as type
+            , smi.menu_order as sort
+            , 'true' as open
+            , 'false' as checked
+        from sys_menu_info smi inner join sys_permission_info spi on smi.sys_id = spi.sys_id and smi.menu_id = spi.permission_resource_id
+        <where>
+            spi.permission_type = 'user'
+            and spi.permission_resource_type = 'menu'
+            and spi.permission_object_id = #{userId}
+        </where>
+    </select>
+</mapper>

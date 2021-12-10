@@ -5,6 +5,7 @@ import com.alibaba.druid.support.http.WebStatFilter;
 import com.csx.common.other.PathPatterns;
 import com.csx.main.plugin.owner.filter.CharFilter;
 import com.csx.main.plugin.owner.filter.LoginFilter;
+import com.csx.main.plugin.owner.filter.ParamFilter;
 import com.csx.main.plugin.owner.interceptor.AuthorizationInterceptor;
 import com.csx.main.plugin.owner.listener.LoginListener;
 import lombok.extern.slf4j.Slf4j;
@@ -54,6 +55,12 @@ public class GlobalConfig implements WebMvcConfigurer {
     @ConfigurationProperties( prefix = "application.filter.druidfilter")
     @Bean("druidFt")
     public PathPatterns getDruidFt() {
+        return new PathPatterns();
+    }
+    /** 参数过滤器 拦截对象    */
+    @ConfigurationProperties( prefix = "application.filter.paramfilter")
+    @Bean("paramFt")
+    public PathPatterns getParamFt() {
         return new PathPatterns();
     }
 
@@ -138,6 +145,25 @@ public class GlobalConfig implements WebMvcConfigurer {
         filterRegistrationBean.addUrlPatterns(druidFt.getInclude());
         log.debug("注册过滤器[ druidFilter ]成功");
         /***************************** 添加Druid过滤器 end   *****************************/
+        return filterRegistrationBean;
+    }
+
+    /**
+     * 添加参数过滤器
+     * @return
+     */
+    @Bean
+    public FilterRegistrationBean paramFilter() {
+        /***************************** 添加参数过滤器 start *****************************/
+        PathPatterns paramFt = getPathPatterns("paramFt");
+        FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
+        Map<String , String> initParams = new HashMap<String , String >();
+        initParams.put("exclusions" , ArrayUtil.join(paramFt.getExclude() , ","));
+        filterRegistrationBean.setFilter(new ParamFilter());
+        filterRegistrationBean.setInitParameters(initParams);
+        filterRegistrationBean.addUrlPatterns(paramFt.getInclude());
+        log.debug("注册过滤器[ paramFilter ]成功");
+        /***************************** 添加参数过滤器 end   *****************************/
         return filterRegistrationBean;
     }
     /**

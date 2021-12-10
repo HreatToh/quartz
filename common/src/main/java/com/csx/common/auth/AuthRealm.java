@@ -4,6 +4,8 @@ import com.csx.common.config.AppCofig;
 import com.csx.common.entity.SysUser;
 import com.csx.common.mapper.SysUserMapper;
 import com.csx.common.other.Constants;
+import com.csx.common.service.CacheService;
+import com.csx.common.utils.OnlineUtils;
 import com.csx.common.utils.ToolUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.*;
@@ -25,6 +27,8 @@ public class AuthRealm extends AuthorizingRealm {
 
     @Autowired
     private SysUserMapper sysUserMapper;
+    @Autowired
+    private CacheService cacheService;
     /**
      * @method  doGetAuthorizationInfo
      * @params  PrincipalCollection principalCollection
@@ -71,8 +75,8 @@ public class AuthRealm extends AuthorizingRealm {
             throw new ExpiredCredentialsException("密码已经过期，请管理员重置密码！");
         }
         /** 判断是否是多用户登录 不是的话需要判定用户是否在线   */
-        if (ToolUtils.isN(AppCofig.getSysConfig(Constants.App.SYS_LOGIN_ISMULTI , "Y")) && ToolUtils.isY(sysUser.getUserIsOnlion())){
-            throw new ConcurrentAccessException("用户已经登录，请注销后重新登录！");
+        if (OnlineUtils.isExceed(sysUser.getUserId())){
+            throw new ConcurrentAccessException("该用户已经超过允许同时登录的数量，请注销后重新登录！");
         }
 
         sysUser.setSalt(userId + "_salt");

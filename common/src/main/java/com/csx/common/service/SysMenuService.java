@@ -4,6 +4,7 @@ import cn.hutool.core.date.DateUtil;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.csx.base.service.BaseService;
 import com.csx.common.other.Constants;
+import com.csx.common.other.Permission;
 import com.csx.common.other.ResultBody;
 import com.csx.common.entity.SysMenu;
 import com.csx.common.mapper.SysMenuMapper;
@@ -30,22 +31,6 @@ public class SysMenuService extends BaseService {
     @Autowired
     private SysMenuMapper menuMapper;
 
-    /**
-     * @method  getMenuInfo
-     * @params  Map<String, Object> params
-     * @return  ResultBody
-     * @desc    获取菜单信息
-     **/
-    public ResultBody getMenuInfo(Map<String, Object> params) {
-        Page<SysMenu> page = null;
-        try{
-            page = menuMapper.selectPage(getPage(params), getWhereQueryWrapper(params));
-        } catch (Exception e){
-            log.error(ToolUtils.format("菜单分页查询发生异常！" ) , e);
-            return ResultBody.error(e);
-        }
-        return ResultBody.success(page);
-    }
 
     /**
      * @method  saveMenuInfo
@@ -89,5 +74,24 @@ public class SysMenuService extends BaseService {
             return ResultBody.error(e);
         }
         return ResultBody.success(SUCCESS , msg);
+    }
+    /**
+     * @method  getMenuInfo
+     * @params  Map<String, Object> params
+     * @return  ResultBody
+     * @desc    获取菜单信息
+     **/
+    public ResultBody getMenuList(Map<String, Object> params) {
+        Page<SysMenu> page = null;
+        try{
+            if (!ToolUtils.isAdmin()){
+                params = initPermission(params , Permission.Type.user , Permission.resourceType.build(Permission.resourceType.menu , Permission.resourceType.menuBtn ));
+            }
+            page = menuMapper.selectPage(getPage(params), getWhereQueryWrapper(params));
+        } catch (Exception e){
+            log.error(ToolUtils.format("菜单分页查询发生异常！" ) , e);
+            return ResultBody.error(e);
+        }
+        return ResultBody.success(page);
     }
 }

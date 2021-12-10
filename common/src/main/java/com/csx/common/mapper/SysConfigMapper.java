@@ -2,6 +2,7 @@ package com.csx.common.mapper;
 
 import com.csx.common.entity.SysConfig;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -30,4 +31,20 @@ public interface SysConfigMapper {
      * @desc    获取所有子系统配置信息
      **/
     List<SysConfig> getSysSubConfigAll() throws Exception;
+
+    /**
+     * @method  saveConfig
+     * @params  @Param("itemId") String itemId, @Param("itemVal") String itemVal
+     * @return  Integer
+     * @desc    更新配置信息
+     **/
+    Integer setConfig(@Param("config") SysConfig sysConfig) throws Exception;
+    /**
+     * @method  saveConfig
+     * @params  @Param("itemId") String itemId, @Param("itemVal") String itemVal
+     * @return  Integer
+     * @desc    更新配置信息
+     **/
+    Integer setSubConfig(@Param("config") SysConfig sysConfig) throws Exception;
+
 }

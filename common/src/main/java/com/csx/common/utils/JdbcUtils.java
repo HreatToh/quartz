@@ -3,6 +3,7 @@ package com.csx.common.utils;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.pool.DruidDataSourceFactory;
+import com.csx.common.other.Constants;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.*;
@@ -41,6 +42,8 @@ public class JdbcUtils {
             initJdbcTemplate(dataSource);
         }
     }
+
+
 
     /**
      * @method  initJdbcTemplate

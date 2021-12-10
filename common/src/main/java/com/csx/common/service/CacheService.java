@@ -3,13 +3,17 @@ package com.csx.common.service;
 
 import com.csx.base.service.BaseService;
 import com.csx.common.entity.SysConfig;
+import com.csx.common.entity.SysDict;
 import com.csx.common.entity.SysMenu;
 import com.csx.common.entity.SysSystem;
 import com.csx.common.handler.CacheHandler;
 import com.csx.common.mapper.SysConfigMapper;
 import com.csx.common.mapper.SysMenuMapper;
 import com.csx.common.mapper.SysPermissionMapper;
+import com.csx.common.mapper.SysSystemMapper;
 import com.csx.common.other.Constants;
+import com.csx.common.other.JsonMap;
+import com.csx.common.other.Permission;
 import com.csx.common.utils.CacheUtils;
 import com.csx.common.utils.JdbcUtils;
 import com.csx.common.utils.SpringUtils;
@@ -18,10 +22,14 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author  Chengshx
@@ -34,9 +42,11 @@ public class CacheService extends BaseService {
 
     @Autowired
     private SysConfigMapper sysConfigMapper;
-
+    @Autowired
+    private SysSystemService sysSystemService;
     @Autowired
     private SysPermissionMapper sysPermissionMapper;
+
     /**
      * 初始化缓存信息
      */
@@ -61,7 +71,7 @@ public class CacheService extends BaseService {
     /**
      * @method  getSysConfigAll
      * @params
-     * @return
+     * @return  List<SysConfig>
      * @desc    获取所有的系统配置信息
      **/
     public List<SysConfig> getSysConfigAll(){
@@ -79,7 +89,7 @@ public class CacheService extends BaseService {
     /**
      * @method  getSysConfigAll
      * @params
-     * @return
+     * @return  List<SysConfig>
      * @desc    获取所有的子系统配置信息
      **/
     public List<SysConfig> getSysSubConfigAll() {
@@ -94,7 +104,24 @@ public class CacheService extends BaseService {
             }
         });
     }
-
+    /**
+     * @method  getSysSystemAll
+     * @params  
+     * @return  List<SysSystem>
+     * @desc    获取所有系统信息
+     **/
+    public List<SysSystem> getSysSystemAll() {
+        return (List<SysSystem>) CacheUtils.get(Constants.Cache.CACHE_SYS_SYSTEM, new CacheHandler() {
+            @Override
+            public Object handler() throws Exception {
+                List<SysSystem> list = sysSystemService.getSysSystemAll();
+                if (ToolUtils.isNull(list) ){
+                    return new ArrayList<SysSystem>();
+                }
+                return list;
+            }
+        });
+    }
     /**
      * @method  getSysMenuByUserId
      * @params  String userId
@@ -107,7 +134,7 @@ public class CacheService extends BaseService {
             public Object handler() throws Exception {
                 List<SysMenu> list = sysPermissionMapper.getSysMenuByUserId(userId);
                 if (ToolUtils.isNull(list) ){
-                    return new ArrayList<SysConfig>();
+                    return new ArrayList<SysMenu>();
                 }
                 return list;
             }
@@ -126,10 +153,75 @@ public class CacheService extends BaseService {
             public Object handler() throws Exception {
                 List<SysMenu> list = sysPermissionMapper.getSysSystemByUserId(userId);
                 if (ToolUtils.isNull(list) ){
-                    return new ArrayList<SysConfig>();
+                    return new ArrayList<SysMenu>();
                 }
                 return list;
             }
         });
     }
+
+
+    /**
+     * @method  getDictMap
+     * @params
+     * @return  Map
+     * @desc    缓存获取字典Map
+     **/
+    public Map getDictMap() {
+        return (Map) CacheUtils.get(Constants.Cache.CACHE_DICT_MAP, new CacheHandler() {
+            @Override
+            public Object handler() throws Exception {
+                JsonMap jsonMap = JsonMap.newInstance();
+                getSystemDictMap(jsonMap , getSysSystemAll());
+                getSysMenuTypeMap(jsonMap);
+                return jsonMap.get();
+            }
+        });
+    }
+
+    /**
+     * @method  getSysMenuTypeMap
+     * @params  JsonMap jsonMap
+     * @return
+     * @desc    转换菜单类型成字典
+     **/
+    private void getSysMenuTypeMap(JsonMap jsonMap) {
+        Map<String, SysDict> map = new HashMap<String, SysDict>();
+        map.putAll(Permission.Type.map);
+        for (Map.Entry<String , SysDict> entry: map.entrySet()) {
+            jsonMap.append("SYSMM.MENU_TYPE." + entry.getKey() , entry.getValue().getDictName());
+        }
+        map.clear();
+        map.putAll(Permission.resourceType.map);
+        for (Map.Entry<String , SysDict> entry: map.entrySet()) {
+            jsonMap.append("SYSMM.RESOURCE_TYPE." + entry.getKey() , entry.getValue().getDictName());
+        }
+    }
+
+
+    /**
+     * @method  getSystemDictMap
+     * @params  JsonMap jsonMap , List<SysSystem> list
+     * @return
+     * @desc    系统信息转map
+     **/
+    private void getSystemDictMap(JsonMap jsonMap , List<SysSystem> list){
+        for (SysSystem system: list) {
+            jsonMap.append("SYSMM.SYSTEM_NAME." + system.getSysId() , system.getSysName());
+        }
+    }
+
+
+    /**
+     * @method  clear
+     * @params  
+     * @return  
+     * @desc    清理缓存
+     **/
+    public void clear() {
+        
+    }
+
+
+
 }

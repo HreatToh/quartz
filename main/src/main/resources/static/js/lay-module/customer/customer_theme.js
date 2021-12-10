@@ -4,9 +4,8 @@
  * version:2.0
  * description:layuimini tab框架扩展
  */
-layui.define(["jquery", "layer"], function (exports) {
-    var $ = layui.$,
-        layer = layui.layer;
+layui.define(["layer"], function (exports) {
+    var layer = layui.layer;
 
     var theme = {
 

@@ -41,7 +41,7 @@ public class SysUser extends BaseEntity {
     /**   是否锁定: Y-是 N-否         */
     private String userIsLock       ;
     /**   是否在线: Y-是 N-否         */
-    private String userIsOnlion     ;
+    private String userIsOnline;
     /**   用户密码加盐                */
     @TableField( exist = false )
     private String salt;
@@ -150,12 +150,12 @@ public class SysUser extends BaseEntity {
         this.userIsLock = userIsLock;
     }
 
-    public String getUserIsOnlion() {
-        return userIsOnlion;
+    public String getUserIsOnline() {
+        return userIsOnline;
     }
 
-    public void setUserIsOnlion(String userIsOnlion) {
-        this.userIsOnlion = userIsOnlion;
+    public void setUserIsOnline(String userIsOnline) {
+        this.userIsOnline = userIsOnline;
     }
 
     public String getSalt() {

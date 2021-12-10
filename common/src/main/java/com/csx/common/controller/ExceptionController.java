@@ -92,7 +92,8 @@ public class ExceptionController extends BaseController implements ErrorControll
      */
     private Map<String, Object> getErrorAttributes(HttpServletRequest request, ErrorAttributeOptions options) {
         ServletRequestAttributes requestAttributes = new ServletRequestAttributes(request);
-        return this.errorAttributes.getErrorAttributes((WebRequest) requestAttributes, options);
+//        return this.errorAttributes.getErrorAttributes((WebRequest) requestAttributes, options);
+        return null;
     }
 
     /**

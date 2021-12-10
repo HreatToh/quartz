@@ -1,7 +1,9 @@
 package com.csx.licence.entity;
 
 import cn.hutool.core.codec.Base64;
+import cn.hutool.core.date.DateTime;
 import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.lang.Console;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONUtil;
 import com.auth0.jwt.JWT;
@@ -159,4 +161,34 @@ public class Licence implements Serializable {
     public String Json(){
         return JSONUtil.toJsonStr(this);
     }
+
+    /**
+     * @method  isExpire
+     * @params  
+     * @return  boolean
+     * @desc    判断licence 是否已经到期
+     **/
+    public boolean isExpire() {
+        /** 如果是永久授权则永不到期    */
+        if (getForever() != null && getForever()){
+            return false;
+        }
+        return getRemainDays() < 0 ;
+    }
+
+    /**
+     * @method getRemainDays
+     * @params  
+     * @return Integer
+     * @desc   剩余天数 到期日期 - 当前日期
+     **/
+    public Long getRemainDays(){
+        DateTime dateTime = DateUtil.parseDate(getExpireDate());
+        return DateUtil.betweenDay(DateUtil.date() , dateTime , true);
+    }
+
+//    public static void main(String[] args) {
+//        DateTime dateTime = DateUtil.parseDate("2021-12-07");
+//        Console.log(DateUtil.betweenDay(DateUtil.date() , dateTime , true));
+//    }
 }

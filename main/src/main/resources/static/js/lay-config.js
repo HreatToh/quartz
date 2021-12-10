@@ -1,8 +1,8 @@
 /**
- * date:2019/08/16
- * author:Mr.Chung
+ * date: 2021/12/08
+ * author: chengshx
  * description:此处放layui自定义扩展
- * version:2.0.4
+ * version:1.0.01
  */
 
 window.rootPath = document.getElementById("ctxPath").getAttribute("content");
@@ -19,6 +19,10 @@ layui.config({
     customer_tab: "customer/customer_tab",
     /** 自定义 主题扩展    */
     customer_theme: "customer/customer_theme",
+    /** 自定义 tree组件    */
+    customer_tree: "customer/customer_tree",
+    /** 自定义 table组件    */
+    customer_grid: "customer/customer_grid",
     /** layuimini 统计扩展    */
     miniTongji: "layuimini/miniTongji",
     /** 分步表单扩展    */

@@ -24,4 +24,137 @@
         select <include refid="sysSubConfigColSql"/> from sys_subconfig_info ssi where ssi.item_enable = 'Y' and ssi.comm_delfalg = 'N'
     </select>
 
+    <!-- 更新系统配置信息 -->
+    <update id="setConfig" parameterType="com.csx.common.entity.SysConfig">
+        update sys_config_info
+        <trim prefix=" set " prefixOverrides=",">
+            <if test="config.itemName != null ">
+                , item_name = #{config.itemName}
+            </if>
+            <if test="config.itemVal != null ">
+                , item_val = #{config.itemVal}
+            </if>
+            <if test="config.itemDefval != null ">
+                , item_defval = #{config.itemDefval}
+            </if>
+            <if test="config.itemType != null ">
+                , item_type = #{config.itemType}
+            </if>
+            <if test="config.itemConf != null ">
+                , item_conf = #{config.itemConf}
+            </if>
+            <if test="config.itemDesc != null ">
+                , item_desc = #{config.itemDesc}
+            </if>
+            <if test="config.itemGroup != null ">
+                , item_group = #{config.itemGroup}
+            </if>
+            <if test="config.itemOrder != null ">
+                , item_order = #{config.itemOrder}
+            </if>
+            <if test="config.itemEnable != null ">
+                , item_enable = #{config.itemEnable}
+            </if>
+            <if test="config.commCdate != null ">
+                , comm_cdate = #{config.commCdate}
+            </if>
+            <if test="config.commUdate != null ">
+                , comm_udate = #{config.commUdate}
+            </if>
+            <if test="config.commCuser != null ">
+                , comm_cuser = #{config.commCuser}
+            </if>
+            <if test="config.commUuser != null ">
+                , comm_uuser = #{config.commUuser}
+            </if>
+            <if test="config.commDelfalg != null ">
+                , comm_delfalg = #{config.commDelfalg}
+            </if>
+            <if test="config.commV1 != null ">
+                , comm_v1 = #{config.commV1}
+            </if>
+            <if test="config.commV1 != null ">
+                , comm_v2 = #{config.commV2}
+            </if>
+            <if test="config.commV1 != null ">
+                , comm_v3 = #{config.commV3}
+            </if>
+            <if test="config.commV1 != null ">
+                , comm_v4 = #{config.commV4}
+            </if>
+            <if test="config.commV1 != null ">
+                , comm_v5 = #{config.commV5}
+            </if>
+        </trim>
+        <where>
+            item_id = #{config.itemId}
+        </where>
+    </update>
+
+    <!-- 更新子系统配置信息 -->
+    <update id="setSubConfig" parameterType="com.csx.common.entity.SysConfig">
+        update sys_subconfig_info
+        <trim prefix=" set " prefixOverrides=",">
+            <if test="config.itemName != null ">
+                , item_name = #{config.itemName}
+            </if>
+            <if test="config.itemVal != null ">
+                , item_val = #{config.itemVal}
+            </if>
+            <if test="config.itemDefval != null ">
+                , item_defval = #{config.itemDefval}
+            </if>
+            <if test="config.itemType != null ">
+                , item_type = #{config.itemType}
+            </if>
+            <if test="config.itemConf != null ">
+                , item_conf = #{config.itemConf}
+            </if>
+            <if test="config.itemDesc != null ">
+                , item_desc = #{config.itemDesc}
+            </if>
+            <if test="config.itemGroup != null ">
+                , item_group = #{config.itemGroup}
+            </if>
+            <if test="config.itemOrder != null ">
+                , item_order = #{config.itemOrder}
+            </if>
+            <if test="config.itemEnable != null ">
+                , item_enable = #{config.itemEnable}
+            </if>
+            <if test="config.commCdate != null ">
+                , comm_cdate = #{config.commCdate}
+            </if>
+            <if test="config.commUdate != null ">
+                , comm_udate = #{config.commUdate}
+            </if>
+            <if test="config.commCuser != null ">
+                , comm_cuser = #{config.commCuser}
+            </if>
+            <if test="config.commUuser != null ">
+                , comm_uuser = #{config.commUuser}
+            </if>
+            <if test="config.commDelfalg != null ">
+                , comm_delfalg = #{config.commDelfalg}
+            </if>
+            <if test="config.commV1 != null ">
+                , comm_v1 = #{config.commV1}
+            </if>
+            <if test="config.commV1 != null ">
+                , comm_v2 = #{config.commV2}
+            </if>
+            <if test="config.commV1 != null ">
+                , comm_v3 = #{config.commV3}
+            </if>
+            <if test="config.commV1 != null ">
+                , comm_v4 = #{config.commV4}
+            </if>
+            <if test="config.commV1 != null ">
+                , comm_v5 = #{config.commV5}
+            </if>
+        </trim>
+        <where>
+            sys_id = #{config.sysId} and item_id = #{config.itemId}
+        </where>
+    </update>
 </mapper>

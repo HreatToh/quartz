@@ -1,102 +1,128 @@
+<style>
+
+</style>
 <div class="layuimini-container">
     <div class="layuimini-main">
-        <table id="table"></table>
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md3">
+                <div class="layui-card box-shadow">
+                    <div class="layui-card-header"><i class="fa fa-tree"></i> 菜单结构</div>
+                    <div class="layui-card-body">
+                        <div id="menuTree" class="ztree" ></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-col-md9">
+                <div class="layui-card box-shadow">
+                    <div class="layui-card-header"><i class="fa fa-list"></i> 菜单列表</div>
+                    <div class="layui-card-body">
+                        <table id="menuGird" > </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+<script type="text/html" id="toolbarDemo">
+    <div class="layui-btn-container">
+        <button class="layui-btn layui-btn-sm" lay-event="add">添加</button>
+        <button class="layui-btn layui-btn-sm" lay-event="delete">删除</button>
+        <button class="layui-btn layui-btn-sm" lay-event="update">编辑</button>
+    </div>
+</script>
 <script>
-    @layout("/layout/layui.html"){
-        var columnData = [
-            {
-                name: 'name',
-                label: '名称',
-                sorting: 'DESC'
-            },{
-                name: 'info',
-                label: '使用说明',
-            },{
-                name: 'url',
-                label: 'url'
-            },{
-                name: 'createDate',
-                label: '创建时间',
-                template: function(createDate, rowObject){
-                    return new Date(createDate).format('YYYY-MM-DD HH:mm:ss');
-                }
-            },{
-                name: 'lastDate',
-                label: '最后修改时间',
-                template: function(lastDate, rowObject){
-                    return new Date(lastDate).format('YYYY-MM-DD HH:mm:ss');
-                }
-            },{
-                name: 'action',
-                label: '操作',
-                template: function(action, rowObject){
-                    return '<span class="plugin-action edit-action" learnLink-id="'+rowObject.id+'">编辑</span>'
-                        +'<span class="plugin-action del-action" learnLink-id="'+rowObject.id+'">删除</span>';
-                }
-            }
-        ];
-        $.Application.getTable({
-            element : $('#table')
-            ,url : '${ctxPath}/sysmm/menu/getMenuInfo'
-            , params : {pluginId: 1}
-            , columns : columnData
-            , options : {}
-            , toolbar : [
-                { label : '新增' , icon : 'fa-plus' , handler : function ( e ) {
-                    $.getJSON('${ctxPath}/json/init.json',function (data) {
-                        $.each(data.menuInfo , function (i , o) {
-                            var sysId = '';
-                            if (o.title == '系统管理'){
-                                sysId = 'SYSMM';
-                            }
-                            if (o.title == '组件管理'){
-                                sysId = 'PLUGIN';
-                            }
-                            if (o.title == '其它管理'){
-                                sysId = 'OTHER';
-                            }
-                            a(sysId , sysId , '' , o);
-                        });
-                    });
-                }},
-                { label : '删除' , icon : 'fa-trash' , handler : function ( e ) {
-                    console.log("这是删除！");
-                }}
-            ]
+    layui.use(['layer' , 'customer_tree' , 'customer_grid'], function () {
+        var layer = layui.layer,
+            cusTree = layui.customer_tree,
+            cusGrid = layui.customer_grid,
+            cusGridId = new Date().getTime(),
+            currentSysId = '${sysId}',
+            currentMenuId = '${menuId}';
+        /**
+         * 开始渲染自定义树形结构
+         */
+        cusTree.render({
+            elem : '#menuTree',
+            url : 'tree/menu',
+            height : 'full-300'
         });
-        function a( sysId , parentId , path , bb ) {
-            if (!bb.child){
-                return;
+
+        /**
+         * 设置表格列
+         */
+        var cusGirdCol = [[
+            {
+                type: 'radio'
+                , width: 50
+            },
+            {
+                title : '序号'
+                , type: 'numbers'
+                , width: 50
+            },
+            {
+                field : 'sysId'
+                , title : '系统名称'
+                , align: 'left'
+                , templet : function (d) {
+                    return '<span style="color: #1E9FFF"> [ ' + d.sysId+ ' ] </span><span>' + $.cusFn.getDict(currentSysId , 'SYSTEM_NAME' , d.sysId ) + '</span>'
+                }
+            },
+            {
+                field : 'menuId'
+                , align: 'left'
+                , title : '菜单编号'
+            },
+            {
+                field : 'menuName'
+                , align: 'left'
+                , title : '菜单名称'
+            },
+            {
+                field : 'menuType'
+                , title : '菜单类型'
+                , templet : function (d) {
+                    return '<span style="color: #FF5722">' + $.cusFn.getDict(currentSysId , 'RESOURCE_TYPE' , d.menuType ) + '</span>'
+                }
+            },
+            {
+                field : 'menuIcon'
+                , title : '菜单图标'
+                , align: 'center'
+                , templet : function (d) {
+                    return '<i class="' + d.menuIcon + '"></i>';
+                }
+            },
+            {
+                field : 'menuUrl'
+                , align: 'left'
+                , title : '菜单链接'
             }
-            $.each(bb.child , function (i , o) {
-                var menu = {};
-                var menuId = parentId + getId(i + 1);
-                var menuPath = path + '/' + menuId;
-                menu.sysId = sysId;
-                menu.menuId = menuId;
-                menu.menuName = o.title;
-                menu.menuType = 'menu';
-                menu.menuIcon = o.icon;
-                menu.menuUrl = o.href || '#';
-                menu.menuParentId = parentId || '';
-                menu.menuPath = menuPath;
-                menu.menuOrder = i + 1;
-                menu.menuClass = 'sysMenuService';
-                menu.menuTarget = o.target;
-                $.post('${ctxPath}/sysmm/menu/saveMenuInfo' ,menu, function (data) {
-                    console.log(data)
-                });
-                a(sysId , menuId , menuPath , o)
-            });
-        }
-        function getId(ii) {
-            var id = '';
-            for (var i = 0 ; i < 3 - (ii+'').length ; i ++){
-                id += '0';
+        ]];
+        /**
+         * 渲染表格
+         */
+        var cusGridOption = {
+            id : cusGridId,
+            elem : '#menuGird',
+            url : 'sysmm/menu/getMenuList',
+            height : 'full-300',
+            cols : cusGirdCol,
+            listener : {
+                row : function (obj) {
+                    console.log($.cus.dict);
+                }
             }
-            return id + ii;
-        }
-    @}
+        };
+
+        /**
+         * 如果表格高度改变 树形框也跟着改变
+         */
+        $('#menuGird').resize(function () {
+            $('#menuTree').height($(this).height());
+        });
+
+        cusGridOption = cusGrid.render(cusGridOption);
+    });
 </script>

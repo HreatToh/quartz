@@ -16,7 +16,6 @@ import java.util.Map;
 
 
 @RestController
-@RequestMapping(name = "登录接口" , value = "/login")
 public class LoginController extends BaseController {
 
     @Autowired
@@ -28,18 +27,19 @@ public class LoginController extends BaseController {
      * @return  ResultBody
      * @desc    登录接口
      **/
-    @RequestMapping( name = "登录验证接口" )
+    @RequestMapping( name = "/login 登录验证接口" , value = "/login"  )
     public ResultBody login(@RequestParam Map<String,Object> params , ModelMap modelMap , HttpServletRequest request , HttpServletResponse response){
         return loginService.login(params , modelMap , request , response);
     }
     /**
-     * @method  index
-     * @params  []
-     * @return java.lang.String
-     * @desc
+     * @method  logout
+     * @params  @RequestParam Map<String,Object> params , ModelMap modelMap , HttpServletRequest request , HttpServletResponse response
+     * @return  ResultBody
+     * @desc    登出接口
      **/
-    @RequestMapping( name = "index" , value = "/index" , method = RequestMethod.POST )
-    public String index(){
-        return "index";
+    @RequestMapping( name = "/logout 登出接口需要清除Session等信息" , value = "/logout" )
+    public ResultBody logout(@RequestParam Map<String,Object> params , ModelMap modelMap , HttpServletRequest request , HttpServletResponse response){
+        return loginService.logout(params , modelMap , request , response);
     }
+
 }

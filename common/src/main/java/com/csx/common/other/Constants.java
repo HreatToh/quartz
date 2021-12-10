@@ -62,6 +62,8 @@ public class Constants {
         public static final String SYS_HOME_OPTIONS_INIURL = "SYS_HOME_OPTIONS_INIURL";
         /**  自定义的缓存清理接口        */
         public static final String SYS_HOME_OPTIONS_CLEARURL = "SYS_HOME_OPTIONS_CLEARURL";
+        /** 自定义的认证接口    */
+        public static final String SYS_HOME_OPTIONS_LICENCEURL = "SYS_HOME_OPTIONS_LICENCEURL";
         /**  自定义的是否打开hash定位    */
         public static final String SYS_HOME_OPTIONS_URLHASHLOCATION = "SYS_HOME_OPTIONS_URLHASHLOCATION";
         /**  自定义的主题默认配置        */
@@ -80,16 +82,17 @@ public class Constants {
         public static final String SYS_HOME_PAGE_TITLE = "SYS_HOME_PAGE_TITLE";
 
         /** 回车换行符 \n\r   */
-        public static final String _N_R = "\n\r";
+        public static final String $N$R = "\n\r";
         /** 斜杠 /   */
-        public static final String _ = "/";
+        public static final String $I$R = "/";
         /** 反斜杠 \   */
-        public static final String __ = "\\";
+        public static final String $A$I$R = "\\";
         /** 空白字符 ""   */
-        public static final String BLANK = "";
+        public static final String $BLANK = "";
         /** NONE 无    */
-        public static final String NONE = "NONE";
-
+        public static final String $NONE = "NONE";
+        /** 允许登录的最大在线人数    */
+        public static final String SYS_LOGIN_MAX_ONLINE_NUM = "SYS_LOGIN_MAX_ONLINE_NUM";
     }
 
 
@@ -105,6 +108,10 @@ public class Constants {
         public static final String CACHE_CURRENT_SYS_MENU = "CACHE_CURRENT_SYS_MENU";
         /** 缓存当前用户的系统信息    */
         public static final String CACHE_CURRENT_SYS_SYSTEM = "CACHE_CURRENT_SYS_SYSTEM";
+        /** 缓存所有子系统信息    */
+        public static final String CACHE_SYS_SYSTEM = "CACHE_SYS_SYSTEM";
+        /** 缓存所有字典信息    */
+        public static final String CACHE_DICT_MAP = "CACHE_DICT_MAP";
     }
 
 
@@ -184,5 +191,19 @@ public class Constants {
         public static final String FORMAT_JAVA_09T = ToolUtils.format("{}时{}分{}秒" , FORMAT_JAVA_HH, FORMAT_JAVA_mm, FORMAT_JAVA_ss);
         /** 时间格式  HH时mm分ss秒S毫秒   */
         public static final String FORMAT_JAVA_12T = ToolUtils.format("{}时{}分{}秒{}毫秒" , FORMAT_JAVA_HH, FORMAT_JAVA_mm, FORMAT_JAVA_ss , FORMAT_JAVA_S);
+    }
+
+
+    /**
+     * 分页常量
+     */
+    public static class Pager{
+
+        /** 分页 当前页    */
+        public static final String PAGE_NUM = "PAGE_NUM";
+
+        /** 分页 当前页的数据量    */
+        public static final String PAGE_SIZE_NUM = "PAGE_SIZE_NUM";
+
     }
 }

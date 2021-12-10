@@ -1,11 +1,8 @@
 package com.csx.common.service;
 
 import com.csx.base.service.BaseService;
-import com.csx.common.other.Constants;
 import com.csx.common.entity.SysConfig;
-import com.csx.common.handler.CacheHandler;
 import com.csx.common.mapper.SysConfigMapper;
-import com.csx.common.utils.CacheUtils;
 import com.csx.common.utils.ToolUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +10,6 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -48,5 +44,37 @@ public class SysConfigService extends BaseService {
      **/
     public List<SysConfig> getSysSubConfigAll() {
         return cacheService.getSysSubConfigAll();
+    }
+
+    /**
+     * @method  setConfig
+     * @params  SysConfig sysConfig
+     * @return  Integer
+     * @desc    修改系统配置的方法
+     **/
+    public Integer setConfig(SysConfig sysConfig) {
+        Integer update = 0;
+        try{
+            update = sysConfigMapper.setConfig(sysConfig);
+        } catch (Exception e){
+            log.error(ToolUtils.format("[{}]修改系统配置异常！" , ToolUtils.nowTime() ) , e);
+        }
+        return update;
+    }
+
+    /**
+     * @method  setSubConfig
+     * @params  SysConfig sysConfig
+     * @return  Integer
+     * @desc    修改子系统配置的方法
+     **/
+    public Integer setSubConfig(SysConfig sysConfig) {
+        Integer update = 0;
+        try{
+            update = sysConfigMapper.setSubConfig(sysConfig);
+        } catch (Exception e){
+            log.error(ToolUtils.format("[{}]修改系统配置异常！" , ToolUtils.nowTime() ) , e);
+        }
+        return update;
     }
 }

@@ -1,6 +1,7 @@
 package com.csx.common.controller;
 
 
+import com.csx.common.utils.CookieUtils;
 import com.csx.common.utils.ToolUtils;
 import com.google.code.kaptcha.Constants;
 import com.google.code.kaptcha.Producer;
