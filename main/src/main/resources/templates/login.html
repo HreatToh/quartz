@@ -13,6 +13,8 @@
     <meta id="isTimeOut" content="${isTimeOut!}">
     <!--引入 Jquery -->
     <script src="${ctxPath}/static/lib/jquery-3.4.1/jquery-3.4.1.min.js"></script>
+    <!--引入 Jquery cookie插件-->
+    <script src="${ctxPath}/static/lib/jquery-3.4.1/jquery.cookie.js"></script>
 
     <!--引入 Application.js 全局js -->
     <script src="${ctxPath}/static/js/Application.js"></script>
@@ -48,27 +50,28 @@
 <div class="layui-container">
     <div class="admin-login-background">
         <div class="layui-form login-form">
-            <form class="layui-form" action="">
+            <form class="layui-form" action="" lay-filter="login">
                 <div class="layui-form-item logo-title">
                     <h1>${login_title!}</h1>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-icon layui-icon-username" for="username"></label>
-                    <input type="text" name="username" lay-verify="required|account" placeholder="用户名或者邮箱" autocomplete="off" class="layui-input" value="admin">
+                    <input type="text" name="username" lay-verify="required|account" placeholder="用户名或者邮箱" autocomplete="off" class="layui-input">
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-icon layui-icon-password" for="password"></label>
-                    <input type="password" name="password" lay-verify="required|password" placeholder="密码" autocomplete="off" class="layui-input" value="123456">
+                    <input type="password" name="password" lay-verify="required|password" placeholder="密码" autocomplete="off" class="layui-input">
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-icon layui-icon-vercode" for="captcha"></label>
-                    <input type="text" name="${kaptcha!}" lay-verify="required|captcha" placeholder="图形验证码" autocomplete="off" class="layui-input verification captcha" value="xszg">
+                    <input type="text" name="${kaptcha!}" lay-verify="required|captcha" placeholder="图形验证码" autocomplete="off" class="layui-input verification captcha" value="nwhl">
                     <div class="captcha-img">
                         <img id="${kaptcha!}_img" src="${ctxPath}/kaptcha">
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <input type="checkbox" name="rememberMe" value="true" lay-skin="primary" title="记住密码">
+                    <input type="checkbox" lay-filter="isRemember" lay-skin="primary" title="记住密码">
+                    <input type="hidden" name="isRemember" value="false">
                 </div>
                 <div class="layui-form-item">
                     <button class="layui-btn layui-btn layui-btn-normal layui-btn-fluid" lay-submit="" lay-filter="login">登 入</button>
@@ -83,7 +86,18 @@
 
         // 粒子线条背景
         $(document).ready(function(){
+            /** 判断是否记住密码    */
+            if ($.cookie('isRemember') && $.cookie('isRemember') == 'true'){
+                $('input[name="username"]').val($.cookie('username'));
+                $('input[name="password"]').val($.cookie('password'));
+                $('input[name="isRemember"]').val($.cookie('isRemember'));
+                $('div.layui-unselect.layui-form-checkbox').removeClass('layui-form-checked');
+                $('div.layui-unselect.layui-form-checkbox').addClass('layui-form-checked');
+            }
 
+            /**
+             * 渲染粒子动画
+             */
             $('.layui-container').particleground({
                 dotColor:'#eee',
                 lineColor:'#c9c9c9',
@@ -92,7 +106,10 @@
                 proximity:70
             });
 
-            // 设置验证码点击事件
+
+            /**
+             * 设置验证码点击事件
+             */
             $('#${kaptcha!}_img').bind('click' , function () {
                 var imgSrc = $(this).attr('src');
                 if (imgSrc && imgSrc.indexOf('?') == -1 ){
@@ -104,9 +121,17 @@
             });
         });
 
+        /**
+         * 记住密码
+         */
+        form.on('checkbox(isRemember)', function(data){
+            $('input[name="isRemember"]').val(data.elem.checked);
+        });
+
+
         // 进行登录操作
         form.on('submit(login)', function (data) {
-            data = data.field;
+            var data = data.field ;
             if ( isNull(data.username) ) {
                 layer.msg('用户名不能为空');
                 return false;
@@ -124,6 +149,20 @@
             var loading = customer.loading('正在登录...');
             $.post('${ctxPath}/login' , data , function (result) {
                 if (result && result.code == '200'){
+                    /**
+                     * 设置密码记住功能
+                     */
+                    if (data.isRemember && data.isRemember == 'true'){
+                        $.cookie('username' , data.username);
+                        $.cookie('password' , data.password);
+                    } else {
+                        $.removeCookie('username');
+                        $.removeCookie('password');
+                    }
+                    $.cookie('isRemember' , data.isRemember);
+                    /**
+                     *  登录成功跳转
+                     */
                     customer.success(result.msg ,  function () {
                         layer.close(loading);
                         window.location = '${ctxPath}/page/index';

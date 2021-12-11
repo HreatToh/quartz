@@ -96,6 +96,11 @@ public class OnlineUtils {
      * @param sessionId
      */
     public synchronized static void remove(String userId , String sessionId){
+
+        if (ToolUtils.isNull(userId) || ToolUtils.isNull(sessionId)){
+            return;
+        }
+
         String numKey = ToolUtils.format("{}.{}" ,PREFIX_NUM , userId);
         String sessionKey = ToolUtils.format("{}.{}.{}" ,PREFIX_SESSION , userId , sessionId);
         CacheUtils.remove(sessionKey);
