@@ -511,6 +511,19 @@ layui.define(["customer_menu", "element","customer_tab", "customer_theme","form"
                 });
             });
             /**
+             * 绑定title的tip提示
+             */
+            $('body').on('mouseover mouseout' , '[lay-cus-title]' , function (e) {
+                if (e.target == e.currentTarget){
+                    if (e.type == 'mouseover'){
+                        var msg = $(this).attr('lay-cus-title');
+                        if (msg){
+                            layer.tips(msg, e.target,{tips: 1});
+                        }
+                    }
+                }
+            });
+            /**
              * 窗口改变事件
              */
             window.addEventListener('resize' ,function () {

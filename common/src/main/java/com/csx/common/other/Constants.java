@@ -110,8 +110,12 @@ public class Constants {
         public static final String CACHE_CURRENT_SYS_SYSTEM = "CACHE_CURRENT_SYS_SYSTEM";
         /** 缓存所有子系统信息    */
         public static final String CACHE_SYS_SYSTEM = "CACHE_SYS_SYSTEM";
+        /** 缓存所有菜单信息    */
+        public static final String CACHE_SYS_MENU = "CACHE_SYS_MENU";
         /** 缓存所有字典信息    */
-        public static final String CACHE_DICT_MAP = "CACHE_DICT_MAP";
+        public static final String CACHE_SYS_DICT = "CACHE_SYS_DICT";
+        /** 缓存所有字典信息 map 对象   */
+        public static final String CACHE_SYS_DICT_MAP = "CACHE_SYS_DICT_MAP";
     }
 
 

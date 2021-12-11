@@ -1,6 +1,7 @@
 package com.csx.common.service;
 
 import cn.hutool.core.date.DateUtil;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.csx.base.service.BaseService;
 import com.csx.common.other.Constants;
@@ -16,6 +17,8 @@ import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -93,5 +96,21 @@ public class SysMenuService extends BaseService {
             return ResultBody.error(e);
         }
         return ResultBody.success(page);
+    }
+
+    /**
+     * @method  getSysMenuAll
+     * @params
+     * @return  List<SysMenu>
+     * @desc    获取所有的菜单信息
+     **/
+    public List<SysMenu> getSysMenuAll() {
+        List<SysMenu> list = null;
+        try{
+            list = menuMapper.selectList(new QueryWrapper<SysMenu>());
+        } catch (Exception e){
+            log.error(ToolUtils.format("getSysMenuAll 获取所有的菜单信息异常！" , ToolUtils.nowTime() ) , e);
+        }
+        return list;
     }
 }

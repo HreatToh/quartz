@@ -65,6 +65,7 @@
                 field : 'sysId'
                 , title : '系统名称'
                 , align: 'left'
+                , width: 200
                 , templet : function (d) {
                     return '<span style="color: #1E9FFF"> [ ' + d.sysId+ ' ] </span><span>' + $.cusFn.getDict(currentSysId , 'SYSTEM_NAME' , d.sysId ) + '</span>'
                 }
@@ -73,15 +74,18 @@
                 field : 'menuId'
                 , align: 'left'
                 , title : '菜单编号'
+                , width: 200
             },
             {
                 field : 'menuName'
                 , align: 'left'
                 , title : '菜单名称'
+                , width: 200
             },
             {
                 field : 'menuType'
                 , title : '菜单类型'
+                , width: 100
                 , templet : function (d) {
                     return '<span style="color: #FF5722">' + $.cusFn.getDict(currentSysId , 'RESOURCE_TYPE' , d.menuType ) + '</span>'
                 }
@@ -90,14 +94,33 @@
                 field : 'menuIcon'
                 , title : '菜单图标'
                 , align: 'center'
+                , width: 100
                 , templet : function (d) {
                     return '<i class="' + d.menuIcon + '"></i>';
                 }
             },
             {
                 field : 'menuUrl'
+                , width: 300
                 , align: 'left'
                 , title : '菜单链接'
+            },
+            {
+                field : 'menuParentId'
+                , width: 200
+                , align: 'left'
+                , title : '父级菜单'
+                , templet : function (d) {
+                    var temp = '' , color;
+                    if (d.menuParentId ){
+                        color = '#393D49';
+                        temp = ' [ ' + d.menuParentId + ' ] ' +  $.cusFn.getDict(currentSysId , 'MENU_NAME' , d.menuParentId );
+                    }else{
+                        color = '#d2d2d2';
+                        temp = '暂无父级菜单';
+                    }
+                    return '<span style="color: ' + color + '">' + temp + '</span>';
+                }
             }
         ]];
         /**

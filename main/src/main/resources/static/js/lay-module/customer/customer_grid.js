@@ -100,7 +100,10 @@ layui.define([ "layer", "table" ], function (exports) {
                             if (template && template instanceof Function){
                                 temp = template(d);
                             }
-                            return '<div title="' + d[col.field] + '" style="text-align: ' + align + '"> ' + temp + ' </div>';
+                            if (d[col.field]){
+                                return '<div lay-cus-title="' + d[col.field] + '" style="text-align: ' + align + '"> ' + temp + ' </div>';
+                            }
+                            return '<div style="text-align: ' + align + '"> ' + temp + ' </div>';
                         };
                         col.align = 'center';
                         cols[ii] = col;

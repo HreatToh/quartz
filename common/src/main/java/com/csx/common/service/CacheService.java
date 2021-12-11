@@ -8,22 +8,16 @@ import com.csx.common.entity.SysMenu;
 import com.csx.common.entity.SysSystem;
 import com.csx.common.handler.CacheHandler;
 import com.csx.common.mapper.SysConfigMapper;
-import com.csx.common.mapper.SysMenuMapper;
 import com.csx.common.mapper.SysPermissionMapper;
-import com.csx.common.mapper.SysSystemMapper;
 import com.csx.common.other.Constants;
 import com.csx.common.other.JsonMap;
 import com.csx.common.other.Permission;
 import com.csx.common.utils.CacheUtils;
-import com.csx.common.utils.JdbcUtils;
-import com.csx.common.utils.SpringUtils;
 import com.csx.common.utils.ToolUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -46,6 +40,8 @@ public class CacheService extends BaseService {
     private SysSystemService sysSystemService;
     @Autowired
     private SysPermissionMapper sysPermissionMapper;
+    @Autowired
+    private SysMenuService sysMenuService;
 
     /**
      * 初始化缓存信息
@@ -129,7 +125,7 @@ public class CacheService extends BaseService {
      * @desc    获取用户的菜单
      **/
     public List<SysMenu> getSysMenuByUserId(String userId){
-        return (List<SysMenu>) CacheUtils.get(Constants.Cache.CACHE_CURRENT_SYS_MENU, new CacheHandler() {
+        return (List<SysMenu>) CacheUtils.get(Constants.Cache.CACHE_CURRENT_SYS_MENU + "." + userId, new CacheHandler() {
             @Override
             public Object handler() throws Exception {
                 List<SysMenu> list = sysPermissionMapper.getSysMenuByUserId(userId);
@@ -142,13 +138,31 @@ public class CacheService extends BaseService {
     }
 
     /**
+     * @method  getSysMenuByUserId
+     * @params  String userId
+     * @return  List<SysMenu>
+     * @desc    获取所有的菜单
+     **/
+    private List<SysMenu> getSysMenuAll() {
+        return (List<SysMenu>) CacheUtils.get(Constants.Cache.CACHE_SYS_MENU , new CacheHandler() {
+            @Override
+            public Object handler() throws Exception {
+                List<SysMenu> list = sysMenuService.getSysMenuAll();
+                if (ToolUtils.isNull(list) ){
+                    return new ArrayList<SysMenu>();
+                }
+                return list;
+            }
+        });
+    }
+    /**
      * @method  getSysSystemByUserId
      * @params  String userId
      * @return  List<SysSystem>
      * @desc    获取用户的系统信息
      **/
     public List<SysSystem> getSysSystemByUserId(String userId){
-        return (List<SysSystem>) CacheUtils.get(Constants.Cache.CACHE_CURRENT_SYS_SYSTEM, new CacheHandler() {
+        return (List<SysSystem>) CacheUtils.get(Constants.Cache.CACHE_CURRENT_SYS_SYSTEM + "." + userId, new CacheHandler() {
             @Override
             public Object handler() throws Exception {
                 List<SysMenu> list = sysPermissionMapper.getSysSystemByUserId(userId);
@@ -168,17 +182,27 @@ public class CacheService extends BaseService {
      * @desc    缓存获取字典Map
      **/
     public Map getDictMap() {
-        return (Map) CacheUtils.get(Constants.Cache.CACHE_DICT_MAP, new CacheHandler() {
+        return (Map) CacheUtils.get(Constants.Cache.CACHE_SYS_DICT_MAP, new CacheHandler() {
             @Override
             public Object handler() throws Exception {
                 JsonMap jsonMap = JsonMap.newInstance();
                 getSystemDictMap(jsonMap , getSysSystemAll());
                 getSysMenuTypeMap(jsonMap);
+                getSysMenuMap(jsonMap , getSysMenuAll());
                 return jsonMap.get();
             }
         });
     }
 
+
+    /**
+     * 把所有的菜单信息转换成Map
+     */
+    private void getSysMenuMap(JsonMap jsonMap , List<SysMenu> menuList){
+        for (SysMenu sysMenu: menuList) {
+            jsonMap.append("SYSMM.MENU_NAME." + sysMenu.getMenuId() , sysMenu.getMenuName());
+        }
+    }
     /**
      * @method  getSysMenuTypeMap
      * @params  JsonMap jsonMap
